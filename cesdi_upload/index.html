@@ -1,0 +1,7102 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Parâmetros para envio de atos por cartórios no sistema SIGNO">
+      
+      
+      
+      
+        <link rel="prev" href="../cesdi_api/">
+      
+      
+        <link rel="next" href="../rcto_api/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Upload - Documentação SIGNO - Envio de Atos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cesdi-envio-por-upload" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Documentação SIGNO - Envio de Atos" class="md-header__button md-logo" aria-label="Documentação SIGNO - Envio de Atos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação SIGNO - Envio de Atos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Upload
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentação SIGNO - Envio de Atos" class="md-nav__button md-logo" aria-label="Documentação SIGNO - Envio de Atos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentação SIGNO - Envio de Atos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CEP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CEP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cep_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cep_upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CESDI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CESDI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cesdi_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#orientacoes-de-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orientações de envio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#campos-e-parametros-de-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos e parâmetros de envio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-basicos-do-ato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Básicos do Ato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Básicos do Ato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipolinha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIPOLINHA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipoato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIPOATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observacaoato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OBSERVACAOATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATAATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#livroinicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LIVROINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complementolivroinicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPLEMENTOLIVROINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folhainicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FOLHAINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complementofolhainicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPLEMENTOFOLHAINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folhafinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FOLHAFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complementofolhafinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPLEMENTOFOLHAFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valoroperacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VALOROPERACAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prazopagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRAZOPAGAMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formapagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FORMAPAGAMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datacontrato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATACONTRATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-especificos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Específicos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Específicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regimebens-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REGIMEBENS Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filhosmaiores-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FILHOSMAIORES Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filhosmenores-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FILHOSMENORES Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datacasamento-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATACASAMENTO Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existebemedireito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXISTEBEMEDIREITO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-basicos-da-parte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Básicos da Parte
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Básicos da Parte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ordemparteato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORDEMPARTEATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qualidadeparte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUALIDADEPARTE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipodocumento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIPODOCUMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOCUMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orgaoemissor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORGAOEMISSOR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estadooab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESTADOOAB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataemissao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATAEMISSAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datanascimento-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATANASCIMENTO Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sexo-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SEXO Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomeparte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOMEPARTE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomesocial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOMESOCIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nacionalidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NACIONALIDADE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paisorigem-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAISORIGEM Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estadonascimento-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESTADONASCIMENTO Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#areaatuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AREAATUACAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profissao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PROFISSAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacidadecivil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAPACIDADECIVIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataobito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATAOBITO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responsavelfilhosmenores-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RESPONSAVELFILHOSMENORES Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naopossuifiliacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAOPOSSUIFILIACAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filiacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FILIACAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estadocivil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESTADOCIVIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-estado-civil-preenchido-somente-quando-o-campo-estado-civil-for-casado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Estado Civil - Preenchido somente quando o campo "ESTADO CIVIL" for "CASADO"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Estado Civil - Preenchido somente quando o campo &#34;ESTADO CIVIL&#34; for &#34;CASADO&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conjuges_datacasamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONJUGES_DATACASAMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpfconjuge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPFCONJUGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomeconjuge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOMECONJUGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conjuges_regimedebens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONJUGES_REGIMEDEBENS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-endereco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Endereço
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Endereço">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CEP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RUA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NUMERO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complemento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPLEMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bairro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BAIRRO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#municipio-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MUNICIPIO Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uf-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UF Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paisresidencia-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAISRESIDENCIA Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-contato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Contato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Contato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EMAIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipocontato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIPOCONTATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONTATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-bens-e-direitos-nenhum-campo-abaixo-devera-ser-preenchido-se-o-campo-existebemedireito-for-falso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Bens e Direitos - (Nenhum campo abaixo deverá ser preenchido se o campo "EXISTEBEMEDIREITO" for FALSO)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Bens e Direitos - (Nenhum campo abaixo deverá ser preenchido se o campo &#34;EXISTEBEMEDIREITO&#34; for FALSO)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipobemedireito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIPOBEMEDIREITO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descricaobem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DESCRICAOBEM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-precatorio-varajudicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo precatório VARAJUDICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-precatorio-numeroprocesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo precatório NUMEROPROCESSO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-precatorio-numeroprecatorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo precatório NUMEROPRECATORIO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-precatorio-valor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo precatório VALOR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#titulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TITULARES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-cin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel CIN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-tiporeferenciacadastralimovel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel TIPOREFERENCIACADASTRALIMOVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-numerocadastroimovel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel NUMEROCADASTROIMOVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-tipoimovel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel TIPOIMOVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-acessao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel ACESSAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-unidadeareatotal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel UNIDADEAREATOTAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-quantidadeareatotal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel QUANTIDADEAREATOTAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-unidadeareaconstruida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel UNIDADEAREACONSTRUIDA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-quantidadeareaconstruida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel QUANTIDADEAREACONSTRUIDA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-valorimovel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel VALORIMOVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-tipotributo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel TIPOTRIBUTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-valorfiscal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel VALORFISCAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-cnm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel CNM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_cep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_CEP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_rua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_RUA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_numero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_NUMERO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_complemento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_COMPLEMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_bairro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_BAIRRO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_municipio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_MUNICIPIO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_uf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_UF
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atos-de-origem-somente-para-preenchimento-em-atos-de-rerratificacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atos de Origem - Somente para preenchimento em atos de Rerratificação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atos de Origem - Somente para preenchimento em atos de Rerratificação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_uf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_UF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_municipio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_MUNICIPIO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_cartorioatual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_CARTORIOATUAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_cartorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_CARTORIO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_cartorionaocadastrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_CARTORIONAOCADASTRADO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_observacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_OBSERVACAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_tipoato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_TIPOATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_livroinicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_LIVROINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_complementolivroinicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_COMPLEMENTOLIVROINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_livrofinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_LIVROFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_complementolivrofinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_COMPLEMENTOLIVROFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_folhainicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_FOLHAINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_complementofolhainicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_COMPLEMENTOFOLHAINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_folhafinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_FOLHAFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_complementofolhafinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_COMPLEMENTOFOLHAFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualidade-da-parte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualidade da parte
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qualidade da parte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separacao-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Separação (1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reconciliacao-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reconciliação (2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversao-de-separacao-em-divorcio-3-e-divorcio-direto-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversão de separação em divórcio (3) e Divórcio direto (4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventario-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inventário (5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobrepartilha-6-e-partilha-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sobrepartilha (6) e Partilha (9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rerratificacao-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rerratificação (7)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomeacao-de-inventariante-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nomeação de inventariante (8)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipo-de-bens-e-direito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipo de bens e direito
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-cadastral-do-imovel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referência cadastral do imóvel
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCTO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RCTO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rcto_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rcto_upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dominios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domínios Compartilhados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#orientacoes-de-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orientações de envio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#campos-e-parametros-de-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos e parâmetros de envio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-basicos-do-ato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Básicos do Ato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Básicos do Ato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipolinha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIPOLINHA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipoato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIPOATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observacaoato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OBSERVACAOATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATAATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#livroinicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LIVROINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complementolivroinicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPLEMENTOLIVROINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folhainicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FOLHAINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complementofolhainicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPLEMENTOFOLHAINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folhafinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FOLHAFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complementofolhafinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPLEMENTOFOLHAFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valoroperacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VALOROPERACAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prazopagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRAZOPAGAMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formapagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FORMAPAGAMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datacontrato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATACONTRATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-especificos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Específicos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Específicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regimebens-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REGIMEBENS Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filhosmaiores-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FILHOSMAIORES Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filhosmenores-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FILHOSMENORES Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datacasamento-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATACASAMENTO Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existebemedireito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXISTEBEMEDIREITO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-basicos-da-parte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Básicos da Parte
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Básicos da Parte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ordemparteato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORDEMPARTEATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qualidadeparte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUALIDADEPARTE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipodocumento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIPODOCUMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOCUMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orgaoemissor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORGAOEMISSOR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estadooab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESTADOOAB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataemissao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATAEMISSAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datanascimento-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATANASCIMENTO Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sexo-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SEXO Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomeparte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOMEPARTE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomesocial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOMESOCIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nacionalidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NACIONALIDADE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paisorigem-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAISORIGEM Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estadonascimento-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESTADONASCIMENTO Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#areaatuacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AREAATUACAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profissao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PROFISSAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacidadecivil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAPACIDADECIVIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataobito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATAOBITO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responsavelfilhosmenores-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RESPONSAVELFILHOSMENORES Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naopossuifiliacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAOPOSSUIFILIACAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filiacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FILIACAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estadocivil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESTADOCIVIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-estado-civil-preenchido-somente-quando-o-campo-estado-civil-for-casado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Estado Civil - Preenchido somente quando o campo "ESTADO CIVIL" for "CASADO"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Estado Civil - Preenchido somente quando o campo &#34;ESTADO CIVIL&#34; for &#34;CASADO&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conjuges_datacasamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONJUGES_DATACASAMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpfconjuge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPFCONJUGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomeconjuge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOMECONJUGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conjuges_regimedebens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONJUGES_REGIMEDEBENS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-endereco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Endereço
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Endereço">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CEP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RUA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NUMERO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complemento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPLEMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bairro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BAIRRO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#municipio-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MUNICIPIO Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uf-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UF Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paisresidencia-obrigatorio-ibge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAISRESIDENCIA Obrigatório IBGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-contato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Contato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Contato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EMAIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipocontato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIPOCONTATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONTATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dados-bens-e-direitos-nenhum-campo-abaixo-devera-ser-preenchido-se-o-campo-existebemedireito-for-falso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados Bens e Direitos - (Nenhum campo abaixo deverá ser preenchido se o campo "EXISTEBEMEDIREITO" for FALSO)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dados Bens e Direitos - (Nenhum campo abaixo deverá ser preenchido se o campo &#34;EXISTEBEMEDIREITO&#34; for FALSO)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipobemedireito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIPOBEMEDIREITO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descricaobem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DESCRICAOBEM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-precatorio-varajudicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo precatório VARAJUDICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-precatorio-numeroprocesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo precatório NUMEROPROCESSO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-precatorio-numeroprecatorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo precatório NUMEROPRECATORIO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-precatorio-valor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo precatório VALOR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#titulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TITULARES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-cin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel CIN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-tiporeferenciacadastralimovel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel TIPOREFERENCIACADASTRALIMOVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-numerocadastroimovel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel NUMEROCADASTROIMOVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-tipoimovel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel TIPOIMOVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-acessao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel ACESSAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-unidadeareatotal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel UNIDADEAREATOTAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-quantidadeareatotal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel QUANTIDADEAREATOTAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-unidadeareaconstruida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel UNIDADEAREACONSTRUIDA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-quantidadeareaconstruida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel QUANTIDADEAREACONSTRUIDA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-valorimovel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel VALORIMOVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-tipotributo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel TIPOTRIBUTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-valorfiscal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel VALORFISCAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-cnm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel CNM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_cep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_CEP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_rua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_RUA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_numero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_NUMERO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_complemento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_COMPLEMENTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_bairro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_BAIRRO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_municipio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_MUNICIPIO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bem-tipo-imovel-imovel_uf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bem - Tipo imóvel IMOVEL_UF
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atos-de-origem-somente-para-preenchimento-em-atos-de-rerratificacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atos de Origem - Somente para preenchimento em atos de Rerratificação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atos de Origem - Somente para preenchimento em atos de Rerratificação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_uf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_UF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_municipio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_MUNICIPIO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_cartorioatual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_CARTORIOATUAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_cartorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_CARTORIO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_cartorionaocadastrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_CARTORIONAOCADASTRADO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_observacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_OBSERVACAO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_tipoato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_TIPOATO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_livroinicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_LIVROINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_complementolivroinicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_COMPLEMENTOLIVROINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_livrofinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_LIVROFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_complementolivrofinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_COMPLEMENTOLIVROFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_folhainicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_FOLHAINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_complementofolhainicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_COMPLEMENTOFOLHAINICIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_folhafinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_FOLHAFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atoorigem_complementofolhafinal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATOORIGEM_COMPLEMENTOFOLHAFINAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualidade-da-parte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualidade da parte
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qualidade da parte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separacao-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Separação (1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reconciliacao-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reconciliação (2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversao-de-separacao-em-divorcio-3-e-divorcio-direto-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversão de separação em divórcio (3) e Divórcio direto (4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventario-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inventário (5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobrepartilha-6-e-partilha-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sobrepartilha (6) e Partilha (9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rerratificacao-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rerratificação (7)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomeacao-de-inventariante-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nomeação de inventariante (8)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipo-de-bens-e-direito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipo de bens e direito
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-cadastral-do-imovel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referência cadastral do imóvel
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cesdi-envio-por-upload">CESDI - Envio por Upload</h1>
+<h2 id="orientacoes-de-envio">Orientações de envio</h2>
+<p>Formato: <strong>CSV, UTF-8</strong>, campos separados por <strong>ponto-e-vírgula (<code>;</code>)</strong>.</p>
+<ol>
+<li>
+<p>Baixe o arquivo exemplo no SIGNO</p>
+</li>
+<li>
+<p>Preencha seguindo as orientações deste documento</p>
+</li>
+<li>
+<p>Salve como "CSV separado por vírgulas"</p>
+</li>
+<li>
+<p>Faça o upload no SIGNO</p>
+</li>
+</ol>
+<hr />
+<h2 id="campos-e-parametros-de-envio">Campos e parâmetros de envio</h2>
+<hr />
+<h2 id="dados-basicos-do-ato">Dados Básicos do Ato</h2>
+<hr />
+<h3 id="tipolinha"><code>TIPOLINHA</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">XX (2 dígitos alfanuméricos)</td>
+<td>Indica se a linha faz referencia a um ato, a uma parte, a um bem e direito ou ato de origem.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> UTILIZADO APENAS NA FORMA DE ENVIO POR UPLOAD</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AC</td>
+<td>Ato Cesdi</td>
+</tr>
+<tr>
+<td>PC</td>
+<td>Parte Cesdi</td>
+</tr>
+<tr>
+<td>BC</td>
+<td>Bens e Direitos Cesdi</td>
+</tr>
+<tr>
+<td>AO</td>
+<td>Ato de origem</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="tipoato"><code>TIPOATO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Tipo do ato que foi lavrado no cartório</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Separação</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Reconciliação</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Conversão de Separação em Divórcio</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Divórcio Direto</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Inventário</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sobrepartilha</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Rerratificação</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Nomeação de Inventariante</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Partilha</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="observacaoato"><code>OBSERVACAOATO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">-</td>
+<td>Campo para preenchimento do motivo do status do ato, caso seja inválido ou incompleto</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Não deve ser preenchido quando o status do ato é "válido".</p>
+</blockquote>
+<hr />
+<h3 id="dataato"><code>DATAATO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Data</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">dd/mm/aaaa</td>
+<td>Data em que o ato foi lavrado.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="livroinicial"><code>LIVROINICIAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0000 (4 dígitos numéricos)</td>
+<td>Número do livro inicial em que o ato foi lavrado.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="complementolivroinicial"><code>COMPLEMENTOLIVROINICIAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">X (letra)</td>
+<td>Complemento alfanumérico referente ao número do livro inicial.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Caso o livro não tenha complemento, esse campo deve ser enviado em branco.</p>
+</blockquote>
+<hr />
+<h3 id="folhainicial"><code>FOLHAINICIAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">000 (3 dígitos numéricos)</td>
+<td>Número da folha inicial em que o ato foi lavrado.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Valores de 1 a 600</p>
+</blockquote>
+<hr />
+<h3 id="complementofolhainicial"><code>COMPLEMENTOFOLHAINICIAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">X (letra)</td>
+<td>Complemento alfanumérico referente ao número da folha inicial. Utilizado para diferenciar quando existem 2 atos no mesmo livro e folha.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Caso a folha não tenha complemento, esse campo deve ser enviado em branco.</p>
+</blockquote>
+<hr />
+<h3 id="folhafinal"><code>FOLHAFINAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">000 (3 dígitos numéricos)</td>
+<td>Número da folha final em que o ato foi lavrado.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Valores de 1 a 600  Caso o ato tenha sido lavrado em uma única folha esse campo deve ser preenchido com o mesmo valor do campo FOLHAINICIAL.</p>
+</blockquote>
+<hr />
+<h3 id="complementofolhafinal"><code>COMPLEMENTOFOLHAFINAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">X (letra)</td>
+<td>Complemento alfanumérico referente ao número da folha final. Utilizado para diferenciar quando existem 2 atos no mesmo livro e folha.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Caso a folha não tenha complemento, esse campo deve ser enviado em branco.</p>
+</blockquote>
+<hr />
+<h3 id="valoroperacao"><code>VALOROPERACAO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Monetário</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">R$ 0,00</td>
+<td>Informe o valor da escritura, contrato, etc</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="prazopagamento"><code>PRAZOPAGAMENTO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Prazo estipulado para o pagamento da escritura, contrato, etc</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>À vista</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A prazo</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Antecipado</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="formapagamento"><code>FORMAPAGAMENTO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Forma de pagamento realizada para quitação da escritura.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Cheque</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dinheiro</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Nota promissória</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Permuta</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Outras</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Transferência Bancária</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="datacontrato"><code>DATACONTRATO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Data</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">dd/mm/aaaa</td>
+<td>Data da última assinatura da escritura, contrato, etc</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="dados-especificos">Dados Específicos</h2>
+<hr />
+<h3 id="regimebens-obrigatorio-ibge"><code>REGIMEBENS Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Campo indicativo do tipo de regime de bens vigente entre as principais partes do ato.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Preenchido somente nos casos abaixo: - Obrigatoriamente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio".  - Opcionalmente nos demais atos, quando o campo "Estado Civil" da parte for preenchida como "CASADA".</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Comunhão Parcial de Bens</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Comunhão Universal de Bens</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Participação Final nos Aquestos</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Regime Específico Previsto em Pacto Antenupcial</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Separação de Bens</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Separação Obrigatória de Bens</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="filhosmaiores-obrigatorio-ibge"><code>FILHOSMAIORES Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">00 (2 dígitos)</td>
+<td>Quantidade de filhos maiores de 18 anos</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Preenchido somente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio"</p>
+</blockquote>
+<hr />
+<h3 id="filhosmenores-obrigatorio-ibge"><code>FILHOSMENORES Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">00 (2 dígitos)</td>
+<td>Quantidade de filhos menores de 18 anos</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Preenchido somente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio"</p>
+</blockquote>
+<hr />
+<h3 id="datacasamento-obrigatorio-ibge"><code>DATACASAMENTO Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Data</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">dd/mm/aaaa</td>
+<td>Campo para informar a data do casamento</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Preenchido somente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio"</p>
+</blockquote>
+<hr />
+<h3 id="existebemedireito"><code>EXISTEBEMEDIREITO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Campo indicativo sobre a existência de bem e direito vinculado a parte do ato</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nulo</td>
+<td>Não informado</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Não existe</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Existe</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="dados-basicos-da-parte">Dados Básicos da Parte</h2>
+<hr />
+<h3 id="ordemparteato"><code>ORDEMPARTEATO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">00 (2 dígitos numéricos)</td>
+<td>Campo que indica a posição que contém todas as informações da parte, ele tem vínculo direto com o campo TITULARES</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> UTILIZADO APENAS NA FORMA DE ENVIO POR UPLOAD</p>
+</blockquote>
+<hr />
+<h3 id="qualidadeparte"><code>QUALIDADEPARTE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0000 (4 dígitos numéricos)</td>
+<td>Campo que indica a qualidade da parte de acordo com o tipo de ato informado</td>
+</tr>
+</tbody>
+</table>
+<p>Consulte a seção <strong>Qualidade da parte</strong> abaixo.</p>
+<hr />
+<h3 id="cpf"><code>CPF</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">Sem formatação ou caracteres especiais</td>
+<td>Número do CPF da parte  Quando a parte for pessoa jurídica este campo deve aceitar o CNPJ.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> O campo passará a aceitar obrigatoriamente o CPF ou CNPJ. A nomenclatura por enquanto permanecerá a mesma</p>
+</blockquote>
+<hr />
+<h3 id="tipodocumento"><code>TIPODOCUMENTO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0000 (4 dígitos numéricos)</td>
+<td>Documento secundário de identificação da parte vinculada ao ato.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Campo obrigatório quando o atributo “Documento” for informado</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1717</td>
+<td>Carteira de Identidade Funcional</td>
+</tr>
+<tr>
+<td>1718</td>
+<td>Carteira de Identidade Militar</td>
+</tr>
+<tr>
+<td>1719</td>
+<td>Carteira de Trabalho</td>
+</tr>
+<tr>
+<td>1720</td>
+<td>Carteira Profissional</td>
+</tr>
+<tr>
+<td>1721</td>
+<td>CNH</td>
+</tr>
+<tr>
+<td>1722</td>
+<td>Passaporte</td>
+</tr>
+<tr>
+<td>1723</td>
+<td>RNE</td>
+</tr>
+<tr>
+<td>1724</td>
+<td>RG</td>
+</tr>
+<tr>
+<td>1725</td>
+<td>Outro Documento Público</td>
+</tr>
+<tr>
+<td>1726</td>
+<td>OAB</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="documento"><code>DOCUMENTO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Descrição do documento, sem caracteres especiais</td>
+<td>Número do documento informado, de acordo com o TIPO DOCUMENTO.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="orgaoemissor"><code>ORGAOEMISSOR</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">-</td>
+<td>Informa o órgão público emissor do documento secundário.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Descrição do órgão emissor, sem caracteres especiais e com letras maiúsculas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="estadooab"><code>ESTADOOAB</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">XX (2 dígitos alfanuméricos)</td>
+<td>Estado do documento da OAB</td>
+</tr>
+</tbody>
+</table>
+<p>Consulte a tabela de <strong>Estado</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h3 id="dataemissao"><code>DATAEMISSAO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Data</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">dd/mm/aaaa</td>
+<td>Data de emissão do documento secundário da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="datanascimento-obrigatorio-ibge"><code>DATANASCIMENTO Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Não</td>
+<td style="text-align: center;">Data</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">dd/mm/aaaa</td>
+<td>Data de nascimento da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Obrigatório somente quando o tipo de ato for "separação", "divórcio direto" e "conversão de separação em divórcio" e o atributo “qualificacaoParte” for igual a "Separando" ou "Divorciando"</p>
+</blockquote>
+<hr />
+<h3 id="sexo-obrigatorio-ibge"><code>SEXO Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Não</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Sexo informado pela parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Obrigatório somente quando o tipo de ato for "separação", "divórcio direto" e "conversão de separação em divórcio" e o atributo “qualificacaoParte” for igual a "Separando" ou "Divorciando"</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Feminino</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Masculino</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="nomeparte"><code>NOMEPARTE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">-</td>
+<td>Nome completo da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="nomesocial"><code>NOMESOCIAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">-</td>
+<td>Nome Social da parte vinculada ao ato.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Recomendado o preenchimento quando houver ciência que a parte possuir um nome social.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(Vazio)</td>
+<td>Nome Social da Parte</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="nacionalidade"><code>NACIONALIDADE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Não</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>País de nacionalidade da parte.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Obrigatório somente quando o tipo de ato for "separação", "divórcio direto" e "conversão de separação em divórcio" e o atributo “qualificacaoParte” for igual a "Separando" ou "Divorciando"  Caso a parte não tenha uma nacionalidade diferente do país em que nasceu, deverá ser informado o mesmo dado do campo "PAISORIGEM".</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Brasileiro</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Estrangeiro</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Naturalizado</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="paisorigem-obrigatorio-ibge"><code>PAISORIGEM Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Não</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">000 (3 dígitos numéricos)</td>
+<td>País em que a parte vinculada ao ato nasceu</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Obrigatório somente quando o tipo de ato for "separação", "divórcio direto" e "conversão de separação em divórcio" e o atributo “qualificacaoParte” for igual a "Separando" ou "Divorciando"</p>
+</blockquote>
+<p>Consulte a tabela de <strong>País</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h3 id="estadonascimento-obrigatorio-ibge"><code>ESTADONASCIMENTO Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Não</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">XX (2 dígitos alfanuméricos)</td>
+<td>UF de nascimento da parte</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Obrigatório somente quando o tipo de ato for "separação", "divórcio direto" e "conversão de separação em divórcio" e o atributo “qualificacaoParte” for igual a "Separando" ou "Divorciando" e quando "PaisOrigem" for Brasil</p>
+</blockquote>
+<p>Consulte a tabela de <strong>Estado</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h3 id="areaatuacao"><code>AREAATUACAO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Lista de códigos do SINTER</td>
+<td>Área de atuação profissional da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<p>Consulte a tabela de <strong>Profissão</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h3 id="profissao"><code>PROFISSAO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Lista de códigos do SINTER</td>
+<td>Profissão da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<p>Consulte a tabela de <strong>Profissão</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h3 id="capacidadecivil"><code>CAPACIDADECIVIL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Indica a capacidade civil da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Capaz</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Incapaz</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Relativamente Incapaz</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="dataobito"><code>DATAOBITO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Data</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">dd/mm/aaaa</td>
+<td>Data de óbito da parte</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Deve ser preenchida somente quando a qualificação da parte vinculada ao ato é "FALECIDO (A)"</p>
+</blockquote>
+<hr />
+<h3 id="responsavelfilhosmenores-obrigatorio-ibge"><code>RESPONSAVELFILHOSMENORES Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Indica se a parte vinculada ao ato é responsável pelos filhos menores, caso existam</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Obrigatório para atos de "separação", "divórcio" e "conversão de separação em divórcio" quando o campo "QuantidadeFilhosMenores" for maior que zero.  Ao menos uma das partes no ato precisa estar como responsável.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="naopossuifiliacao"><code>NAOPOSSUIFILIACAO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Campo indicativo de que a parte possui ou não filiação</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nulo</td>
+<td>Não informado</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="filiacao"><code>FILIACAO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Não</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">No envio por upload deve ser utilizado caractere / (barra) ou / (pipe) para separar quando houver mais de uma filiação.</td>
+<td>Informa o nome dos pais</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Poderá ser preenchido somente quando o atributo “naopossuiFiliacao” for igual a 0</p>
+</blockquote>
+<hr />
+<h3 id="estadocivil"><code>ESTADOCIVIL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Informa o estado civil da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Não deve ser preenchido nos casos de "Divórcio Diteto", "Separação" e "Conversão de Separação em Divórcio".</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Casado</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Desquitado</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Divorciado</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Separado</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Solteiro</td>
+</tr>
+<tr>
+<td>6</td>
+<td>União Estável</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Viúvo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="dados-estado-civil-preenchido-somente-quando-o-campo-estado-civil-for-casado">Dados Estado Civil - Preenchido somente quando o campo "ESTADO CIVIL" for "CASADO"</h2>
+<hr />
+<h3 id="conjuges_datacasamento"><code>CONJUGES_DATACASAMENTO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Data</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">dd/mm/aaaa</td>
+<td>Data do casamento entre as partes.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Preenchido OPCIONALMENTE somente nos casos abaixo: Quando o tipo de ato NÃO for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio",  quando o campo "Estado Civil" da parte for preenchida como "CASADA".</p>
+</blockquote>
+<hr />
+<h3 id="cpfconjuge"><code>CPFCONJUGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">00000000000 Ou 000.000.000-00</td>
+<td>Informa o cpf do cônjuge da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Preenchido OPCIONALMENTE somente nos casos abaixo: Quando o tipo de ato NÃO for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio", quando o campo "Estado Civil" da parte for preenchida como "CASADA".</p>
+</blockquote>
+<hr />
+<h3 id="nomeconjuge"><code>NOMECONJUGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Informa o nome do cônjuge da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Preenchido OPCIONALMENTE somente nos casos abaixo: Quando o tipo de ato NÃO for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio", quando o campo "Estado Civil" da parte for preenchida como "CASADA".  Campo obrigatório caso seja informado o cpfConjuge</p>
+</blockquote>
+<hr />
+<h3 id="conjuges_regimedebens"><code>CONJUGES_REGIMEDEBENS</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Campo indicativo do tipo de regime de bens vigente entre as principais partes do ato.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Preenchido OPCIONALMENTE somente nos casos abaixo: Quando o tipo de ato NÃO for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio", quando o campo "Estado Civil" da parte for preenchida como "CASADA".</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Comunhão Parcial de Bens</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Comunhão Universal de Bens</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Participação Final nos Aquestos</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Regime Específico atribuído em Pacto Antenupcial</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Separação de Bens</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Separação Obrigatória de Bens</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="dados-endereco">Dados Endereço</h2>
+<hr />
+<h3 id="cep"><code>CEP</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">00000-000</td>
+<td>Cep do endereço da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="rua"><code>RUA</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Rua do endereço da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="numero"><code>NUMERO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Número do endereço da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="complemento"><code>COMPLEMENTO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Complemento do endereço da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="bairro"><code>BAIRRO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Bairro do endereço da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="municipio-obrigatorio-ibge"><code>MUNICIPIO Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">000000 (6 dígitos)</td>
+<td>Código do IBGE para o município de residência</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Obrigatório somente quando o tipo de ato for "separação", "divórcio direto" e "conversão de separação em divórcio" e o atributo “qualificacaoParte” for igual a "Separando" ou "Divorciando" e quando "PAISDERESIDENCIA" for Brasil</p>
+</blockquote>
+<p>Consulte a tabela de <strong>Município</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h3 id="uf-obrigatorio-ibge"><code>UF Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">XX (2 dígitos alfanuméricos)</td>
+<td>Código do IBGE para o estado de residência</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Obrigatório somente quando o tipo de ato for "separação", "divórcio direto" e "conversão de separação em divórcio" e o atributo “qualificacaoParte” for igual a "Separando" ou "Divorciando" e quando "PAISDERESIDENCIA" for Brasil</p>
+</blockquote>
+<p>Consulte a tabela de <strong>Estado</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h3 id="paisresidencia-obrigatorio-ibge"><code>PAISRESIDENCIA Obrigatório IBGE</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">000 (3 dígitos numéricos)</td>
+<td>País em que a parte vinculada ao ato reside atualmente</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Obrigatório somente quando o tipo de ato for "separação", "divórcio direto" e "conversão de separação em divórcio" e o atributo “qualificacaoParte” for igual a "Separando" ou "Divorciando"</p>
+</blockquote>
+<p>Consulte a tabela de <strong>País</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h2 id="dados-contato">Dados Contato</h2>
+<hr />
+<h3 id="email"><code>EMAIL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>E-mail de contato da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Preenchido somente quando a parte for diferente de falecido</p>
+</blockquote>
+<hr />
+<h3 id="tipocontato"><code>TIPOCONTATO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>informa o tipo de informação de contato</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Preenchido somente quando a parte for diferente de falecido</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Celular</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Telefone</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="contato"><code>CONTATO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">(00) 00000-0000</td>
+<td>Informa o número passado como contato</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Preenchido somente quando a parte for diferente de falecido</p>
+</blockquote>
+<hr />
+<h2 id="dados-bens-e-direitos-nenhum-campo-abaixo-devera-ser-preenchido-se-o-campo-existebemedireito-for-falso">Dados Bens e Direitos - (Nenhum campo abaixo deverá ser preenchido se o campo "EXISTEBEMEDIREITO" for FALSO)</h2>
+<hr />
+<h3 id="tipobemedireito"><code>TIPOBEMEDIREITO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0000 (4 dígitos numéricos)</td>
+<td>Indica o tipo de bem e direito que pertence a parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Lista de códigos dos tipos de bens e direitos. Acesse a aba TiposBensEDireitos para verificar o código aceito. O campo deve ser preenchido com a informação existente na coluna CÓDIGO.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="descricaobem"><code>DESCRICAOBEM</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Descrição do bem pertencente a parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="bem-tipo-precatorio-varajudicial"><code>Bem - Tipo precatório  VARAJUDICIAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Referente ao nome da vara judicial de cadastro do precatório.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-precatorio-numeroprocesso"><code>Bem - Tipo precatório  NUMEROPROCESSO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Referente ao número do processo do precatório</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-precatorio-numeroprecatorio"><code>Bem - Tipo precatório  NUMEROPRECATORIO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Referente ao número do precatório.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-precatorio-valor"><code>Bem - Tipo precatório  VALOR</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Monetário</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">R$ 0,00</td>
+<td>Valor monetário do bem descrito</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”</p>
+</blockquote>
+<hr />
+<h3 id="titulares"><code>TITULARES</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">1,2,3,4</td>
+<td>De acordo com a posição do campo ORDEMPARTEATO, a posição que inserir nesse campo TITULARES será o titular do bem</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Os números é de</td>
+<td></td>
+</tr>
+<tr>
+<td>Acordo com o valor</td>
+<td></td>
+</tr>
+<tr>
+<td>Inserido no campo</td>
+<td></td>
+</tr>
+<tr>
+<td>ORDEMPARTEATO</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="bem-tipo-imovel-cin"><code>Bem - Tipo imóvel  CIN</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Código Imobiliário Nacional.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-imovel-tiporeferenciacadastralimovel"><code>Bem - Tipo imóvel  TIPOREFERENCIACADASTRALIMOVEL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Indica o tipo da referencia cadastral do imóvel de bem e direito apontado no registro relativo a parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Inscrição Municipal</td>
+</tr>
+<tr>
+<td>2</td>
+<td>NIRF(Receita Federal)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>RIP-Registro Imobiliário Patrimonial (SPU)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>SNCR (INCRA)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="bem-tipo-imovel-numerocadastroimovel"><code>Bem - Tipo imóvel  NUMEROCADASTROIMOVEL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Número do respectivo tipo de cadastro selecionado</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-imovel-tipoimovel"><code>Bem - Tipo imóvel  TIPOIMOVEL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Tipo do imóvel informado</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Cavidade Natural Subterrânea</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Espelho dágua</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Gleba</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Laje</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Terreno/Lote</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Unidade Autônoma – Apartamento</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Unidade Autônoma – Garagem, Box, Outras</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Unidade Autônoma – Lote</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Unidade Autônoma – Sala/Loja</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="bem-tipo-imovel-acessao"><code>Bem - Tipo imóvel  ACESSAO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Tipo de acessão.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Aeroporto</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Edificação Atípica/Obra de Arte</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Edificação Multipavimentos</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Edificação Térrea</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Estádio / Arena / Ginásio</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Templo Religioso</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Terminal Ferroviário / Marítimo / Rodoviário</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Usina de geração de energia</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="bem-tipo-imovel-unidadeareatotal"><code>Bem - Tipo imóvel  UNIDADEAREATOTAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Tipo de unidade de área para mensurar a área total do imóvel</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ha (hectare)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Km² (Kilomêtro quadrado)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>M² (Mêtro quadrado)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="bem-tipo-imovel-quantidadeareatotal"><code>Bem - Tipo imóvel  QUANTIDADEAREATOTAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">0,00</td>
+<td>Valor numérico da quantidade de área total do imóvel</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-imovel-unidadeareaconstruida"><code>Bem - Tipo imóvel  UNIDADEAREACONSTRUIDA</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Tipo de unidade de área para mensurar a área construída do imóvel</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ha (hectare)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Km² (Kilomêtro quadrado)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>M² (Mêtro quadrado)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="bem-tipo-imovel-quantidadeareaconstruida"><code>Bem - Tipo imóvel  QUANTIDADEAREACONSTRUIDA</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">0,00</td>
+<td>Valor numérico da quantidade de área construída do imóvel</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-imovel-valorimovel"><code>Bem - Tipo imóvel  VALORIMOVEL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Monetário</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">R$ 0,00</td>
+<td>Valor monetário do imóvel descrito</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-imovel-tipotributo"><code>Bem - Tipo imóvel  TIPOTRIBUTO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Tipo do tributo cobrado pelo imóvel</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>IPTU</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ITBI</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ITCMD</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ITR</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="bem-tipo-imovel-valorfiscal"><code>Bem - Tipo imóvel  VALORFISCAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Monetário</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">R$ 0,00</td>
+<td>Valor fiscal do imóvel no caso de compra e venda</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-imovel-cnm"><code>Bem - Tipo imóvel  CNM</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Código nacional de matricula</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(Vazio)</td>
+<td>CNS + número de ordem da matrícula</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="bem-tipo-imovel-imovel_cep"><code>Bem - Tipo imóvel  IMOVEL_CEP</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">00000-000</td>
+<td>Cep do endereço do imóvel</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-imovel-imovel_rua"><code>Bem - Tipo imóvel  IMOVEL_RUA</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Logradouro do endereço do imóvel</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-imovel-imovel_numero"><code>Bem - Tipo imóvel  IMOVEL_NUMERO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Número do endereço do imóvel</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-imovel-imovel_complemento"><code>Bem - Tipo imóvel  IMOVEL_COMPLEMENTO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Complemento do endereço do imóvel</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-imovel-imovel_bairro"><code>Bem - Tipo imóvel  IMOVEL_BAIRRO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td>Bairro do endereço da parte vinculada ao ato</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<hr />
+<h3 id="bem-tipo-imovel-imovel_municipio"><code>Bem - Tipo imóvel  IMOVEL_MUNICIPIO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">000000 (6 dígitos)</td>
+<td>Município do endereço do imóvel</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<p>Consulte a tabela de <strong>Município</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h3 id="bem-tipo-imovel-imovel_uf"><code>Bem - Tipo imóvel  IMOVEL_UF</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">XX (2 dígitos alfanuméricos)</td>
+<td>UF do endereço do imóvel</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”</p>
+</blockquote>
+<p>Consulte a tabela de <strong>Estado</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h2 id="atos-de-origem-somente-para-preenchimento-em-atos-de-rerratificacao">Atos de Origem - Somente para preenchimento em atos de Rerratificação</h2>
+<hr />
+<h3 id="atoorigem_uf"><code>ATOORIGEM_UF</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">XX (2 dígitos alfanuméricos)</td>
+<td>UF do cartório onde o ato de origem foi lavrado</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Se torna obrigatório somente no envio de ato por DIGITAÇÃO como facilitador para se conseguir preencher o campo "Cartório"</p>
+</blockquote>
+<p>Consulte a tabela de <strong>Estado</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h3 id="atoorigem_municipio"><code>ATOORIGEM_MUNICIPIO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">000000 (6 dígitos)</td>
+<td>Município do cartório onde o ato de origem foi lavrado</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Se torna obrigatório somente no envio de ato por DIGITAÇÃO como facilitador para se conseguir preencher o campo "Cartório"</p>
+</blockquote>
+<p>Consulte a tabela de <strong>Município</strong> na página <a href="../dominios/">Domínios Compartilhados</a>.</p>
+<hr />
+<h3 id="atoorigem_cartorioatual"><code>ATOORIGEM_CARTORIOATUAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Cartório onde o ato de rerratificação está sendo lavrado</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Se torna obrigatório somente no envio de ato por DIGITAÇÃO como facilitador para se conseguir preencher o campo "Cartório"</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Ato de origem não foi lavrado no cartório atual</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Ato de origem foi lavrado no mesmo cartório onde o ato de rerratificação foi lavrado</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="atoorigem_cartorio"><code>ATOORIGEM_CARTORIO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">000000 (6 digitos numéricos)</td>
+<td>Este campo deve ser preenchido com o (CNS)Número do Código Nacional da Serventia em que consta o ato de origem. O CNS do cartório deve seguir o divulgado pelo CNJ.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="atoorigem_cartorionaocadastrado"><code>ATOORIGEM_CARTORIONAOCADASTRADO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SIM</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Informação se o ato de origem foi lavrado em um cartório não cadastrado na base de dados do SIGNO.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Quando seu valor for "1" este desobriga o preenchimento das informações do cartório.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>False</td>
+</tr>
+<tr>
+<td>1</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="atoorigem_observacao"><code>ATOORIGEM_OBSERVACAO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">-</td>
+<td>Campo para preenchimento dos dados de localização do ato de origem</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="atoorigem_tipoato"><code>ATOORIGEM_TIPOATO</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0 (1 dígito numérico)</td>
+<td>Tipo do ato que foi lavrado no cartório</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Separação</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Reconciliação</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Conversão de Separação em Divórcio</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Divórcio Direto</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Inventário</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sobrepartilha</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Rerratificação</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Nomeação de Inventariante</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Partilha</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="atoorigem_livroinicial"><code>ATOORIGEM_LIVROINICIAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0000 (4 dígitos numéricos)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="atoorigem_complementolivroinicial"><code>ATOORIGEM_COMPLEMENTOLIVROINICIAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Não</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">X (letra)</td>
+<td>Complemento alfanumérico referente ao número do livro inicial.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Caso o livro não tenha complemento, esse campo deve ser enviado em branco.</p>
+</blockquote>
+<hr />
+<h3 id="atoorigem_livrofinal"><code>ATOORIGEM_LIVROFINAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0000 (4 dígitos numéricos)</td>
+<td>Número do livro final em que o ato foi lavrado.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Caso o ato tenha sido lavrado em um único livro esse campo deve ser preenchido com o mesmo valor do campo ATOORIGEM_LIVROINICIAL</p>
+</blockquote>
+<hr />
+<h3 id="atoorigem_complementolivrofinal"><code>ATOORIGEM_COMPLEMENTOLIVROFINAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">X (letra)</td>
+<td>Complemento alfanumérico referente ao número do livro final.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Caso o livro não tenha complemento, esse campo deve ser enviado em branco.</p>
+</blockquote>
+<hr />
+<h3 id="atoorigem_folhainicial"><code>ATOORIGEM_FOLHAINICIAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">000 (3 dígitos numéricos)</td>
+<td>Número da folha inicial em que o ato foi lavrado.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="atoorigem_complementofolhainicial"><code>ATOORIGEM_COMPLEMENTOFOLHAINICIAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">X (letra)</td>
+<td>Complemento alfanumérico referente ao número da folha inicial.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Caso a folha não tenha complemento, esse campo deve ser enviado em branco.</p>
+</blockquote>
+<hr />
+<h3 id="atoorigem_folhafinal"><code>ATOORIGEM_FOLHAFINAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Numérico</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">000 (3 dígitos numéricos)</td>
+<td>Número da folha final em que o ato foi lavrado.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Caso o ato tenha sido lavrado em uma única folha esse campo deve ser preenchido com o mesmo valor campo ATOORIGEM_FOLHAINICIAL.</p>
+</blockquote>
+<hr />
+<h3 id="atoorigem_complementofolhafinal"><code>ATOORIGEM_COMPLEMENTOFOLHAFINAL</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Obrigatório</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: center;">Tamanho</th>
+<th style="text-align: center;">Formato</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NÃO</td>
+<td style="text-align: center;">Alfanumérico</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">X (letra)</td>
+<td>Complemento alfanumérico referente ao número da folha final.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Validação:</strong> Caso a folha não tenha complemento, esse campo deve ser enviado em branco.</p>
+</blockquote>
+<hr />
+<h2 id="qualidade-da-parte">Qualidade da parte</h2>
+<p>Agrupada por atos com partes idênticas.</p>
+<h3 id="separacao-1">Separação (1)</h3>
+<p>Mínimo 3 partes: um advogado e dois separandos.</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Separando(a)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Advogado(a)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cessionário/Adjudicatários</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cedente</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Interveniente</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Anuente</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reconciliacao-2">Reconciliação (2)</h3>
+<p>Mínimo 3 partes: um advogado e dois reconciliandos.</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>Reconciliando(a)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Advogado(a)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cessionário/Adjudicatários</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cedente</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Interveniente</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Anuente</td>
+</tr>
+</tbody>
+</table>
+<h3 id="conversao-de-separacao-em-divorcio-3-e-divorcio-direto-4">Conversão de separação em divórcio (3) e Divórcio direto (4)</h3>
+<p>Mínimo 3 partes: um advogado e dois divorciandos.</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>Divorciando(a)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Advogado(a)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cessionário/Adjudicatários</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cedente</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Interveniente</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Anuente</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inventario-5">Inventário (5)</h3>
+<p>Mínimo 3 partes: um advogado, um falecido e um herdeiro.</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>Falecido(a)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Viúvo(a)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Herdeiro(a)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Inventariante</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Advogado(a)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cessionário/Adjudicatários</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cedente</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Interveniente</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Anuente</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sobrepartilha-6-e-partilha-9">Sobrepartilha (6) e Partilha (9)</h3>
+<p>Advogado + falecido + herdeiro, ou advogado + divorciando.</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>Falecido(a)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Viúvo(a)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Herdeiro(a)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Divorciando(a)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Advogado(a)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cessionário/Adjudicatários</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cedente</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Interveniente</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Anuente</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rerratificacao-7">Rerratificação (7)</h3>
+<p>Mínimo 1 parte, exceto Advogado e Interveniente.</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>Divorciando(a)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Separando(a)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Falecido(a)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Viúvo(a)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Herdeiro(a)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Advogado(a)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cessionário/Adjudicatários</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cedente</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Interveniente</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Anuente</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nomeacao-de-inventariante-8">Nomeação de inventariante (8)</h3>
+<p>Mínimo 2 partes: Inventariante e Falecido.</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>Falecido(a)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Viúvo(a)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Inventariante</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Herdeiro(a)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Advogado(a)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cessionário/Adjudicatários</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cedente</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Interveniente</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Anuente</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tipo-de-bens-e-direito">Tipo de bens e direito</h2>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1765</td>
+<td>Imóvel rural</td>
+</tr>
+<tr>
+<td>1766</td>
+<td>Imóvel urbano</td>
+</tr>
+<tr>
+<td>1790</td>
+<td>Precatório judicial</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="referencia-cadastral-do-imovel">Referência cadastral do imóvel</h2>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1800</td>
+<td>CAFEN - Cadastro Ferroviário Nacional</td>
+</tr>
+<tr>
+<td>1801</td>
+<td>CC - Conta Corrente (Banco/Agência/Nº da Conta)</td>
+</tr>
+<tr>
+<td>1802</td>
+<td>CIN - Código Imobiliário Nacional</td>
+</tr>
+<tr>
+<td>1803</td>
+<td>CNM - Código Nacional de Matrícula</td>
+</tr>
+<tr>
+<td>1804</td>
+<td>Inscrição de Embarcação</td>
+</tr>
+<tr>
+<td>1805</td>
+<td>Inscrição Municipal</td>
+</tr>
+<tr>
+<td>1806</td>
+<td>NIRF - Número do Imóvel Rural na Receita Federal</td>
+</tr>
+<tr>
+<td>1807</td>
+<td>Número de Série</td>
+</tr>
+<tr>
+<td>1808</td>
+<td>Placa</td>
+</tr>
+<tr>
+<td>1809</td>
+<td>Precatório</td>
+</tr>
+<tr>
+<td>1810</td>
+<td>RAB - Aeronave</td>
+</tr>
+<tr>
+<td>1811</td>
+<td>Registro Animal</td>
+</tr>
+<tr>
+<td>1812</td>
+<td>RIP - Registro Imobiliário Patrimonial (SPU)</td>
+</tr>
+<tr>
+<td>1813</td>
+<td>SNCR - Sistema Nacional de Cadastro Rural (INCRA)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.highlight", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
