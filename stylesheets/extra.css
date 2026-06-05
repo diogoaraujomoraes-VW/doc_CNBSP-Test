@@ -12,6 +12,9 @@
     --text-light: #666666;
 }
 
+.md-main {
+    background: linear-gradient(180deg, #ffffff 0%, #f0f8f6 100%);
+}
 /* ===== BARRA SUPERIOR ===== */
 .md-header {
     background-color: teal;
@@ -29,18 +32,42 @@
 }
 
 .md-nav__link {
-    color: var(--text-dark);
+    transition: all 0.2s ease !important;
+    border-left: 10px solid transparent !important;
+    padding-left: 8px !important;
+    border-radius: 0 4px 4px 0 !important;
+}
+.md-nav__link:hover {
+    color: var(--signo-primary) !important;
+    background-color: rgba(27, 138, 126, 0.06) !important;
 }
 
-.md-nav__link:hover {
-    color: var(--signo-primary);
-    background-color: var(--signo-light);
+.md-nav__link--active {
+    color: var(--signo-primary) !important;
+    font-weight: 600 !important;
+    background-color: transparent !important;
+    border-left: 3px solid var(--signo-primary) !important;
+    padding-left: 8px !important;
 }
 
 .md-nav__link.md-nav__link--active {
     color: var(--signo-primary);
     font-weight: 600;
     border-left: 4px solid var(--signo-primary);
+}
+
+/* Títulos das seções do menu lateral (CEP, CESDI, RCTO) - preto e negrito */
+.md-nav__item--section > .md-nav__link {
+    color: #333333 !important;
+    font-weight: 700 !important;
+    font-size: 0.95em;
+}
+
+/* Espaçamento entre as seções */
+.md-nav__item--section {
+    margin-top: 16px;
+    padding-top: 8px;
+    border-top: 1px solid #e0e0e0;
 }
 
 /* ===== TÍTULOS ===== */
@@ -174,6 +201,8 @@ code {
     margin: 0 0 8px 0;
 }
 
+
+
 /* ===== BLOCKQUOTE ===== */
 blockquote {
     border-left: 4px solid var(--signo-secondary);
@@ -217,6 +246,11 @@ body {
     color: var(--text-dark);
 }
 
+.md-typeset h3 {
+    color: #333333;
+    font-weight: 700;
+}
+
 /* ===== RODAPÉ ===== */
 .md-footer {
     background-color: var(--signo-primary);
@@ -242,7 +276,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--signo-secondary);
+    background: gray;
     border-radius: 4px;
 }
 
@@ -267,4 +301,25 @@ body {
         background-color: white;
         border-right: 2px solid var(--signo-primary);
     }
+}
+
+.md-sidebar {
+    background-color: white !important;
+}
+
+.md-sidebar--secondary {
+    background-color: white !important;
+}
+
+/* Espaço e separador antes de cada subdivisão H3 */
+.md-typeset h4 {
+    margin-top: 48px !important;
+    padding-top: 24px !important;
+    border-top: 1px solid #e0e0e0 !important;
+}
+
+/* Remove a borda do primeiro H3 da página (opcional) */
+.md-typeset h3 + h4 {
+    border-top: none !important;
+    margin-top: 24px !important;
 }
