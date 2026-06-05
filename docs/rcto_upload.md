@@ -5,11 +5,8 @@
 Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 
 1. Baixe o arquivo exemplo no SIGNO
-
 2. Preencha seguindo as orientações deste documento
-
 3. Salve como "CSV separado por vírgulas"
-
 4. Faça o upload no SIGNO
 
 
@@ -17,19 +14,11 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 
 ## Campos e parâmetros de envio
 
----
 
-## INFORMAÇÕES DO ATO
-
-
----
-
-## STATUS
+### Informações do ato
 
 
----
-
-### `TIPOTESTAMENTO`
+#### `TIPOTESTAMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -45,9 +34,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | 13 | Testamento com revogação |
 
 
----
-
-### `DATAATO`
+#### `DATAATO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -58,9 +45,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-### `LIVROINICIAL`
+#### `LIVROINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -71,9 +56,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-### `COMPLEMENTOLIVROINICIAL`
+#### `COMPLEMENTOLIVROINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -84,35 +67,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-### `LIVROFINAL`
-
-| Obrigatório | Tipo | Tamanho | Formato | Descrição |
-|:-----------:|:----:|:-------:|:-------:|-----------|
-| - | - | - | - | Este campo será inutilizado. Não é necessário o envio |
-
-| Código | Descrição |
-|--------|-----------|
-| - |  |
-
-
----
-
-### `COMPLEMENTOLIVROFINAL`
-
-| Obrigatório | Tipo | Tamanho | Formato | Descrição |
-|:-----------:|:----:|:-------:|:-------:|-----------|
-| - | - | - | - | Este campo será inutilizado. Não é necessário o envio |
-
-| Código | Descrição |
-|--------|-----------|
-| - |  |
-
-
----
-
-### `FOLHAINICIAL`
+#### `FOLHAINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -123,9 +78,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-### `COMPLEMENTOFOLHAINICIAL`
+#### `COMPLEMENTOFOLHAINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -136,9 +89,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-### `FOLHAFINAL`
+#### `FOLHAFINAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -149,9 +100,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-### `COMPLEMENTOFOLHAFINAL`
+#### `COMPLEMENTOFOLHAFINAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -162,9 +111,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-### `LEGADOSOLIDARIO`
+#### `LEGADOSOLIDARIO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -176,9 +123,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | 1 | Possui |
 
 
----
-
-### `DESCRICAOLEGADOSOLIDARIO`
+#### `DESCRICAOLEGADOSOLIDARIO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -189,35 +134,16 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-### `OBSERVACAOATO`
-
-| Obrigatório | Tipo | Tamanho | Formato | Descrição |
-|:-----------:|:----:|:-------:|:-------:|-----------|
-| - | - | - | - | Este campo será inutilizado. Não é necessário o envio |
-
-| Código | Descrição |
-|--------|-----------|
-| - |  |
+### Informações da parte
 
 
----
-
-## INFORMAÇÕES DA PARTE
-
-
----
-
-### `CPFCNPJ`
+#### `CPFCNPJ`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | SIM | Numérico | 11 | 00000000000 | Número do CPF do testador. |
 
----
-
-### `TIPODOCUMENTO`
+#### `TIPODOCUMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -231,9 +157,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | 17 | Passaporte |
 
 
----
-
-### `DESCRICAODOCUMENTO`
+#### `DESCRICAODOCUMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -244,9 +168,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-### `NOME`
+#### `NOME`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -257,9 +179,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-### `NOMESOCIAL`
+#### `NOMESOCIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -270,22 +190,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-### `QUALIFICAÇÃO`
-
-| Obrigatório | Tipo | Tamanho | Formato | Descrição |
-|:-----------:|:----:|:-------:|:-------:|-----------|
-| - | - | - | - | Este campo será inutilizado. Não é necessário o envio.  Qualificação da parte, no caso dos atos da RCTO, sempre será "Testador". |
-
-| Código | Descrição |
-|--------|-----------|
-| 1 | Testador |
-
-
----
-
-### `FILIAÇÃO`
+#### `FILIAÇÃO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -296,14 +201,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | - |  |
 
 
----
-
-## NÃO POSSUI FICIAÇÃO
-
-
----
-
-### `NACIONALIDADE`
+#### `NACIONALIDADE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -316,9 +214,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | 3 | Naturalizado |
 
 
----
-
-### `PAISORIGEM`
+#### `PAISORIGEM`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -327,9 +223,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `DATANASCIMENTO`
+#### `DATANASCIMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -340,9 +234,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 | - |  |
 
 
----
-
-### `ESTADOCIVIL`
+#### `ESTADOCIVIL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -359,9 +251,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 | 7 | Viúvo |
 
 
----
-
-### `AREADEATUACAO`
+#### `AREADEATUACAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -370,9 +260,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 Consulte a tabela de **Profissão** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `PROFISSAO`
+#### `PROFISSAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -381,14 +269,16 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 Consulte a tabela de **Profissão** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-## ATOS A REVOGAR (PREENCHIDOS SOMENTE PARA ATOS DE REVOGAÇÃO)
+### Revogações
 
 
----
+**Atos a Revogar**
 
-### `REVOGACAOCARTORIO`
+
+> **Validação:** PREENCHIDOS SOMENTE PARA ATOS DE REVOGAÇÃO
+
+
+#### `REVOGACAOCARTORIO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -399,9 +289,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | - | 000000 (CNS que identifica o cartório) |
 
 
----
-
-### `REVOGACAOLIVROINICIAL`
+#### `REVOGACAOLIVROINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -412,9 +300,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | - | 0000 (4 dígitos numéricos) |
 
 
----
-
-### `REVOGACAOCOMPLEMENTOLIVROINICIAL`
+#### `REVOGACAOCOMPLEMENTOLIVROINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -425,19 +311,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | - | X (Letra) |
 
 
----
-
-## REVOGACAOLIVROFINAL
-
-
----
-
-## REVOGACAOCOMPLEMENTOLIVROFINAL
-
-
----
-
-### `REVOGACAOFOLHAINICIAL`
+#### `REVOGACAOFOLHAINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -448,9 +322,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | - | 000 (Permite até 3 dígitos numéricos) |
 
 
----
-
-### `REVOGACAOCOMPLEMENTOFOLHAINICIAL`
+#### `REVOGACAOCOMPLEMENTOFOLHAINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -461,9 +333,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | - |  |
 
 
----
-
-### `REVOGACAOFOLHAFINAL`
+#### `REVOGACAOFOLHAFINAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -474,9 +344,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | - | 000 (Permite até 3 dígitos numéricos) |
 
 
----
-
-### `REVOGACAOCOMPLEMENTOFOLHAFINAL`
+#### `REVOGACAOCOMPLEMENTOFOLHAFINAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -487,9 +355,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | - |  |
 
 
----
-
-### `REVOGACAOOBSERVACAO`
+#### `REVOGACAOOBSERVACAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -498,8 +364,3 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | Código | Descrição |
 |--------|-----------|
 | - | Inclui observação sobre a revogação, caso necessário. |
-
-
----
-
-## CARTORIO / ORGÃO NÃO CADASTRADO??

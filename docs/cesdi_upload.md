@@ -5,11 +5,8 @@
 Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 
 1. Baixe o arquivo exemplo no SIGNO
-
 2. Preencha seguindo as orientações deste documento
-
 3. Salve como "CSV separado por vírgulas"
-
 4. Faça o upload no SIGNO
 
 
@@ -17,14 +14,11 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 
 ## Campos e parâmetros de envio
 
----
 
-## Dados Básicos do Ato
+### Dados básicos do ato
 
 
----
-
-### `TIPOLINHA`
+#### `TIPOLINHA`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -41,9 +35,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | AO | Ato de origem |
 
 
----
-
-### `TIPOATO`
+#### `TIPOATO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -62,9 +54,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | 9 | Partilha |
 
 
----
-
-### `OBSERVACAOATO`
+#### `OBSERVACAOATO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -73,25 +63,19 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 > **Validação:** Não deve ser preenchido quando o status do ato é "válido".
 
 
----
-
-### `DATAATO`
+#### `DATAATO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | SIM | Data | - | dd/mm/aaaa | Data em que o ato foi lavrado. |
 
----
-
-### `LIVROINICIAL`
+#### `LIVROINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | SIM | Numérico | 4 | 0000 (4 dígitos numéricos) | Número do livro inicial em que o ato foi lavrado. |
 
----
-
-### `COMPLEMENTOLIVROINICIAL`
+#### `COMPLEMENTOLIVROINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -100,9 +84,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 > **Validação:** Caso o livro não tenha complemento, esse campo deve ser enviado em branco.
 
 
----
-
-### `FOLHAINICIAL`
+#### `FOLHAINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -111,9 +93,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 > **Validação:** Valores de 1 a 600
 
 
----
-
-### `COMPLEMENTOFOLHAINICIAL`
+#### `COMPLEMENTOFOLHAINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -122,9 +102,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 > **Validação:** Caso a folha não tenha complemento, esse campo deve ser enviado em branco.
 
 
----
-
-### `FOLHAFINAL`
+#### `FOLHAFINAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -133,9 +111,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 > **Validação:** Valores de 1 a 600  Caso o ato tenha sido lavrado em uma única folha esse campo deve ser preenchido com o mesmo valor do campo FOLHAINICIAL.
 
 
----
-
-### `COMPLEMENTOFOLHAFINAL`
+#### `COMPLEMENTOFOLHAFINAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -144,17 +120,13 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 > **Validação:** Caso a folha não tenha complemento, esse campo deve ser enviado em branco.
 
 
----
-
-### `VALOROPERACAO`
+#### `VALOROPERACAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Monetário | - | R$ 0,00 | Informe o valor da escritura, contrato, etc |
 
----
-
-### `PRAZOPAGAMENTO`
+#### `PRAZOPAGAMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -167,9 +139,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | 3 | Antecipado |
 
 
----
-
-### `FORMAPAGAMENTO`
+#### `FORMAPAGAMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -185,96 +155,19 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 | 6 | Transferência Bancária |
 
 
----
-
-### `DATACONTRATO`
+#### `DATACONTRATO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Data | - | dd/mm/aaaa | Data da última assinatura da escritura, contrato, etc |
 
----
-
-## Dados Específicos
+### Dados das partes
 
 
----
-
-### `REGIMEBENS Obrigatório IBGE`
-
-| Obrigatório | Tipo | Tamanho | Formato | Descrição |
-|:-----------:|:----:|:-------:|:-------:|-----------|
-| SIM | Numérico | 1 | 0 (1 dígito numérico) | Campo indicativo do tipo de regime de bens vigente entre as principais partes do ato. |
-
-> **Validação:** Preenchido somente nos casos abaixo: - Obrigatoriamente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio".  - Opcionalmente nos demais atos, quando o campo "Estado Civil" da parte for preenchida como "CASADA".
+**Dados Básicos da Parte**
 
 
-| Código | Descrição |
-|--------|-----------|
-| 1 | Comunhão Parcial de Bens |
-| 2 | Comunhão Universal de Bens |
-| 3 | Participação Final nos Aquestos |
-| 5 | Regime Específico Previsto em Pacto Antenupcial |
-| 7 | Separação de Bens |
-| 8 | Separação Obrigatória de Bens |
-
-
----
-
-### `FILHOSMAIORES Obrigatório IBGE`
-
-| Obrigatório | Tipo | Tamanho | Formato | Descrição |
-|:-----------:|:----:|:-------:|:-------:|-----------|
-| SIM | Numérico | 2 | 00 (2 dígitos) | Quantidade de filhos maiores de 18 anos |
-
-> **Validação:** Preenchido somente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio"
-
-
----
-
-### `FILHOSMENORES Obrigatório IBGE`
-
-| Obrigatório | Tipo | Tamanho | Formato | Descrição |
-|:-----------:|:----:|:-------:|:-------:|-----------|
-| SIM | Numérico | 2 | 00 (2 dígitos) | Quantidade de filhos menores de 18 anos |
-
-> **Validação:** Preenchido somente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio"
-
-
----
-
-### `DATACASAMENTO Obrigatório IBGE`
-
-| Obrigatório | Tipo | Tamanho | Formato | Descrição |
-|:-----------:|:----:|:-------:|:-------:|-----------|
-| SIM | Data | - | dd/mm/aaaa | Campo para informar a data do casamento |
-
-> **Validação:** Preenchido somente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio"
-
-
----
-
-### `EXISTEBEMEDIREITO`
-
-| Obrigatório | Tipo | Tamanho | Formato | Descrição |
-|:-----------:|:----:|:-------:|:-------:|-----------|
-| NÃO | Numérico | 1 | 0 (1 dígito numérico) | Campo indicativo sobre a existência de bem e direito vinculado a parte do ato |
-
-| Código | Descrição |
-|--------|-----------|
-| Nulo | Não informado |
-| 0 | Não existe |
-| 1 | Existe |
-
-
----
-
-## Dados Básicos da Parte
-
-
----
-
-### `ORDEMPARTEATO`
+#### `ORDEMPARTEATO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -283,20 +176,39 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 > **Validação:** UTILIZADO APENAS NA FORMA DE ENVIO POR UPLOAD
 
 
----
-
-### `QUALIDADEPARTE`
+#### `QUALIDADEPARTE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | SIM | Numérico | 4 | 0000 (4 dígitos numéricos) | Campo que indica a qualidade da parte de acordo com o tipo de ato informado |
 
-Consulte a seção **Qualidade da parte** abaixo.
+A qualificação da parte depende do tipo de ato. Cada qualificação abaixo indica em quais atos ela pode ser usada:
+
+| Qualificação | Código | Atos |
+|--------------|:------:|------|
+| Separando(a) | 1 | Separação, Rerratificação |
+| Advogado(a) | 2 | Todos os atos |
+| Cessionário/Adjudicatários | 3 | Todos os atos |
+| Cedente | 4 | Todos os atos |
+| Interveniente | 5 | Todos os atos |
+| Anuente | 6 | Todos os atos |
+| Reconciliando(a) | 7 | Reconciliação |
+| Divorciando(a) | 8 | Conversão / Divórcio direto, Sobrepartilha / Partilha, Rerratificação |
+| Falecido(a) | 9 | Inventário, Sobrepartilha / Partilha, Rerratificação, Nomeação de inventariante |
+| Viúvo(a) | 10 | Inventário, Sobrepartilha / Partilha, Rerratificação, Nomeação de inventariante |
+| Herdeiro(a) | 11 | Inventário, Sobrepartilha / Partilha, Rerratificação, Nomeação de inventariante |
+| Inventariante | 13 | Inventário, Nomeação de inventariante |
+
+**Requisitos mínimos de partes por ato:**
+
+- **Separação / Reconciliação / Conversão / Divórcio direto:** mínimo 3 partes (1 advogado e 2 separandos/reconciliandos/divorciandos).
+- **Inventário:** mínimo 3 partes (1 advogado, 1 falecido e 1 herdeiro).
+- **Sobrepartilha / Partilha:** advogado + falecido + herdeiro, ou advogado + divorciando.
+- **Rerratificação:** mínimo 1 parte, exceto Advogado e Interveniente.
+- **Nomeação de inventariante:** mínimo 2 partes (Inventariante e Falecido).
 
 
----
-
-### `CPF`
+#### `CPF`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -305,9 +217,7 @@ Consulte a seção **Qualidade da parte** abaixo.
 > **Validação:** O campo passará a aceitar obrigatoriamente o CPF ou CNPJ. A nomenclatura por enquanto permanecerá a mesma
 
 
----
-
-### `TIPODOCUMENTO`
+#### `TIPODOCUMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -330,17 +240,13 @@ Consulte a seção **Qualidade da parte** abaixo.
 | 1726 | OAB |
 
 
----
-
-### `DOCUMENTO`
+#### `DOCUMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | - | - | Descrição do documento, sem caracteres especiais | Número do documento informado, de acordo com o TIPO DOCUMENTO. |
 
----
-
-### `ORGAOEMISSOR`
+#### `ORGAOEMISSOR`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -351,9 +257,7 @@ Consulte a seção **Qualidade da parte** abaixo.
 |  | Descrição do órgão emissor, sem caracteres especiais e com letras maiúsculas |
 
 
----
-
-### `ESTADOOAB`
+#### `ESTADOOAB`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -362,17 +266,13 @@ Consulte a seção **Qualidade da parte** abaixo.
 Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `DATAEMISSAO`
+#### `DATAEMISSAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Data | - | dd/mm/aaaa | Data de emissão do documento secundário da parte vinculada ao ato |
 
----
-
-### `DATANASCIMENTO Obrigatório IBGE`
+#### `DATANASCIMENTO Obrigatório IBGE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -381,9 +281,7 @@ Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.m
 > **Validação:** Obrigatório somente quando o tipo de ato for "separação", "divórcio direto" e "conversão de separação em divórcio" e o atributo “qualificacaoParte” for igual a "Separando" ou "Divorciando"
 
 
----
-
-### `SEXO Obrigatório IBGE`
+#### `SEXO Obrigatório IBGE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -398,17 +296,13 @@ Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.m
 | 2 | Masculino |
 
 
----
-
-### `NOMEPARTE`
+#### `NOMEPARTE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | SIM | Alfanumérico | 255 | - | Nome completo da parte vinculada ao ato |
 
----
-
-### `NOMESOCIAL`
+#### `NOMESOCIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -422,9 +316,7 @@ Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.m
 | (Vazio) | Nome Social da Parte |
 
 
----
-
-### `NACIONALIDADE`
+#### `NACIONALIDADE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -440,9 +332,7 @@ Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.m
 | 3 | Naturalizado |
 
 
----
-
-### `PAISORIGEM Obrigatório IBGE`
+#### `PAISORIGEM Obrigatório IBGE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -454,9 +344,7 @@ Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.m
 Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `ESTADONASCIMENTO Obrigatório IBGE`
+#### `ESTADONASCIMENTO Obrigatório IBGE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -468,9 +356,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `AREAATUACAO`
+#### `AREAATUACAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -479,9 +365,7 @@ Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.m
 Consulte a tabela de **Profissão** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `PROFISSAO`
+#### `PROFISSAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -490,9 +374,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 Consulte a tabela de **Profissão** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `CAPACIDADECIVIL`
+#### `CAPACIDADECIVIL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -505,9 +387,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | 3 | Relativamente Incapaz |
 
 
----
-
-### `DATAOBITO`
+#### `DATAOBITO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -516,9 +396,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 > **Validação:** Deve ser preenchida somente quando a qualificação da parte vinculada ao ato é "FALECIDO (A)"
 
 
----
-
-### `RESPONSAVELFILHOSMENORES Obrigatório IBGE`
+#### `RESPONSAVELFILHOSMENORES Obrigatório IBGE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -533,9 +411,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | 1 | Sim |
 
 
----
-
-### `NAOPOSSUIFILIACAO`
+#### `NAOPOSSUIFILIACAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -548,9 +424,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | 1 | Sim |
 
 
----
-
-### `FILIACAO`
+#### `FILIACAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -559,9 +433,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 > **Validação:** Poderá ser preenchido somente quando o atributo “naopossuiFiliacao” for igual a 0
 
 
----
-
-### `ESTADOCIVIL`
+#### `ESTADOCIVIL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -581,14 +453,13 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | 7 | Viúvo |
 
 
----
-
-## Dados Estado Civil - Preenchido somente quando o campo "ESTADO CIVIL" for "CASADO"
+**Dados do Estado Civil**
 
 
----
+> **Validação:** Preenchido somente quando o campo "ESTADO CIVIL" for "CASADO"
 
-### `CONJUGES_DATACASAMENTO`
+
+#### `CONJUGES_DATACASAMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -597,9 +468,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 > **Validação:** Preenchido OPCIONALMENTE somente nos casos abaixo: Quando o tipo de ato NÃO for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio",  quando o campo "Estado Civil" da parte for preenchida como "CASADA".
 
 
----
-
-### `CPFCONJUGE`
+#### `CPFCONJUGE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -608,9 +477,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 > **Validação:** Preenchido OPCIONALMENTE somente nos casos abaixo: Quando o tipo de ato NÃO for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio", quando o campo "Estado Civil" da parte for preenchida como "CASADA".
 
 
----
-
-### `NOMECONJUGE`
+#### `NOMECONJUGE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -619,9 +486,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 > **Validação:** Preenchido OPCIONALMENTE somente nos casos abaixo: Quando o tipo de ato NÃO for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio", quando o campo "Estado Civil" da parte for preenchida como "CASADA".  Campo obrigatório caso seja informado o cpfConjuge
 
 
----
-
-### `CONJUGES_REGIMEDEBENS`
+#### `CONJUGES_REGIMEDEBENS`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -640,54 +505,40 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 | 8 | Separação Obrigatória de Bens |
 
 
----
-
-## Dados Endereço
+**Dados de Endereço**
 
 
----
-
-### `CEP`
+#### `CEP`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Numérico | 8 | 00000-000 | Cep do endereço da parte vinculada ao ato |
 
----
-
-### `RUA`
+#### `RUA`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Alfanumérico | - | - | Rua do endereço da parte vinculada ao ato |
 
----
-
-### `NUMERO`
+#### `NUMERO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Alfanumérico | - | - | Número do endereço da parte vinculada ao ato |
 
----
-
-### `COMPLEMENTO`
+#### `COMPLEMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Alfanumérico | - | - | Complemento do endereço da parte vinculada ao ato |
 
----
-
-### `BAIRRO`
+#### `BAIRRO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Alfanumérico | - | - | Bairro do endereço da parte vinculada ao ato |
 
----
-
-### `MUNICIPIO Obrigatório IBGE`
+#### `MUNICIPIO Obrigatório IBGE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -699,9 +550,7 @@ Consulte a tabela de **Profissão** na página [Domínios Compartilhados](domini
 Consulte a tabela de **Município** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `UF Obrigatório IBGE`
+#### `UF Obrigatório IBGE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -713,9 +562,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `PAISRESIDENCIA Obrigatório IBGE`
+#### `PAISRESIDENCIA Obrigatório IBGE`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -727,14 +574,10 @@ Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.m
 Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-## Dados Contato
+**Dados de Contato**
 
 
----
-
-### `EMAIL`
+#### `EMAIL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -743,9 +586,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Preenchido somente quando a parte for diferente de falecido
 
 
----
-
-### `TIPOCONTATO`
+#### `TIPOCONTATO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -760,9 +601,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 | 2 | Telefone |
 
 
----
-
-### `CONTATO`
+#### `CONTATO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -771,14 +610,75 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Preenchido somente quando a parte for diferente de falecido
 
 
----
-
-## Dados Bens e Direitos - (Nenhum campo abaixo deverá ser preenchido se o campo "EXISTEBEMEDIREITO" for FALSO)
+### Dados Específicos
 
 
----
+#### `REGIMEBENS Obrigatório IBGE`
 
-### `TIPOBEMEDIREITO`
+| Obrigatório | Tipo | Tamanho | Formato | Descrição |
+|:-----------:|:----:|:-------:|:-------:|-----------|
+| SIM | Numérico | 1 | 0 (1 dígito numérico) | Campo indicativo do tipo de regime de bens vigente entre as principais partes do ato. |
+
+> **Validação:** Preenchido somente nos casos abaixo: - Obrigatoriamente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio".  - Opcionalmente nos demais atos, quando o campo "Estado Civil" da parte for preenchida como "CASADA".
+
+
+| Código | Descrição |
+|--------|-----------|
+| 1 | Comunhão Parcial de Bens |
+| 2 | Comunhão Universal de Bens |
+| 3 | Participação Final nos Aquestos |
+| 5 | Regime Específico Previsto em Pacto Antenupcial |
+| 7 | Separação de Bens |
+| 8 | Separação Obrigatória de Bens |
+
+
+#### `FILHOSMAIORES Obrigatório IBGE`
+
+| Obrigatório | Tipo | Tamanho | Formato | Descrição |
+|:-----------:|:----:|:-------:|:-------:|-----------|
+| SIM | Numérico | 2 | 00 (2 dígitos) | Quantidade de filhos maiores de 18 anos |
+
+> **Validação:** Preenchido somente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio"
+
+
+#### `FILHOSMENORES Obrigatório IBGE`
+
+| Obrigatório | Tipo | Tamanho | Formato | Descrição |
+|:-----------:|:----:|:-------:|:-------:|-----------|
+| SIM | Numérico | 2 | 00 (2 dígitos) | Quantidade de filhos menores de 18 anos |
+
+> **Validação:** Preenchido somente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio"
+
+
+#### `DATACASAMENTO Obrigatório IBGE`
+
+| Obrigatório | Tipo | Tamanho | Formato | Descrição |
+|:-----------:|:----:|:-------:|:-------:|-----------|
+| SIM | Data | - | dd/mm/aaaa | Campo para informar a data do casamento |
+
+> **Validação:** Preenchido somente quando o tipo de ato for "Separação", "Divórcio Direto" e "Conversão de Separação em Divórcio"
+
+
+#### `EXISTEBEMEDIREITO`
+
+| Obrigatório | Tipo | Tamanho | Formato | Descrição |
+|:-----------:|:----:|:-------:|:-------:|-----------|
+| NÃO | Numérico | 1 | 0 (1 dígito numérico) | Campo indicativo sobre a existência de bem e direito vinculado a parte do ato |
+
+| Código | Descrição |
+|--------|-----------|
+| Nulo | Não informado |
+| 0 | Não existe |
+| 1 | Existe |
+
+
+### Dados Bens e Direitos
+
+
+> **Validação:** Nenhum campo abaixo deverá ser preenchido se o campo "EXISTEBEMEDIREITO" for FALSO
+
+
+#### `TIPOBEMEDIREITO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -789,17 +689,13 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 |  | Lista de códigos dos tipos de bens e direitos. Acesse a aba TiposBensEDireitos para verificar o código aceito. O campo deve ser preenchido com a informação existente na coluna CÓDIGO. |
 
 
----
-
-### `DESCRICAOBEM`
+#### `DESCRICAOBEM`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Alfanumérico | - | - | Descrição do bem pertencente a parte vinculada ao ato |
 
----
-
-### `Bem - Tipo precatório  VARAJUDICIAL`
+#### `Bem - Tipo precatório  VARAJUDICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -808,9 +704,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”
 
 
----
-
-### `Bem - Tipo precatório  NUMEROPROCESSO`
+#### `Bem - Tipo precatório  NUMEROPROCESSO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -819,9 +713,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”
 
 
----
-
-### `Bem - Tipo precatório  NUMEROPRECATORIO`
+#### `Bem - Tipo precatório  NUMEROPRECATORIO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -830,9 +722,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”
 
 
----
-
-### `Bem - Tipo precatório  VALOR`
+#### `Bem - Tipo precatório  VALOR`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -841,9 +731,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”
 
 
----
-
-### `TITULARES`
+#### `TITULARES`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -857,9 +745,7 @@ Inserido no campo
 ORDEMPARTEATO |  |
 
 
----
-
-### `Bem - Tipo imóvel  CIN`
+#### `Bem - Tipo imóvel  CIN`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -868,9 +754,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
----
-
-### `Bem - Tipo imóvel  TIPOREFERENCIACADASTRALIMOVEL`
+#### `Bem - Tipo imóvel  TIPOREFERENCIACADASTRALIMOVEL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -887,9 +771,7 @@ ORDEMPARTEATO |  |
 | 4 | SNCR (INCRA) |
 
 
----
-
-### `Bem - Tipo imóvel  NUMEROCADASTROIMOVEL`
+#### `Bem - Tipo imóvel  NUMEROCADASTROIMOVEL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -898,9 +780,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
----
-
-### `Bem - Tipo imóvel  TIPOIMOVEL`
+#### `Bem - Tipo imóvel  TIPOIMOVEL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -922,9 +802,7 @@ ORDEMPARTEATO |  |
 | 9 | Unidade Autônoma – Sala/Loja |
 
 
----
-
-### `Bem - Tipo imóvel  ACESSAO`
+#### `Bem - Tipo imóvel  ACESSAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -945,9 +823,7 @@ ORDEMPARTEATO |  |
 | 8 | Usina de geração de energia |
 
 
----
-
-### `Bem - Tipo imóvel  UNIDADEAREATOTAL`
+#### `Bem - Tipo imóvel  UNIDADEAREATOTAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -963,9 +839,7 @@ ORDEMPARTEATO |  |
 | 3 | M² (Mêtro quadrado) |
 
 
----
-
-### `Bem - Tipo imóvel  QUANTIDADEAREATOTAL`
+#### `Bem - Tipo imóvel  QUANTIDADEAREATOTAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -974,9 +848,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
----
-
-### `Bem - Tipo imóvel  UNIDADEAREACONSTRUIDA`
+#### `Bem - Tipo imóvel  UNIDADEAREACONSTRUIDA`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -992,9 +864,7 @@ ORDEMPARTEATO |  |
 | 3 | M² (Mêtro quadrado) |
 
 
----
-
-### `Bem - Tipo imóvel  QUANTIDADEAREACONSTRUIDA`
+#### `Bem - Tipo imóvel  QUANTIDADEAREACONSTRUIDA`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1003,9 +873,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
----
-
-### `Bem - Tipo imóvel  VALORIMOVEL`
+#### `Bem - Tipo imóvel  VALORIMOVEL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1014,9 +882,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
----
-
-### `Bem - Tipo imóvel  TIPOTRIBUTO`
+#### `Bem - Tipo imóvel  TIPOTRIBUTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1033,9 +899,7 @@ ORDEMPARTEATO |  |
 | 4 | ITR |
 
 
----
-
-### `Bem - Tipo imóvel  VALORFISCAL`
+#### `Bem - Tipo imóvel  VALORFISCAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1044,9 +908,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
----
-
-### `Bem - Tipo imóvel  CNM`
+#### `Bem - Tipo imóvel  CNM`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1060,9 +922,7 @@ ORDEMPARTEATO |  |
 | (Vazio) | CNS + número de ordem da matrícula |
 
 
----
-
-### `Bem - Tipo imóvel  IMOVEL_CEP`
+#### `Bem - Tipo imóvel  IMOVEL_CEP`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1071,9 +931,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
----
-
-### `Bem - Tipo imóvel  IMOVEL_RUA`
+#### `Bem - Tipo imóvel  IMOVEL_RUA`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1082,9 +940,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
----
-
-### `Bem - Tipo imóvel  IMOVEL_NUMERO`
+#### `Bem - Tipo imóvel  IMOVEL_NUMERO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1093,9 +949,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
----
-
-### `Bem - Tipo imóvel  IMOVEL_COMPLEMENTO`
+#### `Bem - Tipo imóvel  IMOVEL_COMPLEMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1104,9 +958,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
----
-
-### `Bem - Tipo imóvel  IMOVEL_BAIRRO`
+#### `Bem - Tipo imóvel  IMOVEL_BAIRRO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1115,9 +967,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
----
-
-### `Bem - Tipo imóvel  IMOVEL_MUNICIPIO`
+#### `Bem - Tipo imóvel  IMOVEL_MUNICIPIO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1129,9 +979,7 @@ ORDEMPARTEATO |  |
 Consulte a tabela de **Município** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `Bem - Tipo imóvel  IMOVEL_UF`
+#### `Bem - Tipo imóvel  IMOVEL_UF`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1143,14 +991,13 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-## Atos de Origem - Somente para preenchimento em atos de Rerratificação
+### Dados do Ato Origem
 
 
----
+> **Validação:** Somente para preenchimento em atos de Rerratificação
 
-### `ATOORIGEM_UF`
+
+#### `ATOORIGEM_UF`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1162,9 +1009,7 @@ Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.m
 Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `ATOORIGEM_MUNICIPIO`
+#### `ATOORIGEM_MUNICIPIO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1176,9 +1021,7 @@ Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.m
 Consulte a tabela de **Município** na página [Domínios Compartilhados](dominios.md).
 
 
----
-
-### `ATOORIGEM_CARTORIOATUAL`
+#### `ATOORIGEM_CARTORIOATUAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1193,17 +1036,13 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 | 1 | Ato de origem foi lavrado no mesmo cartório onde o ato de rerratificação foi lavrado |
 
 
----
-
-### `ATOORIGEM_CARTORIO`
+#### `ATOORIGEM_CARTORIO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | SIM | Numérico | 6 | 000000 (6 digitos numéricos) | Este campo deve ser preenchido com o (CNS)Número do Código Nacional da Serventia em que consta o ato de origem. O CNS do cartório deve seguir o divulgado pelo CNJ. |
 
----
-
-### `ATOORIGEM_CARTORIONAOCADASTRADO`
+#### `ATOORIGEM_CARTORIONAOCADASTRADO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1218,17 +1057,13 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 | 1 | True |
 
 
----
-
-### `ATOORIGEM_OBSERVACAO`
+#### `ATOORIGEM_OBSERVACAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Alfanumérico | 255 | - | Campo para preenchimento dos dados de localização do ato de origem |
 
----
-
-### `ATOORIGEM_TIPOATO`
+#### `ATOORIGEM_TIPOATO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1247,17 +1082,13 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 | 9 | Partilha |
 
 
----
-
-### `ATOORIGEM_LIVROINICIAL`
+#### `ATOORIGEM_LIVROINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Numérico | 4 | 0000 (4 dígitos numéricos) | - |
 
----
-
-### `ATOORIGEM_COMPLEMENTOLIVROINICIAL`
+#### `ATOORIGEM_COMPLEMENTOLIVROINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1266,9 +1097,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 > **Validação:** Caso o livro não tenha complemento, esse campo deve ser enviado em branco.
 
 
----
-
-### `ATOORIGEM_LIVROFINAL`
+#### `ATOORIGEM_LIVROFINAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1277,9 +1106,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 > **Validação:** Caso o ato tenha sido lavrado em um único livro esse campo deve ser preenchido com o mesmo valor do campo ATOORIGEM_LIVROINICIAL
 
 
----
-
-### `ATOORIGEM_COMPLEMENTOLIVROFINAL`
+#### `ATOORIGEM_COMPLEMENTOLIVROFINAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1288,17 +1115,13 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 > **Validação:** Caso o livro não tenha complemento, esse campo deve ser enviado em branco.
 
 
----
-
-### `ATOORIGEM_FOLHAINICIAL`
+#### `ATOORIGEM_FOLHAINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Numérico | 3 | 000 (3 dígitos numéricos) | Número da folha inicial em que o ato foi lavrado. |
 
----
-
-### `ATOORIGEM_COMPLEMENTOFOLHAINICIAL`
+#### `ATOORIGEM_COMPLEMENTOFOLHAINICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1307,9 +1130,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 > **Validação:** Caso a folha não tenha complemento, esse campo deve ser enviado em branco.
 
 
----
-
-### `ATOORIGEM_FOLHAFINAL`
+#### `ATOORIGEM_FOLHAFINAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1318,9 +1139,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 > **Validação:** Caso o ato tenha sido lavrado em uma única folha esse campo deve ser preenchido com o mesmo valor campo ATOORIGEM_FOLHAINICIAL.
 
 
----
-
-### `ATOORIGEM_COMPLEMENTOFOLHAFINAL`
+#### `ATOORIGEM_COMPLEMENTOFOLHAFINAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1328,119 +1147,6 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 
 > **Validação:** Caso a folha não tenha complemento, esse campo deve ser enviado em branco.
 
-
----
-
-## Qualidade da parte
-
-Agrupada por atos com partes idênticas.
-
-
-### Separação (1)
-
-Mínimo 3 partes: um advogado e dois separandos.
-
-| Código | Qualidade |
-|--------|-----------|
-| 1 | Separando(a) |
-| 2 | Advogado(a) |
-| 3 | Cessionário/Adjudicatários |
-| 4 | Cedente |
-| 5 | Interveniente |
-| 6 | Anuente |
-
-### Reconciliação (2)
-
-Mínimo 3 partes: um advogado e dois reconciliandos.
-
-| Código | Qualidade |
-|--------|-----------|
-| 7 | Reconciliando(a) |
-| 2 | Advogado(a) |
-| 3 | Cessionário/Adjudicatários |
-| 4 | Cedente |
-| 5 | Interveniente |
-| 6 | Anuente |
-
-### Conversão de separação em divórcio (3) e Divórcio direto (4)
-
-Mínimo 3 partes: um advogado e dois divorciandos.
-
-| Código | Qualidade |
-|--------|-----------|
-| 8 | Divorciando(a) |
-| 2 | Advogado(a) |
-| 3 | Cessionário/Adjudicatários |
-| 4 | Cedente |
-| 5 | Interveniente |
-| 6 | Anuente |
-
-### Inventário (5)
-
-Mínimo 3 partes: um advogado, um falecido e um herdeiro.
-
-| Código | Qualidade |
-|--------|-----------|
-| 9 | Falecido(a) |
-| 10 | Viúvo(a) |
-| 11 | Herdeiro(a) |
-| 13 | Inventariante |
-| 2 | Advogado(a) |
-| 3 | Cessionário/Adjudicatários |
-| 4 | Cedente |
-| 5 | Interveniente |
-| 6 | Anuente |
-
-### Sobrepartilha (6) e Partilha (9)
-
-Advogado + falecido + herdeiro, ou advogado + divorciando.
-
-| Código | Qualidade |
-|--------|-----------|
-| 9 | Falecido(a) |
-| 10 | Viúvo(a) |
-| 11 | Herdeiro(a) |
-| 8 | Divorciando(a) |
-| 2 | Advogado(a) |
-| 3 | Cessionário/Adjudicatários |
-| 4 | Cedente |
-| 5 | Interveniente |
-| 6 | Anuente |
-
-### Rerratificação (7)
-
-Mínimo 1 parte, exceto Advogado e Interveniente.
-
-| Código | Qualidade |
-|--------|-----------|
-| 8 | Divorciando(a) |
-| 1 | Separando(a) |
-| 9 | Falecido(a) |
-| 10 | Viúvo(a) |
-| 11 | Herdeiro(a) |
-| 2 | Advogado(a) |
-| 3 | Cessionário/Adjudicatários |
-| 4 | Cedente |
-| 5 | Interveniente |
-| 6 | Anuente |
-
-### Nomeação de inventariante (8)
-
-Mínimo 2 partes: Inventariante e Falecido.
-
-| Código | Qualidade |
-|--------|-----------|
-| 9 | Falecido(a) |
-| 10 | Viúvo(a) |
-| 13 | Inventariante |
-| 11 | Herdeiro(a) |
-| 2 | Advogado(a) |
-| 3 | Cessionário/Adjudicatários |
-| 4 | Cedente |
-| 5 | Interveniente |
-| 6 | Anuente |
-
----
 
 ## Tipo de bens e direito
 

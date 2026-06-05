@@ -1,10 +1,11 @@
 extra_css:
   - stylesheets/extra.css
 
-site_name: Documentação SIGNO - Envio de Atos
+site_name: Documentação SIGNO
 site_description: Parâmetros para envio de atos por cartórios no sistema SIGNO
 theme:
   name: material
+  language: pt-BR
   logo: assets/cnb-sp.png
   favicon: assets/favicon.png
   palette:
@@ -35,3 +36,6 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - toc:
+      permalink: true
+      toc_depth: 4
