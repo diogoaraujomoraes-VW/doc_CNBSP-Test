@@ -35,7 +35,7 @@ https://backend.signo.org.br/api/ato/envio-ato-cesdi-api/retificacao
 ## Campos e parâmetros de envio
 
 
-### Dados básicos do ato
+### Informações do ato
 
 
 #### `tipoAto`
@@ -155,12 +155,10 @@ https://backend.signo.org.br/api/ato/envio-ato-cesdi-api/retificacao
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | String | - | yyyy-MM-dd | Data da última assinatura da escritura, contrato, etc |
 
-### Dados das partes
+### Informações das partes
 
 
 > **Observação:** Os campos a seguir compõem cada item da lista `partes`. O envio dessa lista é **obrigatório** e o ato pode conter múltiplas partes.
-
-**Dados Básicos da Parte**
 
 
 #### `qualificacaoParte`
@@ -691,7 +689,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | String | - | - | Descrição do bem pertencente a parte vinculada ao ato |
 
-#### `Bem - Tipo precatório varaJudicial`
+#### `varaJudicial`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -700,7 +698,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Obrigatório somente quando o atributo "tipoBemEdireto" for igual a 1790.
 
 
-#### `Bem - Tipo precatório  numeroProcesso`
+#### `numeroProcesso`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -709,7 +707,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Obrigatório somente quando o atributo "tipoBemEdireto" for igual a 1790.
 
 
-#### `Bem - Tipo precatório  numeroPrecatorio`
+#### `numeroPrecatorio`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -718,7 +716,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Obrigatório somente quando o atributo "tipoBemEdireto" for igual a 1790.
 
 
-#### `Bem - Tipo precatório  valorDoBem`
+#### `valorDoBem`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -736,7 +734,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** O envio do bloco de titulares é obrigatório quando existir bem. Cada item dentro da lista possui sua obrigatoriedade de acordo com o detalhamento mais abaixo.
 
 
-#### `Bem - Tipo imóvel  cin`
+#### `cin`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -745,7 +743,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  referenciaCadastralImovel`
+#### `referenciaCadastralImovel`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -762,7 +760,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 | 4 | SNCR (INCRA) |
 
 
-#### `Bem - Tipo imóvel  numeroCadastroImovel`
+#### `numeroCadastroImovel`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -771,7 +769,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  tipoImovel`
+#### `tipoImovel`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -793,7 +791,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 | 9 | Unidade Autônoma – Sala/Loja |
 
 
-#### `Bem - Tipo imóvel  acessaoImovel`
+#### `acessaoImovel`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -814,7 +812,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 | 8 | Usina de geração de energia |
 
 
-#### `Bem - Tipo imóvel  tipoUnidadeAreaTotal`
+#### `tipoUnidadeAreaTotal`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -830,7 +828,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 | 3 | M² (Mêtro quadrado) |
 
 
-#### `Bem - Tipo imóvel  quantidadeUnidadeAreaTotal`
+#### `quantidadeUnidadeAreaTotal`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -839,7 +837,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Obrigatório somente quando o atributo "tipoBemEdireto" for igual a 1765 OU 1766.
 
 
-#### `Bem - Tipo imóvel  tipoUnidadeAreaConstruida`
+#### `tipoUnidadeAreaConstruida`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -855,7 +853,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 | 3 | M² (Mêtro quadrado) |
 
 
-#### `Bem - Tipo imóvel  quantidadeUnidadeAreaConstruida`
+#### `quantidadeUnidadeAreaConstruida`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -864,7 +862,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Obrigatório somente quando o atributo "tipoBemEdireto" for igual a 1765 OU 1766.
 
 
-#### `Bem - Tipo imóvel  valorImovel`
+#### `valorImovel`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -873,7 +871,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  tipoTributo`
+#### `tipoTributo`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -890,7 +888,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 | 4 | ITR |
 
 
-#### `Bem - Tipo imóvel  valorFiscal`
+#### `valorFiscal`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -899,7 +897,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Obrigatório somente quando o atributo "tipoBemEdireto" for igual a 1765 OU 1766.
 
 
-#### `Bem - Tipo imóvel  cnm`
+#### `cnm`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -913,7 +911,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 | (Vazio) | CNS + número de ordem da matrícula |
 
 
-#### `Bem - Tipo imóvel  cep`
+#### `cep`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -922,7 +920,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  logradouro`
+#### `logradouro`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -931,7 +929,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  numero`
+#### `numero`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -940,7 +938,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  complemento`
+#### `complemento`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -949,7 +947,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  bairro`
+#### `bairro`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -958,7 +956,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  cidade`
+#### `cidade`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -970,7 +968,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 Consulte a tabela de **Município** na página [Domínios Compartilhados](dominios.md).
 
 
-#### `Bem - Tipo imóvel siglaUF`
+#### `siglaUF`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1232,7 +1230,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 > **Validação:** É obrigatório caso seja	informado	o atributo “base64Content”
 
 
-## Tipo de bens e direito
+### Tipo de bens e direito
 
 | Código | Descrição |
 | --- | --- |
@@ -1242,7 +1240,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 
 ---
 
-## Referência cadastral do imóvel
+### Referência cadastral do imóvel
 
 | Código | Descrição |
 | --- | --- |

@@ -6,19 +6,6 @@
 
 Esta documentação reúne os parâmetros para envio de atos por cartórios no sistema **SIGNO**. Use o menu lateral para navegar até a central e o método de envio desejados.
 
-## As três centrais
-
-O envio de atos é dividido em três centrais, cada uma com campos, regras e domínios próprios:
-
-**CEP — Central de Escrituras e Procurações**
-Atos de escrituras, procurações, substabelecimentos, revogações, atas notariais e atos relacionados a precatórios.
-
-**CESDI — Central de Separações, Divórcios e Inventários**
-Atos de separação, reconciliação, divórcio, inventário, partilha, sobrepartilha, rerratificação e nomeação de inventariante.
-
-**RCTO — Registro Central de Testamento Online**
-Atos de testamento (público, cerrado, aditamento, revogação) e seus registros.
-
 ## Métodos de envio
 
 Cada central aceita dois métodos. Escolha conforme o volume e a forma de integração do cartório:

@@ -15,7 +15,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 ## Campos e parâmetros de envio
 
 
-### Dados básicos do ato
+### Informações do ato
 
 
 #### `TIPOLINHA`
@@ -161,10 +161,7 @@ Formato: **CSV, UTF-8**, campos separados por **ponto-e-vírgula (`;`)**.
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Data | - | dd/mm/aaaa | Data da última assinatura da escritura, contrato, etc |
 
-### Dados das partes
-
-
-**Dados Básicos da Parte**
+### Informações das partes
 
 
 #### `ORDEMPARTEATO`
@@ -695,7 +692,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Alfanumérico | - | - | Descrição do bem pertencente a parte vinculada ao ato |
 
-#### `Bem - Tipo precatório  VARAJUDICIAL`
+#### `VARAJUDICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -704,7 +701,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”
 
 
-#### `Bem - Tipo precatório  NUMEROPROCESSO`
+#### `NUMEROPROCESSO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -713,7 +710,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”
 
 
-#### `Bem - Tipo precatório  NUMEROPRECATORIO`
+#### `NUMEROPRECATORIO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -722,7 +719,7 @@ Consulte a tabela de **País** na página [Domínios Compartilhados](dominios.md
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”
 
 
-#### `Bem - Tipo precatório  VALOR`
+#### `VALOR`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -745,7 +742,7 @@ Inserido no campo
 ORDEMPARTEATO |  |
 
 
-#### `Bem - Tipo imóvel  CIN`
+#### `CIN`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -754,7 +751,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  TIPOREFERENCIACADASTRALIMOVEL`
+#### `TIPOREFERENCIACADASTRALIMOVEL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -771,7 +768,7 @@ ORDEMPARTEATO |  |
 | 4 | SNCR (INCRA) |
 
 
-#### `Bem - Tipo imóvel  NUMEROCADASTROIMOVEL`
+#### `NUMEROCADASTROIMOVEL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -780,7 +777,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  TIPOIMOVEL`
+#### `TIPOIMOVEL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -802,7 +799,7 @@ ORDEMPARTEATO |  |
 | 9 | Unidade Autônoma – Sala/Loja |
 
 
-#### `Bem - Tipo imóvel  ACESSAO`
+#### `ACESSAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -823,7 +820,7 @@ ORDEMPARTEATO |  |
 | 8 | Usina de geração de energia |
 
 
-#### `Bem - Tipo imóvel  UNIDADEAREATOTAL`
+#### `UNIDADEAREATOTAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -839,7 +836,7 @@ ORDEMPARTEATO |  |
 | 3 | M² (Mêtro quadrado) |
 
 
-#### `Bem - Tipo imóvel  QUANTIDADEAREATOTAL`
+#### `QUANTIDADEAREATOTAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -848,7 +845,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  UNIDADEAREACONSTRUIDA`
+#### `UNIDADEAREACONSTRUIDA`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -864,7 +861,7 @@ ORDEMPARTEATO |  |
 | 3 | M² (Mêtro quadrado) |
 
 
-#### `Bem - Tipo imóvel  QUANTIDADEAREACONSTRUIDA`
+#### `QUANTIDADEAREACONSTRUIDA`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -873,7 +870,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  VALORIMOVEL`
+#### `VALORIMOVEL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -882,7 +879,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  TIPOTRIBUTO`
+#### `TIPOTRIBUTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -899,7 +896,7 @@ ORDEMPARTEATO |  |
 | 4 | ITR |
 
 
-#### `Bem - Tipo imóvel  VALORFISCAL`
+#### `VALORFISCAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -908,7 +905,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  CNM`
+#### `CNM`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -922,7 +919,7 @@ ORDEMPARTEATO |  |
 | (Vazio) | CNS + número de ordem da matrícula |
 
 
-#### `Bem - Tipo imóvel  IMOVEL_CEP`
+#### `IMOVEL_CEP`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -931,7 +928,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  IMOVEL_RUA`
+#### `IMOVEL_RUA`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -940,7 +937,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  IMOVEL_NUMERO`
+#### `IMOVEL_NUMERO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -949,7 +946,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  IMOVEL_COMPLEMENTO`
+#### `IMOVEL_COMPLEMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -958,7 +955,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  IMOVEL_BAIRRO`
+#### `IMOVEL_BAIRRO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -967,7 +964,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bem - Tipo imóvel  IMOVEL_MUNICIPIO`
+#### `IMOVEL_MUNICIPIO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -979,7 +976,7 @@ ORDEMPARTEATO |  |
 Consulte a tabela de **Município** na página [Domínios Compartilhados](dominios.md).
 
 
-#### `Bem - Tipo imóvel  IMOVEL_UF`
+#### `IMOVEL_UF`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1148,7 +1145,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 > **Validação:** Caso a folha não tenha complemento, esse campo deve ser enviado em branco.
 
 
-## Tipo de bens e direito
+### Tipo de bens e direito
 
 | Código | Descrição |
 | --- | --- |
@@ -1158,7 +1155,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 
 ---
 
-## Referência cadastral do imóvel
+### Referência cadastral do imóvel
 
 | Código | Descrição |
 | --- | --- |

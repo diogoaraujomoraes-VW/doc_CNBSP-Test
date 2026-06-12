@@ -270,9 +270,9 @@ A qualificação da parte depende do tipo de ato. Cada qualificação abaixo ind
 | Requerido | 7 | Mediação, Conciliação |
 | Conciliador | 8 | Conciliação |
 | Mediador | 9 | Mediação |
-| Cedente | 10 | Cessão de Precatório (natureza 77) |
-| Beneficiário | 11 | Cessão de Precatório (natureza 77) |
-| Cessionário | 12 | Cessão de Precatório (natureza 77) |
+| Cedente | 10 | Cessão de Precatório |
+| Beneficiário | 11 | Cessão de Precatório |
+| Cessionário | 12 | Cessão de Precatório |
 
 ¹ **Atos padrão:** Escritura, Procuração, Procuração p/ Fins Previdenciários, Renúncia de Procuração, Revogação de Procuração, Ata Notarial.
 
@@ -706,7 +706,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 |:-----------:|:----:|:-------:|:-------:|-----------|
 | NÃO | Alfanumérico | - | - | Descrição do bem pertencente a parte vinculada ao ato |
 
-#### `Bens - Tipo Precatório  VARAJUDICIAL`
+#### `VARAJUDICIAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -715,7 +715,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”
 
 
-#### `Bens - Tipo Precatório  NUMEROPROCESSO`
+#### `NUMEROPROCESSO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -724,7 +724,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”
 
 
-#### `Bens - Tipo Precatório  NUMEROPRECATORIO`
+#### `NUMEROPRECATORIO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -733,7 +733,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”
 
 
-#### `Bens - Tipo Precatório  VALOR`
+#### `VALOR`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -756,7 +756,7 @@ Inserido no campo
 ORDEMPARTEATO |  |
 
 
-#### `Bens - Tipo Imóvel  CIN`
+#### `CIN`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -765,7 +765,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bens - Tipo Imóvel  REFERENCIACADASTRAL`
+#### `REFERENCIACADASTRAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -782,7 +782,7 @@ ORDEMPARTEATO |  |
 | 4 | SNCR (INCRA) |
 
 
-#### `Bens - Tipo Imóvel  NUMEROCADASTRO`
+#### `NUMEROCADASTRO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -791,7 +791,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bens - Tipo Imóvel  TIPOIMOVEL`
+#### `TIPOIMOVEL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -813,7 +813,7 @@ ORDEMPARTEATO |  |
 | 9 | Unidade Autônoma – Sala/Loja |
 
 
-#### `Bens - Tipo Imóvel  ACESSAO`
+#### `ACESSAO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -834,7 +834,7 @@ ORDEMPARTEATO |  |
 | 8 | Usina de geração de energia |
 
 
-#### `Bens - Tipo Imóvel  UNIDADEAREATOTAL`
+#### `UNIDADEAREATOTAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -850,7 +850,7 @@ ORDEMPARTEATO |  |
 | 3 | M² (Mêtro quadrado) |
 
 
-#### `Bens - Tipo Imóvel  QUANTIDADEAREATOTAL`
+#### `QUANTIDADEAREATOTAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -859,7 +859,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bens - Tipo Imóvel  UNIDADEAREACONSTRUIDA`
+#### `UNIDADEAREACONSTRUIDA`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -875,7 +875,7 @@ ORDEMPARTEATO |  |
 | 3 | M² (Mêtro quadrado) |
 
 
-#### `Bens - Tipo Imóvel  QUANTIDADEAREACONSTRUIDA`
+#### `QUANTIDADEAREACONSTRUIDA`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -884,7 +884,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bens - Tipo Imóvel  VALORIMOVEL`
+#### `VALORIMOVEL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -893,7 +893,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bens - Tipo Imóvel  TIPOTRIBUTO`
+#### `TIPOTRIBUTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -910,7 +910,7 @@ ORDEMPARTEATO |  |
 | 4 | ITR |
 
 
-#### `Bens - Tipo Imóvel  VALORFISCAL`
+#### `VALORFISCAL`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -919,7 +919,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bens - Tipo Imóvel  CNM`
+#### `CNM`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -933,7 +933,7 @@ ORDEMPARTEATO |  |
 | (Vazio) | CNS + número de ordem da matrícula |
 
 
-#### `Bens - Tipo Imóvel  IMOVEL_CEP`
+#### `IMOVEL_CEP`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -942,7 +942,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bens - Tipo Imóvel  IMOVEL_RUA`
+#### `IMOVEL_RUA`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -951,7 +951,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bens - Tipo Imóvel  IMOVEL_NUMERO`
+#### `IMOVEL_NUMERO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -960,7 +960,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bens - Tipo Imóvel  IMOVEL_COMPLEMENTO`
+#### `IMOVEL_COMPLEMENTO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -969,7 +969,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bens - Tipo Imóvel  IMOVEL_BAIRRO`
+#### `IMOVEL_BAIRRO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -978,7 +978,7 @@ ORDEMPARTEATO |  |
 > **Validação:** Esse campo só poderá ser preenchido quando o tipo do bem for  “Imóvel Rural” ou “imóvel Urbano”
 
 
-#### `Bens - Tipo Imóvel  IMOVEL_UF`
+#### `IMOVEL_UF`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -990,7 +990,7 @@ ORDEMPARTEATO |  |
 Consulte a tabela de **Estado** na página [Domínios Compartilhados](dominios.md).
 
 
-#### `Bens - Tipo Imóvel  IMOVEL_MUNICIPIO`
+#### `IMOVEL_MUNICIPIO`
 
 | Obrigatório | Tipo | Tamanho | Formato | Descrição |
 |:-----------:|:----:|:-------:|:-------:|-----------|
@@ -1520,74 +1520,7 @@ Consulte a tabela de **Município** na página [Domínios Compartilhados](domini
 > **Validação:** UTILIZADO APENAS NA FORMA DE ENVIO POR UPLOAD
 
 
----
-
-## Natureza do ato
-
-Aplicável somente quando o tipo de ato é **Escritura (1)**.
-
-| código | Descrição |
-| --- | --- |
-| 1 | ACORDO EXTRAJUDICIAL |
-| 4 | ALIENAÇÃO FIDUCIÁRIA |
-| 26 | BEM DE FAMÍLIA |
-| 5 | CESSÃO |
-| 63 | COMODATO/MÚTUO |
-| 6 | COMPRA E VENDA |
-| 48 | CONDOMÍNIO |
-| 56 | CONFERÊNCIA DE BENS |
-| 10 | CONFISSÃO DE DÍVIDA |
-| 74 | CONTRATO DE NAMORO |
-| 58 | OUTRAS GARANTIAS |
-| 14 | DECLARAÇÃO |
-| 15 | DECLARATÓRIA DE UNIÃO ESTÁVEL |
-| 17 | DESAPROPRIAÇÃO |
-| 52 | DIREITO DE USO OU SUPERFÍCIE |
-| 55 | DIRETIVAS ANTECIPADAS DE VONTADE (testamento vital) |
-| 20 | DISSOLUÇÃO DE UNIÃO ESTÁVEL |
-| 21 | DISTRATO |
-| 53 | DIVISÃO AMIGÁVEL |
-| 22 | DOAÇÃO |
-| 23 | EMANCIPAÇÃO |
-| 59 | EMISSÃO DE CÉDULA |
-| 60 | EMISSÃO DE DEBÊNTURES |
-| 54 | FIANÇA |
-| 24 | HIPOTECA |
-| 25 | INCORPORAÇÃO |
-| 28 | LOCAÇÃO |
-| 57 | NOVAÇÃO |
-| 30 | PACTO ANTENUPCIAL |
-| 49 | PARCELAMENTO |
-| 31 | PENHOR |
-| 33 | PROMESSAS |
-| 34 | QUITAÇÃO |
-| 36 | RECONHECIMENTO DE PATERNIDADE |
-| 38 | REGISTRO DE CHANCELA MECÂNICA |
-| 39 | REMISSÃO DE FORO E LAUDÊMIOS |
-| 62 | RENÚNCIA DE DIREITOS HEREDITÁRIOS |
-| 35 | RERRATIFICAÇÃO |
-| 61 | REVOGAÇÃO |
-| 43 | SEM VALOR DECLARADO |
-| 45 | SERVIDÃO |
-| 50 | SOCIEDADE E FUNDAÇÕES |
-| 51 | TRANSAÇÃO |
-| 46 | USUFRUTO (reserva, instituição e renúncia) |
-| 70 | PRESTAÇÃO DE SERVIÇOS |
-| 71 | ARRENDAMENTO MERCANTIL (LEASING) |
-| 72 | CONCESSÃO DE DOMÍNIO |
-| 75 | CONCILIAÇÃO |
-| 76 | MEDIAÇÃO |
-| 77 | CESSÃO DE PRECATÓRIOS |
-| 78 | CESSÃO DE DIREITOS HEREDITÁRIOS |
-| 79 | DAÇÃO EM PAGAMENTO |
-| 80 | CESSÃO DE POSSE |
-| 81 | OUTROS NEGÓCIOS JURÍDICOS COM VALOR ECONÔMICO |
-| 82 | CESSÃO DE CONTRATOS |
-| 83 | CESSÃO DE DIREITO CREDITÓRIO |
-
----
-
-## Natureza do litígio
+### Natureza do litígio
 
 Aplicável somente quando a natureza do ato é **Mediação** ou **Conciliação**.
 
