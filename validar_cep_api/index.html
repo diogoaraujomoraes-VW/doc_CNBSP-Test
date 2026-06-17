@@ -1,0 +1,1054 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Parâmetros para envio de atos por cartórios no sistema SIGNO">
+      
+      
+      
+      
+        <link rel="prev" href="../cep_upload/">
+      
+      
+        <link rel="next" href="../cesdi_api/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>CEP - API - Documentação SIGNO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#validador-cep-api" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Documentação SIGNO" class="md-header__button md-logo" aria-label="Documentação SIGNO" data-md-component="logo">
+      
+  <img src="../assets/cnb-sp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação SIGNO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CEP - API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentação SIGNO" class="md-nav__button md-logo" aria-label="Documentação SIGNO" data-md-component="logo">
+      
+  <img src="../assets/cnb-sp.png" alt="logo">
+
+    </a>
+    Documentação SIGNO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CEP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CEP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cep_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cep_upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validadores
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Validadores
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CEP - API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CESDI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CESDI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cesdi_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cesdi_upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCTO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RCTO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rcto_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rcto_upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dominios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domínios Compartilhados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="validador-cep-api">Validador — CEP API<a class="headerlink" href="#validador-cep-api" title="Permanent link">&para;</a></h1>
+<p>Verifique se o JSON que você pretende enviar para a API do CEP está de acordo com o manual. A validação roda <strong>localmente no seu navegador</strong> — nada é enviado a nenhum servidor.</p>
+<p><strong>Como usar:</strong></p>
+<ol>
+<li><strong>Cole</strong> o JSON na caixa abaixo <strong>ou</strong> clique em <strong>Anexar arquivo (.json ou .txt)</strong></li>
+<li>Clique em <strong>Validar</strong></li>
+<li>Veja o resultado logo abaixo: <strong>OK</strong> ou a lista de erros com o caminho exato de cada problema</li>
+</ol>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css"></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+
+<div class="validador-container">
+  <div class="validador-toolbar">
+    <button id="btnValidar" class="val-btn val-btn-primary">✓ Validar</button>
+    <label for="fileInput" class="val-btn val-btn-anexar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px;"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>Anexar arquivo (.json ou .txt)</label>
+    <input type="file" id="fileInput" accept=".json,.txt,application/json,text/plain" style="display:none;">
+    <button id="btnExemplo" class="val-btn">Carregar exemplo</button>
+    <button id="btnLimpar" class="val-btn">Limpar</button>
+  </div>
+  <textarea id="jsonInput" class="validador-input" spellcheck="false" placeholder="Cole aqui o JSON do ato, ou use o botao Anexar arquivo..."></textarea>
+  <div id="nomeArquivo" class="validador-arquivo"></div>
+  <div id="resultado" class="validador-resultado"></div>
+</div>
+
+<script>
+(function(){
+  const SCHEMA = {"root": [{"name": "tipoAto", "obrigatorio": true, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": null, "descricao": "Tipo do ato que foi lavrado no cartório", "dominio": ["1", "2", "3", "4", "5", "6", "7", "8"], "dominioDesc": {"1": "Escritura", "2": "Procuração", "3": "Procuração para Fins Previdenciários", "4": "Renúncia de Procuração", "5": "Revogação de Procuração", "6": "Substabelecimento", "7": "Ata Notarial", "8": "Procuração sem valor econômico"}}, {"name": "naturezaAto", "obrigatorio": true, "tipo": "integer", "tamanho": 2, "formato": "00 (2 dígitos numéricos)", "validacao": "Campo habilitado somente quando o ato é “Escritura”", "descricao": "Campo de lista de natureza do ato.", "dominio": ["1", "4", "26", "5", "63", "6", "48", "56", "10", "74", "58", "14", "15", "17", "52", "55", "20", "21", "53", "22", "23", "59", "60", "54", "24", "25", "28", "57", "30", "49", "31", "33", "34", "36", "38", "39", "62", "35", "61", "43", "45", "50", "51", "46", "70", "71", "72", "75", "76", "77", "78", "79", "80", "81", "82", "83"], "dominioDesc": {"": "Lista de códigos na aba NaturezaAto"}}, {"name": "dataAto", "obrigatorio": true, "tipo": "string", "tamanho": null, "formato": "yyyy-MM-dd", "validacao": null, "descricao": "Data em que o ato foi lavrado.", "dominio": null, "dominioDesc": null}, {"name": "livroInicial", "obrigatorio": true, "tipo": "integer", "tamanho": 8, "formato": "00000000 (8 dígitos numéricos)", "validacao": null, "descricao": "Número do livro inicial em que o ato foi lavrado.", "dominio": null, "dominioDesc": null}, {"name": "complementoLivroInicial", "obrigatorio": false, "tipo": "string", "tamanho": 1, "formato": "X (letra)", "validacao": "Caso o livro não tenha complemento, esse campo deve ser enviado em branco.", "descricao": "Complemento alfanumérico referente ao número do livro inicial. Caso o livro não tenha complemento, esse campo deve ser enviado em branco.", "dominio": null, "dominioDesc": null}, {"name": "folhaInicial", "obrigatorio": true, "tipo": "integer", "tamanho": 3, "formato": "000 (3 dígitos numéricos)", "validacao": null, "descricao": "Número da folha inicial em que o ato foi lavrado.", "dominio": null, "dominioDesc": null}, {"name": "complementoFolhaInicial", "obrigatorio": false, "tipo": "string", "tamanho": 2, "formato": "XX (2 – letras)", "validacao": "Caso a folha não tenha complemento, esse campo deve ser enviado em branco.", "descricao": "Complemento alfanumérico referente ao número da folha inicial. Caso a folha não tenha complemento, esse campo deve ser enviado em branco.", "dominio": null, "dominioDesc": null}, {"name": "folhaFinal", "obrigatorio": true, "tipo": "integer", "tamanho": 3, "formato": "000 (3 dígitos numéricos)", "validacao": "Caso o ato tenha sido lavrado em uma única folha esse campo deve ser preenchido com o mesmo valor do campo FOLHAINICIAL.", "descricao": "Número da folha final em que o ato foi lavrado. Caso o ato tenha sido lavrado em uma única folha esse campo deve ser preenchido com o mesmo valor campo FOLHAINICIAL.", "dominio": null, "dominioDesc": null}, {"name": "complementoFolhaFinal", "obrigatorio": false, "tipo": "string", "tamanho": 2, "formato": "XX (2 – letras)", "validacao": "Caso a folha não tenha complemento, esse campo deve ser enviado em branco.", "descricao": "Complemento alfanumérico referente ao número da folha final. Caso a folha não tenha complemento, esse campo deve ser enviado em branco.", "dominio": null, "dominioDesc": null}, {"name": "valorOperacao", "obrigatorio": false, "tipo": "double", "tamanho": null, "formato": "0,00", "validacao": "Somente para escritura", "descricao": "Informe o valor da escritura, contrato, etc", "dominio": null, "dominioDesc": null}, {"name": "prazoPagamento", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": "Somente para escritura", "descricao": "Prazo estipulado para o pagamento da escritura, contrato, etc", "dominio": ["1", "2", "3"], "dominioDesc": {"1": "À vista", "2": "A prazo", "3": "Antecipado"}}, {"name": "formaPagamento", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": "Somente para escritura", "descricao": "Forma de pagamento realizada para quitação da escritura.", "dominio": ["1", "2", "3", "4", "5", "6"], "dominioDesc": {"1": "Cheque", "2": "Dinheiro", "3": "Nota promissória", "4": "Permuta", "5": "Outras", "6": "Transferência Bancária"}}, {"name": "dataContrato", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": "yyyy-MM-dd", "validacao": null, "descricao": "Data da última assinatura da escritura, contrato, etc", "dominio": null, "dominioDesc": null}, {"name": "existeBemEdireito", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": null, "descricao": "Campo indicativo sobre a existência de bem e direito vinculado a parte do ato", "dominio": ["0", "1"], "dominioDesc": {"Nulo": "Não informado", "0": "Não", "1": "Sim"}}, {"name": "reservaDePoderes", "obrigatorio": false, "tipo": "boolean", "tamanho": null, "formato": null, "validacao": "Pode ser preenchido somente quando o ato é “Substabelecimento”", "descricao": "Indica se o ato tem reserva de poderes", "dominio": null, "dominioDesc": {"Nulo": "Não informado", "False": "Não Existe", "True": "Existe"}}, {"name": "naturezaLitigio", "obrigatorio": true, "tipo": "integer", "tamanho": 2, "formato": "00 (2 dígitos numéricos)", "validacao": "Deve ser preenchido somente quando a Natureza do ato é \n“ Mediação “ ou “ Conciliação ”", "descricao": "Natureza do Litígio", "dominio": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"], "dominioDesc": {"": "Lista de códigos na aba NaturezaLitigio"}}, {"name": "acordo", "obrigatorio": true, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": "Deve ser preenchido somente quando a Natureza do ato é \n“ Mediação “ ou “ Conciliação ”", "descricao": "Informa se houve ou não acordo", "dominio": ["0", "1"], "dominioDesc": {"0": "Não", "1": "Sim"}}], "lists": {"partes": {"required": true, "fields": [{"name": "qualificacaoParte", "obrigatorio": true, "tipo": "integer", "tamanho": 1, "formato": "00 (2 dígitos numéricos)", "validacao": null, "descricao": "Campo que indica a qualidade da parte de acordo com o tipo de ato informado", "dominio": null, "dominioDesc": {"": "Lista de códigosda Qualidade da parte está na aba qualidadeParte"}}, {"name": "cpf", "obrigatorio": true, "tipo": "integer", "tamanho": 11, "formato": "Sem pontos ou traços", "validacao": "O campo passará a aceitar obrigatoriamente o CPF ou CNPJ. A nomenclatura por enquanto permanecerá a mesma", "descricao": "Número do CPF da parte \nQuando a parte for pessoa jurídica este campo deve aceitar o CNPJ.", "dominio": null, "dominioDesc": null}, {"name": "nomeParte", "obrigatorio": true, "tipo": "string", "tamanho": 255, "formato": null, "validacao": null, "descricao": "Nome completo da parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "nomeSocial", "obrigatorio": false, "tipo": "string", "tamanho": 255, "formato": null, "validacao": "Recomendado o preenchimento quando houver ciência que a parte possuir um nome social.", "descricao": "Nome Social da parte vinculada ao ato. Obrigatório quando a parte possuir um nome social.", "dominio": null, "dominioDesc": null}, {"name": "tipoDocumento", "obrigatorio": false, "tipo": "integer", "tamanho": 2, "formato": "00 (2 dígitos numéricos)", "validacao": "Obrigatório caso o campo \"DOCUMENTO\" seja informado", "descricao": "Documento secundário de identificação da parte vinculada ao ato.", "dominio": ["1", "2", "3", "4", "5", "6", "7", "8", "9"], "dominioDesc": {"1": "Carteira de Identidade Funcional", "2": "Carteira de Identidade Militar", "3": "Carteira de Trabalho", "4": "Carteira Profissional", "5": "CNH", "6": "Passaporte", "7": "RNE", "8": "RG", "9": "Outro Documento Público"}}, {"name": "documento", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": null, "descricao": "Número do documento informado, de acordo com o TIPO DOCUMENTO.", "dominio": null, "dominioDesc": null}, {"name": "orgaoEmissor", "obrigatorio": false, "tipo": "string", "tamanho": 100, "formato": null, "validacao": null, "descricao": "Informa o órgão público emissor do documento secundário.", "dominio": null, "dominioDesc": {"": "Descrição do órgão emissor, sem caracteres especiais e com letras maiúsculas"}}, {"name": "dataEmissao", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": "yyyy-MM-dd", "validacao": null, "descricao": "Data de emissão do documento secundário da parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "dataNascimento", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": "yyyy-MM-dd", "validacao": null, "descricao": "Data de nascimento da parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "sexo", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": null, "descricao": "Sexo informado pela parte vinculada ao ato", "dominio": ["1", "2"], "dominioDesc": {"1": "Feminino", "2": "Masculino"}}, {"name": "estadoCivil", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": null, "descricao": "Informa o estado civil da parte vinculada ao ato", "dominio": ["1", "2", "3", "4", "5", "6", "7"], "dominioDesc": {"1": "Casado", "2": "Desquitado", "3": "Divorciado", "4": "Separado", "5": "Solteiro", "6": "União Estável", "7": "Viúvo"}}, {"name": "nacionalidade", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": "Caso a parte não tenha uma nacionalidade diferente do país em que nasceu, deverá ser informado o mesmo dado do campo \"PAISNASCIMENTO\".", "descricao": "País de nacionalidade da parte.", "dominio": ["1", "2", "3"], "dominioDesc": {"1": "Brasileiro", "2": "Estrangeiro", "3": "Naturalizado"}}, {"name": "paisOrigem", "obrigatorio": false, "tipo": "integer", "tamanho": 3, "formato": "000 (3 dígitos numéricos)", "validacao": null, "descricao": "País em que a parte vinculada ao ato nasceu", "dominio": null, "dominioDesc": {"": "Lista de códigos do SINTER. \nAcesse a aba PAÍS para verificar o código aceito. O campo deve ser preenchido com a informação existente na coluna Código."}}, {"name": "areaAtuacao", "obrigatorio": false, "tipo": "integer", "tamanho": 2, "formato": "Lista de códigos na aba Profissão", "validacao": null, "descricao": "Área de atuação profissional da parte vinculada ao ato", "dominio": null, "dominioDesc": {"": "Lista de documentos do SINTER.\nAcesse a aba PROFISSÃO para verificar o código aceito. Esse campo deve ser preenchido com o código existente na coluna CÓDIGO AREA DE ATUAÇÃO."}}, {"name": "profissao", "obrigatorio": false, "tipo": "integer", "tamanho": 3, "formato": "Lista de códigos na aba Profissão", "validacao": null, "descricao": "Profissão da parte vinculada ao ato\nEsse campo só poderá ficar habilitado em caso de selecionar\nUma área de atuação.", "dominio": null, "dominioDesc": {"": "Lista de documentos do SINTER.\nAcesse a aba PROFISSÃO para verificar o código aceito. Esse campo deve ser preenchido com o código existente na coluna CÓDIGO PROFISSÃO."}}, {"name": "capacidadeCivil", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": null, "descricao": "Indica a capacidade civil da parte vinculada ao ato", "dominio": ["1", "2", "3"], "dominioDesc": {"1": "Capaz", "2": "Incapaz", "3": "Relativamente Incapaz"}}, {"name": "dataObito", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": "yyyy-MM-dd", "validacao": null, "descricao": "Data de óbito da parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "filiacoes", "obrigatorio": false, "tipo": "list", "tamanho": null, "formato": "Lista de String", "validacao": "Poderá ser preenchido somente quando o atributo “naopossuiFiliacao” for igual a 0", "descricao": "Informa o nome dos pais da parte", "dominio": null, "dominioDesc": null, "isList": true}, {"name": "semFiliacoes", "obrigatorio": false, "tipo": "boolean", "tamanho": null, "formato": null, "validacao": null, "descricao": "Campo indicativo de que a parte possui ou não filiação", "dominio": null, "dominioDesc": {"Nulo": "Não informado", "False": "Possui Filiação", "True": "Não Possui Filiação"}}, {"name": "inscricaoEstadual", "obrigatorio": false, "tipo": "string", "tamanho": 255, "formato": null, "validacao": "Esse campo só é habilitado quando o tipo do documento for “CNPJ”", "descricao": "Campo para colocar inscrição estadual. da parte quando pessoa jurídica", "dominio": null, "dominioDesc": null}, {"name": "dataCasamento", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": "yyyy-MM-dd", "validacao": null, "descricao": "Campo para informar a data do casamento", "dominio": null, "dominioDesc": null}, {"name": "regimeBens", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": null, "descricao": "Campo indicativo do tipo de regime de bens vigente entre as principais partes do ato.\nEsse campo só é habilitado quando é inserido qualquer valor no campo ESTADOCIVIL.", "dominio": ["1", "2", "3", "5", "7", "8"], "dominioDesc": {"1": "Comunhão Parcial de Bens", "2": "Comunhão Universal de Bens", "3": "Participação Final nos Aquestos", "5": "Regime Específico atribuído em Pacto Antenupcial", "7": "Separação de Bens", "8": "Separação Obrigatória de Bens"}}, {"name": "cpfConjuge", "obrigatorio": false, "tipo": "integer", "tamanho": 11, "formato": "00000000000\nOu\n000.000.000-00", "validacao": null, "descricao": "Informa o cpf do cônjuge da parte vinculada ao ato.\nEsse campo só é habilitado quando é inserido qualquer valor no campo ESTADOCIVIL.", "dominio": null, "dominioDesc": null}, {"name": "nomeConjuge", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": "Campo obrigatório caso seja informado o cpfConjuge", "descricao": "Informa o nome do cônjuge da parte vinculada ao ato.\nEsse campo só é habilitado quando é inserido qualquer valor no campo ESTADOCIVIL.", "dominio": null, "dominioDesc": null}, {"name": "cep", "obrigatorio": false, "tipo": "string", "tamanho": 8, "formato": "00000000\n(8 caracteres numéricos)", "validacao": null, "descricao": "Cep do endereço da parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "logradouro", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": null, "descricao": "Rua do endereço da parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "numero", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": null, "descricao": "Número do endereço da parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "complemento", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": null, "descricao": "Complemento do endereço da parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "bairro", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": null, "descricao": "Bairro do endereço da parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "uf", "obrigatorio": false, "tipo": "string", "tamanho": 2, "formato": "XX (2 dígitos alfanuméricos)", "validacao": null, "descricao": "Estado do endereço da parte vinculada ao ato", "dominio": null, "dominioDesc": {"": "Acesse a aba ESTADO para verificar o código IBGE. \nO campo deve ser preenchido com a informação existente na coluna SIGLA."}}, {"name": "municipio", "obrigatorio": false, "tipo": "integer", "tamanho": 6, "formato": "000000 (6 dígitos)", "validacao": null, "descricao": "Município do endereço da parte vinculada ao ato", "dominio": null, "dominioDesc": {"": "Acesse a aba MUNICIPIO para verificar o código IBGE.\nO campo deve ser preenchido com a informação existente na coluna código."}}, {"name": "email", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": null, "descricao": "E-mail de contato da parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "tipoContato", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": null, "descricao": "informa o tipo de informação de contato", "dominio": ["1", "2"], "dominioDesc": {"1": "Celular", "2": "Telefone"}}, {"name": "contato", "obrigatorio": false, "tipo": "string", "tamanho": 11, "formato": "Somente números, sem traços ou caracteres especiais", "validacao": null, "descricao": "Informa o número passado como contato.\nCampo habilitado somente quando o campo TIPOCONTATO tiver valor.", "dominio": null, "dominioDesc": {"": "Telefone"}}]}, "bensEdireitos": {"required": false, "fields": [{"name": "qualificacaodeBens", "obrigatorio": true, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": null, "descricao": "Indica o tipo de bem e/ou direito que pertence a parte vinculada ao ato", "dominio": ["1", "2", "3"], "dominioDesc": {"1": "Imóvel Rural", "2": "Imóvel Urbano", "3": "Precatório Judicial"}}, {"name": "descricaoBenseDireitos", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": null, "descricao": "Descrição do bem pertencente a parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Precatório\n\nvaraJudicial", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”", "descricao": "Campo para digitar a Vara Judicial do bem informado.\nEsse campo só é habilitado quando o tipo do bem for “Precatório Judicial”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Precatório\n\nnumeroProcesso", "obrigatorio": true, "tipo": "string", "tamanho": null, "formato": null, "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”", "descricao": "Campo para digitar o número do processo do bem informado.\nEsse campo só é habilitado quando o tipo do bem for “Precatório Judicial”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Precatório\n\nnumeroPrecatorio", "obrigatorio": true, "tipo": "string", "tamanho": null, "formato": null, "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”", "descricao": "Campo para digitar o número do precatório do bem informado.\nEsse campo só é habilitado quando o tipo do bem for “Precatório Judicial”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Precatório\n\nvalor", "obrigatorio": true, "tipo": "double", "tamanho": null, "formato": "0,00", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for “Precatório Judicial”", "descricao": "Campo para digitar o custo do bem informado.", "dominio": null, "dominioDesc": null}, {"name": "titulares", "obrigatorio": true, "tipo": "list", "tamanho": null, "formato": null, "validacao": "O envio do bloco de titulares é obrigatório quando existir bem. Cada item dentro da lista possui sua obrigatoriedade de acordo com o detalhamento mais abaixo.", "descricao": "Lista de informações dos titulares do bem. Verificar abaixo os itens de campos da lista", "dominio": null, "dominioDesc": null, "isList": true}, {"name": "Bens - Tipo Imóvel\n\ncin", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Código Imobiliário Nacional.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Imóvel\n\nreferenciaCadastralImovel", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Indica o tipo da referencia cadastral do imóvel de bem e direito apontado no registro relativo a parte vinculada ao ato.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": ["1", "2", "3", "4"], "dominioDesc": {"1": "Inscrição Municipal", "2": "NIRF(Receita Federal)", "3": "RIP-Registro Imobiliário Patrimonial (SPU)", "4": "SNCR (INCRA)"}}, {"name": "Bens - Tipo Imóvel\n\nnumeroCadastralImovel", "obrigatorio": false, "tipo": "integer", "tamanho": null, "formato": null, "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Número do respectivo tipo de cadastro selecionado.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Imóvel\n\ntipoImovel", "obrigatorio": true, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Tipo do imóvel informado.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": ["1", "2", "3", "4", "5", "6", "7", "8", "9"], "dominioDesc": {"1": "Cavidade Natural Subterrânea", "2": "Espelho dágua", "3": "Gleba", "4": "Laje", "5": "Terreno/Lote", "6": "Unidade Autônoma – Apartamento", "7": "Unidade Autônoma – Garagem, Box, Outras", "8": "Unidade Autônoma – Lote", "9": "Unidade Autônoma – Sala/Loja"}}, {"name": "Bens - Tipo Imóvel\n\nacessao", "obrigatorio": false, "tipo": "integer", "tamanho": 4, "formato": "0 (1 dígito numérico)", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Tipo de acessão.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": ["1", "2", "3", "4", "5", "6", "7", "8"], "dominioDesc": {"1": "Aeroporto", "2": "Edificação Atípica/Obra de Arte", "3": "Edificação Multipavimentos", "4": "Edificação Térrea", "5": "Estádio / Arena / Ginásio", "6": "Templo Religioso", "7": "Terminal Ferroviário / Marítimo / Rodoviário", "8": "Usina de geração de energia"}}, {"name": "Bens - Tipo Imóvel\n\nunidadeAreaTotal", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Tipo de unidade de área para mensurar a área total do imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": ["1", "2", "3"], "dominioDesc": {"1": "Ha (hectare)", "2": "Km² (Kilomêtro quadrado)", "3": "M² (Mêtro quadrado)"}}, {"name": "Bens - Tipo Imóvel\n\nquantidadeAreaTotal", "obrigatorio": false, "tipo": "double", "tamanho": null, "formato": "0,00", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Valor numérico da quantidade de área total do imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Imóvel\n\nunidadeAreaConstruida", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Tipo de unidade de área para mensurar a área construída do imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": ["1", "2", "3"], "dominioDesc": {"1": "Ha (hectare)", "2": "Km² (Kilomêtro quadrado)", "3": "M² (Mêtro quadrado)"}}, {"name": "Bens - Tipo Imóvel\n\nquantidadeAreaConstruida", "obrigatorio": false, "tipo": "double", "tamanho": null, "formato": "0,00", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Valor numérico da quantidade de área construída do imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Imóvel\n\nvalorImovel", "obrigatorio": false, "tipo": "double", "tamanho": null, "formato": "R$ 0,00", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Valor monetário do imóvel descrito.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Imóvel\n\ntipoTributo", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Tipo do tributo cobrado pelo imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": ["1", "2", "3", "4"], "dominioDesc": {"1": "IPTU", "2": "ITBI", "3": "ITCMD", "4": "ITR"}}, {"name": "Bens - Tipo Imóvel\n\nvalorFiscal", "obrigatorio": false, "tipo": "double", "tamanho": null, "formato": "R$ 0,00", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Valor fiscal do imóvel no caso de compra e venda.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Imóvel\n\ncnm", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Código nacional de matricula.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": {"(Vazio)": "CNS + número de ordem da matrícula"}}, {"name": "Bens - Tipo Imóvel\n\ncep", "obrigatorio": false, "tipo": "string", "tamanho": 8, "formato": "00000000\n(8 caracteres numéricos)", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "CEP do endereço do imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Imóvel\n\nlogradouro", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Logradouro do endereço do imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Imóvel\n\nnumero", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Número do endereço do imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Imóvel\n\ncomplemento", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Complemento do endereço do imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Imóvel\n\nbairro", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Bairro do endereço Do imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": null}, {"name": "Bens - Tipo Imóvel\n\nidEstado", "obrigatorio": false, "tipo": "string", "tamanho": 2, "formato": "XX (2 dígitos alfanuméricos)", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Estado do endereço do imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": null, "dominioDesc": {"": "Sigla do Estado"}}, {"name": "Bens - Tipo Imóvel\n\nidCidade", "obrigatorio": false, "tipo": "integer", "tamanho": 6, "formato": "000000 (6 dígitos)", "validacao": "Esse campo só poderá ser preenchido quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "descricao": "Município do endereço do imóvel.\nEsse campo só será habilitado quando o tipo do bem for \n“Imóvel Rural” ou “imóvel Urbano”", "dominio": ["Município"], "dominioDesc": {"Município": "Acesse a aba MUNICIPIO para verificar o código aceito. O campo deve ser preenchido com a informação existente na coluna código."}}]}, "atosOrigem": {"required": false, "fields": [{"name": "idEstadoCartorio", "obrigatorio": false, "tipo": "string", "tamanho": 2, "formato": "XX (2 dígitos alfanuméricos)", "validacao": null, "descricao": "Estado do cartório onde o ato de origem foi lavrado", "dominio": null, "dominioDesc": {"": "Sigla do Estado"}}, {"name": "idMunicipioCartorio", "obrigatorio": false, "tipo": "integer", "tamanho": 6, "formato": "000000 (6 dígitos)", "validacao": null, "descricao": "Município do cartório onde o ato de origem foi lavrado", "dominio": ["Município"], "dominioDesc": {"Município": "Acesse a aba MUNICIPIO para verificar o código aceito. O campo deve ser preenchido com a informação existente na coluna código."}}, {"name": "cartorioAtual", "obrigatorio": false, "tipo": "boolean", "tamanho": null, "formato": null, "validacao": null, "descricao": "Caso o ato de origem foi lavrado no mesmo cartório do ato de rerratificação foi lavrado", "dominio": null, "dominioDesc": {"False": "Ato de origem não foi lavrado no cartório atual", "True": "Ato de origem foi lavrado no mesmo cartório onde o ato de rerratificação foi lavrado"}}, {"name": "numeroCns", "obrigatorio": true, "tipo": "string", "tamanho": 6, "formato": "XXXXXX (CNS que identifica o cartório)", "validacao": null, "descricao": "Este campo deve ser preenchido com o (CNS)Número do Código Nacional da Serventia em que consta o ato de origem. O CNS do cartório deve seguir o divulgado pelo CNJ.", "dominio": null, "dominioDesc": null}, {"name": "outroCartorio", "obrigatorio": true, "tipo": "boolean", "tamanho": null, "formato": null, "validacao": "Quando seu valor for \"1\" este desobriga o preenchimento das informações do cartório.", "descricao": "Quando o ato de origem foi lavrado em um cartório não cadastrado na base de dados do SIGNO.\nEsse campo fica desabilitado quando o valor do campo “NATUREZAATO” é do tipo “Revogação”", "dominio": null, "dominioDesc": {"False": "Se o ato a ser rerratificado pertence a um cartório da base de dados do signo.", "True": "Se o ato a ser rerratificado não pertence a um cartório da base de dados do signo."}}, {"name": "observacoesOutroCartorio", "obrigatorio": false, "tipo": "string", "tamanho": 255, "formato": null, "validacao": null, "descricao": "Campo para preenchimento dos dados de localização do ato de origem", "dominio": null, "dominioDesc": null}, {"name": "atosAnteriores", "obrigatorio": false, "tipo": "boolean", "tamanho": null, "formato": null, "validacao": null, "descricao": "Revoga todos os atos de um cartório cadastrado na base de dados do SIGNO.\nEsse campo fica habilitado quando o valor do campo “NATUREZAATO” é do tipo “Revogação”", "dominio": null, "dominioDesc": {"False": "Não", "True": "Sim"}}, {"name": "tipoAtoOrigem", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": "Esse campo é desabilitado se o valor do campo\n “ATOORIGEM_TODOSATOSANTERIORES” for “Sim”", "descricao": "Tipo do ato que foi lavrado no cartório.", "dominio": ["1", "2", "3", "4", "5", "6", "7"], "dominioDesc": {"1": "Escritura", "2": "Procuração", "3": "Procuração para Fins Previdenciários", "4": "Renúncia de Procuração", "5": "Revogação de Procuração", "6": "Substabelecimento", "7": "Ata Notarial"}}, {"name": "naturezaAtoOrigem", "obrigatorio": false, "tipo": "integer", "tamanho": 2, "formato": "00 (2 dígitos numéricos)", "validacao": "Preenchido somente quando o ato é “Escritura”\n\nEsse campo é desabilitado se o valor do campo\n “ATOORIGEM_TODOSATOSANTERIORES” for “Sim”", "descricao": "Campo de lista de natureza do ato.", "dominio": ["NaturezaAto"], "dominioDesc": {"NaturezaAto": "Lista de códigos na aba NaturezaAto"}}, {"name": "livroInicialAtoOrigem", "obrigatorio": false, "tipo": "integer", "tamanho": 8, "formato": "00000000 (8 dígitos numéricos)", "validacao": null, "descricao": "Número do livro inicial em que o ato foi lavrado.", "dominio": null, "dominioDesc": null}, {"name": "complementoLivroInicialAtoOrigem", "obrigatorio": false, "tipo": "string", "tamanho": 1, "formato": "X (letra)", "validacao": "Caso o livro não tenha complemento, esse campo deve ser enviado em branco.", "descricao": "Complemento alfanumérico referente ao número do livro inicial. Caso o livro não tenha complemento, esse campo deve ser enviado em branco.", "dominio": null, "dominioDesc": null}, {"name": "livroFinalAtoOrigem", "obrigatorio": false, "tipo": "integer", "tamanho": 8, "formato": "00000000 (8 dígitos numéricos)", "validacao": "Caso o ato tenha sido lavrado em um único livro esse campo deve ser preenchido com o mesmo valor do campo ATOORIGEM_LIVROINICIAL", "descricao": "Número do livro final em que o ato foi lavrado.", "dominio": null, "dominioDesc": null}, {"name": "complementoLivroFinalAtoOrigem", "obrigatorio": false, "tipo": "string", "tamanho": 1, "formato": "X (letra)", "validacao": "Caso o livro não tenha complemento, esse campo deve ser enviado em branco.", "descricao": "Complemento alfanumérico referente ao número do livro final. Caso o livro não tenha complemento, esse campo deve ser enviado em branco.", "dominio": null, "dominioDesc": null}, {"name": "folhaInicialAtoOrigem", "obrigatorio": false, "tipo": "integer", "tamanho": 3, "formato": "000 (3 dígitos numéricos)", "validacao": null, "descricao": "Número da folha inicial em que o ato foi lavrado.", "dominio": null, "dominioDesc": null}, {"name": "complementoFolhaInicialAtoOrigem", "obrigatorio": false, "tipo": "string", "tamanho": 2, "formato": "XX (2 – letras)", "validacao": "Caso a folha não tenha complemento, esse campo deve ser enviado em branco.", "descricao": "Complemento alfanumérico referente ao número da folha inicial. Caso a folha não tenha complemento, esse campo deve ser enviado em branco.", "dominio": null, "dominioDesc": null}, {"name": "folhaFinalAtoOrigem", "obrigatorio": false, "tipo": "integer", "tamanho": 3, "formato": "000 (3 dígitos numéricos)", "validacao": "Caso o ato tenha sido lavrado em uma única folha esse campo deve ser preenchido com o mesmo valor campo ATOORIGEM_FOLHAINICIAL.", "descricao": "Número da folha final em que o ato foi lavrado. Caso o ato tenha sido lavrado em uma única folha esse campo deve ser preenchido com o mesmo valor campo ATOORIGEM_FOLHAINICIAL.", "dominio": null, "dominioDesc": null}, {"name": "complementoFolhaFinalAtoOrigem", "obrigatorio": false, "tipo": "string", "tamanho": 2, "formato": "XX (2 – letras)", "validacao": "Caso a folha não tenha complemento, esse campo deve ser enviado em branco.", "descricao": "Complemento alfanumérico referente ao número da folha final. Caso a folha não tenha complemento, esse campo deve ser enviado em branco.", "dominio": null, "dominioDesc": null}]}, "informacoesPrecatorios": {"required": false, "fields": [{"name": "descricaoPrecatorio", "obrigatorio": false, "tipo": "string", "tamanho": 255, "formato": null, "validacao": null, "descricao": "Contém a descrição do precatório", "dominio": null, "dominioDesc": null}, {"name": "numeroOficioRequisitorio", "obrigatorio": false, "tipo": "string", "tamanho": 255, "formato": null, "validacao": null, "descricao": "Contém o número do Ofício Requisitório", "dominio": null, "dominioDesc": null}, {"name": "numeroProcesso", "obrigatorio": true, "tipo": "string", "tamanho": 20, "formato": null, "validacao": null, "descricao": "Contém o número do processo do precatório", "dominio": null, "dominioDesc": null}, {"name": "varaOrigem", "obrigatorio": true, "tipo": "string", "tamanho": 255, "formato": null, "validacao": null, "descricao": "Contém a vara de origem do precatório", "dominio": null, "dominioDesc": null}, {"name": "tribunalPrecatorio", "obrigatorio": true, "tipo": "string", "tamanho": 5, "formato": null, "validacao": "Lista na aba \"Tribunais\" desta planilha", "descricao": "Contém o código do tribunal", "dominio": null, "dominioDesc": {"": "Ver a lista na aba TRIBUNAIS"}}, {"name": "valorGlobalPrecatorio", "obrigatorio": true, "tipo": "double", "tamanho": null, "formato": "0,00", "validacao": null, "descricao": "Contém o valor global do precatório", "dominio": null, "dominioDesc": null}, {"name": "beneficiarios", "obrigatorio": true, "tipo": "list", "tamanho": null, "formato": null, "validacao": "O envio do bloco de beneficiários é obrigatório quando o ato for uma cessão de precatório. Cada item dentro da lista possui sua obrigatoriedade de acordo com o detalhamento mais abaixo.", "descricao": "Lista de informações dos beneficiários do precatório. Verificar abaixo os itens de campos da lista", "dominio": null, "dominioDesc": null, "isList": true}]}, "cessoesPrecatorios": {"required": false, "fields": [{"name": "alienacao", "obrigatorio": true, "tipo": "integer", "tamanho": 3, "formato": null, "validacao": null, "descricao": "Porcentagem da alienação", "dominio": null, "dominioDesc": null}, {"name": "informacaoPrecatorio", "obrigatorio": true, "tipo": "list", "tamanho": null, "formato": null, "validacao": "Cada item dentro da lista possui sua obrigatoriedade de acordo com o detalhamento mais abaixo.", "descricao": "Lista com as informações do precatório relacionado à cessão. Verificar os itens da lista.", "dominio": ["-"], "dominioDesc": {"-": ""}, "isList": true}, {"name": "partesDaCessao", "obrigatorio": true, "tipo": "list", "tamanho": null, "formato": null, "validacao": null, "descricao": "Lista de partes da cessão do precatório com a qualificação de “Cedente” ou “Cessionário”. Verificar os itens da lista.", "dominio": ["-"], "dominioDesc": {"-": ""}, "isList": true}]}, "cessoesAnteriores": {"required": false, "fields": [{"name": "cessaoNaoOriginaria", "obrigatorio": true, "tipo": "list", "tamanho": null, "formato": null, "validacao": null, "descricao": "Informações da cessão informada na lista \"CessaoPrecatorio\" a qual essa cessão Anterior faz referência", "dominio": ["-"], "dominioDesc": {"-": ""}, "isList": true}, {"name": "tipoAto", "obrigatorio": true, "tipo": "integer", "tamanho": 1, "formato": "0 (1 dígito numérico)", "validacao": null, "descricao": "Informa se a cessão anterior faz referência a um ato público ou privado", "dominio": ["1", "2"], "dominioDesc": {"1": "privado", "2": "publico"}}, {"name": "ufCartorio", "obrigatorio": true, "tipo": "string", "tamanho": 2, "formato": "XX (2 dígitos alfanuméricos)", "validacao": "Preenchido somente quando a cessão anterior for \"pública\"", "descricao": "Estado do cartório da cessão anterior", "dominio": null, "dominioDesc": {"": "Sigla do Estado"}}, {"name": "municipioCartorio", "obrigatorio": true, "tipo": "integer", "tamanho": 6, "formato": "000000 (6 dígitos)", "validacao": "Preenchido somente quando a cessão anterior for \"pública\"", "descricao": "Município do endereço da parte vinculada ao ato", "dominio": ["Município"], "dominioDesc": {"Município": "Acesse a aba MUNICIPIO para verificar o código IBGE.\nO campo deve ser preenchido com a informação existente na coluna código."}}, {"name": "cnsCartorio", "obrigatorio": true, "tipo": "string", "tamanho": 6, "formato": "XXXXXX (CNS que identifica o cartório)", "validacao": "Preenchido somente quando a cessão anterior for \"pública\"", "descricao": "Este campo deve ser preenchido com o (CNS)Número do Código Nacional da Serventia em que consta o ato de origem. O CNS do cartório deve seguir o divulgado pelo CNJ.", "dominio": null, "dominioDesc": null}, {"name": "livroInicial", "obrigatorio": false, "tipo": "integer", "tamanho": 8, "formato": "00000000 (8 dígitos numéricos)", "validacao": "Preenchido opcionalmente somente quando a cessão anterior for \"pública\"", "descricao": "Indica a capacidade civil da parte vinculada ao ato", "dominio": null, "dominioDesc": null}, {"name": "complementoLivroInicial", "obrigatorio": false, "tipo": "string", "tamanho": 1, "formato": "X (letra)", "validacao": "Preenchido opcionalmente somente quando a cessão anterior for \"pública\"", "descricao": "Complemento alfanumérico referente ao número do livro inicial. Caso o livro não tenha complemento, esse campo deve ser enviado em branco.", "dominio": null, "dominioDesc": null}, {"name": "livroFinal", "obrigatorio": false, "tipo": "integer", "tamanho": 8, "formato": "00000000 (8 dígitos numéricos)", "validacao": "Preenchido opcionalmente somente quando a cessão anterior for \"pública\"", "descricao": "Número do livro final em que o ato foi lavrado.", "dominio": null, "dominioDesc": null}, {"name": "complementoLivroFinal", "obrigatorio": false, "tipo": "string", "tamanho": 1, "formato": "X (letra)", "validacao": "Preenchido opcionalmente somente quando a cessão anterior for \"pública\"", "descricao": "Complemento alfanumérico referente ao número do livro final. Caso o livro não tenha complemento, esse campo deve ser enviado em branco.", "dominio": null, "dominioDesc": null}, {"name": "folhaInicial", "obrigatorio": false, "tipo": "integer", "tamanho": 3, "formato": "000 (3 dígitos numéricos)", "validacao": "Preenchido opcionalmente somente quando a cessão anterior for \"pública\"", "descricao": "Número da folha inicial em que o ato foi lavrado.", "dominio": null, "dominioDesc": null}, {"name": "complementoFolhaInicial", "obrigatorio": false, "tipo": "string", "tamanho": 2, "formato": "XX (2 – letras)", "validacao": "Preenchido opcionalmente somente quando a cessão anterior for \"pública\"", "descricao": "Complemento alfanumérico referente ao número da folha inicial. Caso a folha não tenha complemento, esse campo deve ser enviado em branco.", "dominio": null, "dominioDesc": null}, {"name": "folhaFinal", "obrigatorio": false, "tipo": "integer", "tamanho": 3, "formato": "000 (3 dígitos numéricos)", "validacao": "Preenchido opcionalmente somente quando a cessão anterior for \"pública\"", "descricao": "Número da folha final em que o ato foi lavrado. Caso o ato tenha sido lavrado em uma única folha esse campo deve ser preenchido com o mesmo valor campo FOLHAINICIAL.", "dominio": null, "dominioDesc": null}, {"name": "complementoFolhaFinal", "obrigatorio": false, "tipo": "string", "tamanho": 2, "formato": "XX (2 – letras)", "validacao": "Preenchido opcionalmente somente quando a cessão anterior for \"pública\"", "descricao": "Complemento alfanumérico referente ao número da folha final. Caso a folha não tenha complemento, esse campo deve ser enviado em branco.", "dominio": null, "dominioDesc": null}, {"name": "dataAtoAnterior", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": "XX/XX/XXXX", "validacao": null, "descricao": "Data do ato da Cessão Anterior", "dominio": null, "dominioDesc": null}, {"name": "alienacao", "obrigatorio": false, "tipo": "integer", "tamanho": 3, "formato": null, "validacao": null, "descricao": "Porcentagem da alienação", "dominio": null, "dominioDesc": null}, {"name": "partesCessao", "obrigatorio": true, "tipo": "list", "tamanho": null, "formato": null, "validacao": null, "descricao": "Lista de partes da cessão anterior com a qualificação de “Cedente” ou “Cessionário”. Verificar os itens da lista.", "dominio": null, "dominioDesc": null, "isList": true}]}, "attachments": {"required": false, "fields": [{"name": "base64Content", "obrigatorio": false, "tipo": "string", "tamanho": 11, "formato": "Arquivo codificado para a base64", "validacao": null, "descricao": "Arquivo codificado para a base64", "dominio": null, "dominioDesc": null}, {"name": "extensaoArquivo", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": "Somente serão aceitas as seguintes extensões:", "validacao": "É obrigatório caso seja\tinformado\to atributo “base64Content”", "descricao": "Extensão do anexo", "dominio": ["“.jpg”", "“.pdf”", "“.png”"], "dominioDesc": {"“.jpg”": "", "“.pdf”": "", "“.png”": ""}}, {"name": "nome", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": null, "validacao": "É obrigatório caso seja\tinformado\to atributo “base64Content”", "descricao": "Nome do arquivo", "dominio": null, "dominioDesc": null}]}, "titulares": {"required": false, "fields": [{"name": "cpf", "obrigatorio": true, "tipo": "string", "tamanho": 11, "formato": "Sem caracteres especiais", "validacao": null, "descricao": "Número do CPF da parte \nQuando a parte for pessoa jurídica este campo deve aceitar o CNPJ.", "dominio": null, "dominioDesc": null}, {"name": "nomeTitular", "obrigatorio": true, "tipo": "string", "tamanho": 255, "formato": null, "validacao": null, "descricao": "Contém o uma string com o nome da parte", "dominio": null, "dominioDesc": null}, {"name": "numeroDocumento", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": "Sem caracteres especiais", "validacao": null, "descricao": "Número do documento informado, de acordo com o TIPO DOCUMENTO.", "dominio": null, "dominioDesc": null}, {"name": "tipoDocumento", "obrigatorio": false, "tipo": "integer", "tamanho": 2, "formato": "00 (2 dígitos numéricos)", "validacao": null, "descricao": "Documento secundário de identificação da parte vinculada ao ato.", "dominio": null, "dominioDesc": {"": "Código do documento:\n\n1:Carteira de Identificação Funcional\n2:Carteira de Identificação Militar\n3:Carteira de Trabalho\n4:Carteira Profissional\n5:CNH\n6:Passaporte\n7:RNE\n8:RG\n9:Outro Documento Público"}}]}, "beneficiarios": {"required": false, "fields": [{"name": "cpfParte", "obrigatorio": true, "tipo": "string", "tamanho": 11, "formato": "Sem caracteres especiais", "validacao": null, "descricao": "Número do CPF da parte \nQuando a parte for pessoa jurídica este campo deve aceitar o CNPJ.", "dominio": null, "dominioDesc": null}, {"name": "nomeParte", "obrigatorio": true, "tipo": "string", "tamanho": 255, "formato": null, "validacao": null, "descricao": "Contém o uma string com o nome da parte", "dominio": null, "dominioDesc": null}, {"name": "documento", "obrigatorio": false, "tipo": "string", "tamanho": null, "formato": "Sem caracteres especiais", "validacao": null, "descricao": "Número do documento informado, de acordo com o TIPO DOCUMENTO.", "dominio": null, "dominioDesc": null}, {"name": "tipoDocumento", "obrigatorio": false, "tipo": "integer", "tamanho": 2, "formato": "00 (2 dígitos numéricos)", "validacao": null, "descricao": "Documento secundário de identificação da parte vinculada ao ato.", "dominio": null, "dominioDesc": {"": "Código do documento:\n\n1:Carteira de Identificação Funcional\n2:Carteira de Identificação Militar\n3:Carteira de Trabalho\n4:Carteira Profissional\n5:CNH\n6:Passaporte\n7:RNE\n8:RG\n9:Outro Documento Público"}}, {"name": "qualificacaoParte", "obrigatorio": false, "tipo": "integer", "tamanho": 2, "formato": "00 (2 dígitos numéricos)", "validacao": "Deve ser cadastrado somente a qualificação \"11: Beneficiário\" na lista BENEFICIARIOS.\nDeve ser cadastrado somente os itens \"10: Cedente\" ou\n\"12: Cessionário \" para listas PARTESDACESSAO E PARTESCESSAO", "descricao": "Contém o código da qualificação da parte. Valores possíveis:", "dominio": null, "dominioDesc": {"": "\"11: Beneficiário\"\n\"10: Cedente\"\n\"12: Cessionário \""}}]}}};
+  const NESTING = {"bensEdireitos": {"titulares": "titulares"}, "informacoesPrecatorios": {"beneficiarios": "beneficiarios"}};
+  const TOP_LISTS = ["partes", "bensEdireitos", "atosOrigem", "informacoesPrecatorios", "cessoesPrecatorios", "cessoesAnteriores", "attachments"];
+
+  const EXEMPLO = {
+    tipoAto: 1, naturezaAto: 1, dataAto: "15/03/2026",
+    livroInicial: 100, folhaInicial: 25, folhaFinal: 26,
+    acordo: 0, naturezaLitigio: 1,
+    partes: [ { qualificacaoParte: 1, cpf: 12345678901, nomeParte: "Joao da Silva" } ]
+  };
+
+  let cm = null;
+
+  function getJson(){ return cm ? cm.getValue() : (document.getElementById('jsonInput')||{}).value || ''; }
+  function setJson(v){ if (cm) cm.setValue(v); else { const t=document.getElementById('jsonInput'); if(t) t.value=v; } }
+
+  function temaEscuro(){ return document.body.getAttribute('data-md-color-scheme') === 'slate'; }
+
+  function initEditor(){
+    const ta = document.getElementById('jsonInput');
+    if (!ta || ta.dataset.cm === '1' || typeof CodeMirror === 'undefined') return;
+    ta.dataset.cm = '1';
+    cm = CodeMirror.fromTextArea(ta, {
+      mode: {name:'javascript', json:true},
+      lineNumbers: true,
+      theme: temaEscuro() ? 'material-darker' : 'default',
+      tabSize: 2,
+      lineWrapping: true
+    });
+    cm.setSize('100%', 320);
+    const obsTema = new MutationObserver(function(){
+      cm.setOption('theme', temaEscuro() ? 'material-darker' : 'default');
+    });
+    obsTema.observe(document.body, {attributes:true, attributeFilter:['data-md-color-scheme']});
+  }
+
+  function tryInitEditor(tries){
+    if (typeof CodeMirror !== 'undefined'){ initEditor(); return; }
+    if (tries > 0) setTimeout(function(){ tryInitEditor(tries-1); }, 300);
+  }
+
+  function ausente(v){ return v === undefined || v === null || v === ""; }
+
+  function validarCampo(valor, campo, caminho, erros){
+    const path = caminho + campo.name;
+    if (ausente(valor)){
+      if (campo.obrigatorio) erros.push({tipo:'erro', campo:path, msg:'campo obrigatório ausente ou vazio'});
+      return;
+    }
+    if (campo.tipo === 'integer'){
+      if (!/^-?\d+$/.test(String(valor)))
+        erros.push({tipo:'erro', campo:path, msg:'deveria ser um número inteiro (recebido: "'+valor+'")'});
+      else if (campo.tamanho && String(Math.abs(parseInt(valor,10))).length > campo.tamanho)
+        erros.push({tipo:'erro', campo:path, msg:'excede o tamanho máximo de '+campo.tamanho+' dígitos'});
+    } else if (campo.tipo === 'double'){
+      if (isNaN(Number(valor))) erros.push({tipo:'erro', campo:path, msg:'deveria ser um número'});
+    } else if (campo.tipo === 'boolean'){
+      if (typeof valor !== 'boolean' && !['true','false'].includes(String(valor).toLowerCase()))
+        erros.push({tipo:'erro', campo:path, msg:'deveria ser true ou false'});
+    } else if (campo.tipo === 'string'){
+      if (typeof valor === 'object') erros.push({tipo:'erro', campo:path, msg:'deveria ser texto'});
+      else {
+        if (campo.tamanho && String(valor).length > campo.tamanho)
+          erros.push({tipo:'erro', campo:path, msg:'excede o tamanho máximo de '+campo.tamanho+' caracteres'});
+        if (campo.formato && /dd\/mm\/aaaa/i.test(campo.formato) && !/^\d{2}\/\d{2}\/\d{4}$/.test(String(valor)))
+          erros.push({tipo:'erro', campo:path, msg:'data deve estar no formato dd/mm/aaaa'});
+      }
+    } else if (campo.tipo === 'list'){
+      if (!Array.isArray(valor)) erros.push({tipo:'erro', campo:path, msg:'deveria ser uma lista (array)'});
+    }
+    if (campo.dominio && campo.dominio.length){
+      if (!campo.dominio.map(String).includes(String(valor)))
+        erros.push({tipo:'erro', campo:path, msg:'valor "'+valor+'" fora do domínio permitido ('+campo.dominio.join(', ')+')'});
+    }
+  }
+
+  function ehSublista(k){
+    for (const p in NESTING) for (const s in NESTING[p]) if (k === s) return true;
+    return false;
+  }
+
+  function validarCampos(obj, campos, caminho, erros){
+    if (typeof obj !== 'object' || obj === null){
+      erros.push({tipo:'erro', campo:caminho||'(raiz)', msg:'deveria ser um objeto'});
+      return;
+    }
+    const nomes = campos.map(c=>c.name);
+    campos.forEach(c => validarCampo(obj[c.name], c, caminho, erros));
+    Object.keys(obj).forEach(k => {
+      if (!nomes.includes(k) && !TOP_LISTS.includes(k) && !ehSublista(k))
+        erros.push({tipo:'aviso', campo:caminho+k, msg:'campo não reconhecido no manual (será ignorado pela API)'});
+    });
+  }
+
+  function validarLista(obj, nome, def, caminho, erros){
+    const val = obj[nome];
+    if (def.required && (!Array.isArray(val) || val.length === 0)){
+      erros.push({tipo:'erro', campo:caminho+nome, msg:'lista obrigatória ausente ou vazia'});
+      return;
+    }
+    if (val === undefined || val === null) return;
+    if (!Array.isArray(val)){ erros.push({tipo:'erro', campo:caminho+nome, msg:'deveria ser uma lista (array)'}); return; }
+    val.forEach((item, idx) => {
+      const p = caminho+nome+'['+idx+'].';
+      validarCampos(item, def.fields, p, erros);
+      if (NESTING[nome]){
+        for (const sub in NESTING[nome]){
+          const subKey = NESTING[nome][sub];
+          if (SCHEMA.lists[subKey]) validarLista(item, sub, SCHEMA.lists[subKey], p, erros);
+        }
+      }
+    });
+  }
+
+  function validar(obj){
+    const erros = [];
+    validarCampos(obj, SCHEMA.root, '', erros);
+    TOP_LISTS.forEach(nome => { if (SCHEMA.lists[nome]) validarLista(obj, nome, SCHEMA.lists[nome], '', erros); });
+    return erros;
+  }
+
+  function render(erros){
+    const div = document.getElementById('resultado');
+    const apenasErros = erros.filter(e=>e.tipo==='erro');
+    const avisos = erros.filter(e=>e.tipo==='aviso');
+    let html = '';
+    if (apenasErros.length === 0)
+      html += '<div class="val-ok">✓ JSON válido! Todos os campos obrigatórios e domínios estão de acordo com o manual.</div>';
+    else {
+      html += '<div class="val-erro-titulo">✗ '+apenasErros.length+' erro(s) encontrado(s):</div><ul class="val-lista">';
+      apenasErros.forEach(e => { html += '<li><code>'+e.campo+'</code> — '+e.msg+'</li>'; });
+      html += '</ul>';
+    }
+    if (avisos.length){
+      html += '<div class="val-aviso-titulo">⚠ '+avisos.length+' aviso(s):</div><ul class="val-lista val-lista-aviso">';
+      avisos.forEach(e => { html += '<li><code>'+e.campo+'</code> — '+e.msg+'</li>'; });
+      html += '</ul>';
+    }
+    div.innerHTML = html;
+    div.style.display = 'block';
+  }
+
+  function executarValidacao(){
+    const txt = getJson().trim();
+    const div = document.getElementById('resultado');
+    if (!txt){ div.innerHTML = '<div class="val-erro-titulo">Cole ou anexe um JSON para validar.</div>'; div.style.display='block'; return; }
+    let obj;
+    try { obj = JSON.parse(txt); }
+    catch(e){
+      div.innerHTML = '<div class="val-erro-titulo">✗ JSON inválido (erro de sintaxe):</div><ul class="val-lista"><li>'+e.message+'</li></ul>';
+      div.style.display='block'; return;
+    }
+    render(validar(obj));
+  }
+
+  function init(){
+    const btn = document.getElementById('btnValidar');
+    if (!btn || btn.dataset.ready === '1') return;
+    btn.dataset.ready = '1';
+
+    tryInitEditor(12);
+
+    btn.addEventListener('click', executarValidacao);
+    document.getElementById('btnExemplo').addEventListener('click', function(){
+      setJson(JSON.stringify(EXEMPLO, null, 2));
+      document.getElementById('nomeArquivo').textContent = '';
+    });
+    document.getElementById('btnLimpar').addEventListener('click', function(){
+      setJson('');
+      document.getElementById('nomeArquivo').textContent = '';
+      const div = document.getElementById('resultado'); div.style.display='none'; div.innerHTML='';
+    });
+    document.getElementById('fileInput').addEventListener('change', function(ev){
+      const file = ev.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e){
+        setJson(e.target.result);
+        document.getElementById('nomeArquivo').textContent = 'Arquivo carregado: ' + file.name;
+        executarValidacao();
+      };
+      reader.readAsText(file);
+      ev.target.value = '';
+    });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+  const obs = new MutationObserver(()=>setTimeout(init,50));
+  const c = document.querySelector('.md-content');
+  if (c) obs.observe(c, {childList:true});
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.highlight", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
