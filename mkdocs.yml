@@ -12,17 +12,33 @@ theme:
     - scheme: default
       primary: teal
       accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
   features:
     - navigation.sections
     - navigation.expand
     - search.highlight
     - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
 
 nav:
   - Home: index.md
   - CEP:
     - API: cep_api.md
     - Upload: cep_upload.md
+    - Validadores:
+        - CEP - API: validar_cep_api.md
   - CESDI:
     - API: cesdi_api.md
     - Upload: cesdi_upload.md
@@ -39,3 +55,5 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 4
+extra_javascript:
+  - javascripts/extra.js      

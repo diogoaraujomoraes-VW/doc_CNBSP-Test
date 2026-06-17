@@ -1,7 +1,7 @@
 # Documentação SIGNO - Envio de Atos
 
 <div style="text-align: center; margin: 30px 0;">
-    <img src="assets/signo.jpg" alt="SIGNO | Colégio Notarial do Brasil - Seção de São Paulo" width="400">
+    <img src="assets/signo.png" alt="SIGNO | Colégio Notarial do Brasil - Seção de São Paulo" width="400">
 </div>
 
 Esta documentação reúne os parâmetros para envio de atos por cartórios no sistema **SIGNO**. Use o menu lateral para navegar até a central e o método de envio desejados.

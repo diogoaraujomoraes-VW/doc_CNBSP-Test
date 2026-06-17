@@ -1,0 +1,108 @@
+/* ============================================================
+   VALIDADOR
+   ============================================================ */
+.validador-container { margin: 24px 0; }
+
+.validador-toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.val-btn {
+    background-color: var(--feedback-bg, #fff);
+    color: var(--signo-primary);
+    border: 2px solid var(--signo-primary);
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+.val-btn:hover { background-color: var(--signo-primary); color: #fff; }
+
+.val-btn-primary {
+    background-color: var(--signo-primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 10px 24px;
+}
+.val-btn-primary:hover { background-color: var(--signo-dark); }
+
+/* Botão Anexar — destacado, com leve preenchimento */
+label.val-btn-anexar {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--signo-light);
+    border: 2px solid var(--signo-primary);
+    color: var(--signo-primary);
+    font-weight: 600;
+    line-height: normal;
+}
+label.val-btn-anexar:hover {
+    background-color: var(--signo-primary);
+    color: #fff;
+}
+label.val-btn-anexar svg { stroke: currentColor; }
+
+/* Editor CodeMirror */
+.validador-input { display: none; } /* textarea original some quando o CM monta */
+.CodeMirror {
+    border: 2px solid var(--border-soft, #e0e0e0) !important;
+    border-radius: 8px !important;
+    font-size: 0.9em !important;
+    height: 320px !important;
+    font-family: 'Courier New', monospace !important;
+}
+.CodeMirror-focused { border-color: var(--signo-primary) !important; }
+
+/* Caso o CodeMirror não carregue (offline), a textarea volta a aparecer */
+textarea.validador-input {
+    display: block;
+    width: 100%;
+    min-height: 260px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+    padding: 14px;
+    border: 2px solid var(--border-soft, #e0e0e0);
+    border-radius: 8px;
+    background-color: var(--bg-code, #f5f5f5);
+    color: var(--text-main, #333);
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.validador-arquivo {
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: var(--signo-primary);
+    font-style: italic;
+}
+
+.validador-resultado {
+    display: none;
+    margin-top: 16px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    background-color: var(--bg-table-stripe, #f4faf9);
+    border: 1px solid var(--border-soft, #e0e0e0);
+}
+
+.val-ok { color: #2e7d32; font-weight: 600; font-size: 1.05em; }
+[data-md-color-scheme="slate"] .val-ok { color: #81c784; }
+.val-erro-titulo { color: #c62828; font-weight: 700; margin-bottom: 8px; }
+[data-md-color-scheme="slate"] .val-erro-titulo { color: #ef9a9a; }
+.val-aviso-titulo { color: #e65100; font-weight: 700; margin: 14px 0 8px; }
+[data-md-color-scheme="slate"] .val-aviso-titulo { color: #ffb74d; }
+.val-lista { margin: 0; padding-left: 22px; }
+.val-lista li { margin: 6px 0; line-height: 1.5; }
+.val-lista code {
+    background-color: rgba(198, 40, 40, 0.10);
+    color: #c62828; padding: 1px 6px; border-radius: 3px; font-weight: 600;
+}
+[data-md-color-scheme="slate"] .val-lista code { background-color: rgba(239,154,154,0.15); color: #ef9a9a; }
+.val-lista-aviso code { background-color: rgba(230,81,0,0.10); color: #e65100; }
+[data-md-color-scheme="slate"] .val-lista-aviso code { background-color: rgba(255,183,77,0.15); color: #ffb74d; }
