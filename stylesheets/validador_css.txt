@@ -106,3 +106,61 @@ textarea.validador-input {
 [data-md-color-scheme="slate"] .val-lista code { background-color: rgba(239,154,154,0.15); color: #ef9a9a; }
 .val-lista-aviso code { background-color: rgba(230,81,0,0.10); color: #e65100; }
 [data-md-color-scheme="slate"] .val-lista-aviso code { background-color: rgba(255,183,77,0.15); color: #ffb74d; }
+
+/* ============================================================
+   GERADOR DE MODELO
+   ============================================================ */
+.gerador-modelo {
+    background-color: var(--bg-table-stripe, #f4faf9);
+    border: 1px solid var(--border-soft, #e0e0e0);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+}
+.gerador-titulo {
+    font-weight: 700;
+    color: var(--signo-primary);
+    margin-bottom: 12px;
+}
+.gerador-grid {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: end;
+    margin-bottom: 12px;
+}
+.gerador-campo {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--text-main, #333);
+    gap: 4px;
+}
+.gerador-campo select {
+    padding: 7px 10px;
+    border: 2px solid var(--border-soft, #e0e0e0);
+    border-radius: 6px;
+    background-color: var(--feedback-bg, #fff);
+    color: var(--text-main, #333);
+    font-size: 1em;
+    min-width: 240px;
+    cursor: pointer;
+}
+.gerador-campo select:focus { outline: none; border-color: var(--signo-primary); }
+.gerador-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--text-main, #333);
+    cursor: pointer;
+}
+.gerador-check input { width: 16px; height: 16px; cursor: pointer; accent-color: var(--signo-primary); }
+.val-btn-gerar {
+    background-color: var(--signo-primary);
+    color: #fff;
+    font-weight: 600;
+}
+.val-btn-gerar:hover { background-color: var(--signo-dark); }
