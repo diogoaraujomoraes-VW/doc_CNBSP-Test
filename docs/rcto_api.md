@@ -1,15 +1,5 @@
 # RCTO - Envio por API
 
-## Endpoints
-
-```
-https://backend.signo.org.br/api/ato/
-```
-
-```
-https://backend.signo.org.br/api/ato/retificacao
-```
-
 ## Informações do recurso
 
 | Propriedade | Valor |

@@ -26,11 +26,6 @@ theme:
     - navigation.expand
     - search.highlight
     - navigation.top
-    - navigation.instant
-    - navigation.instant.progress
-    - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.instant.progress
 
 nav:
   - Home: index.md
@@ -39,12 +34,17 @@ nav:
     - Upload: cep_upload.md
     - Validadores:
         - CEP - API: validar_cep_api.md
+        - CEP - Upload: validar_cep_upload.md
   - CESDI:
     - API: cesdi_api.md
     - Upload: cesdi_upload.md
   - RCTO:
     - API: rcto_api.md
     - Upload: rcto_upload.md
+    - Validadores:
+        - RCTO - API: validar_rcto_api.md
+  - IBGE:
+    - Validador (TABINF07/12): validar_ibge.md
   - Domínios Compartilhados: dominios.md
 
 markdown_extensions:

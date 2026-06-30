@@ -1,15 +1,5 @@
 # CEP - Envio por API
 
-## Endpoints
-
-```
-https://backend.signo.org.br/api/ato/envio-ato-cep-api
-```
-
-```
-https://backend.signo.org.br/api/ato/envio-ato-cep-api/retificacao
-```
-
 ## Informações do recurso
 
 | Propriedade | Valor |

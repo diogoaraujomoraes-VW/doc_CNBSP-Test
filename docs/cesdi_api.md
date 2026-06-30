@@ -1,15 +1,5 @@
 # CESDI - Envio por API
 
-## Endpoints
-
-```
-https://backend.signo.org.br/api/ato/envio-ato-cesdi-api
-```
-
-```
-https://backend.signo.org.br/api/ato/envio-ato-cesdi-api/retificacao
-```
-
 ## Informações do recurso
 
 | Propriedade | Valor |

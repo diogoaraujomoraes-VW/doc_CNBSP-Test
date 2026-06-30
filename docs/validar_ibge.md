@@ -1,0 +1,381 @@
+# Validador — IBGE (TABINF07 / TABINF12)
+
+Validador client-side para os arquivos de **Divórcios Extrajudiciais** que o SIGNO gera para o **Registro Civil do IBGE**: o `TABINF07.TXT` (registros de divórcio, 121 caracteres por linha) e o `TABINF12.TXT` (recibo/resumo, 26 caracteres por linha). A validação roda **localmente no seu navegador** — nenhum dado é enviado a servidor.
+
+**Como usar:**
+
+1. Cole (ou anexe) o conteúdo do `TABINF07.TXT` na primeira caixa
+2. Cole (ou anexe) o conteúdo do `TABINF12.TXT` na segunda caixa
+3. Clique em **Validar** — o resultado segue o formato do relatório do IBGE: **etapa, linha, campo, mensagem, valor e sugestão**, separando **erros** (impedem o envio) de **avisos** (vale conferir)
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+<style>
+  .CodeMirror { font-family:"Courier New",monospace; font-size:12px; border:1px solid var(--md-default-fg-color--lightest); border-radius:4px; }
+  [data-md-color-scheme="slate"] .CodeMirror { background:#1e1e1e; color:#e0e0e0; }
+  .ibge-arq-titulo { font-weight:700; margin:1.2rem 0 .3rem; color:var(--signo-primary,#00A9BA); }
+  .ibge-arq-sub { font-size:.8rem; color:var(--c-cinza,#6A7781); margin-bottom:.4rem; }
+  .ibge-tab { width:100%; border-collapse:collapse; font-size:.82rem; margin:.5rem 0 1rem; }
+  .ibge-tab th, .ibge-tab td { border:1px solid var(--md-default-fg-color--lightest); padding:.35rem .5rem; text-align:left; vertical-align:top; }
+  .ibge-tab th { background:var(--signo-primary,#00A9BA); color:#fff; font-weight:600; }
+  .ibge-tab tr:nth-child(even) td { background:rgba(0,0,0,.03); }
+  .ibge-badge { display:inline-block; padding:.05rem .4rem; border-radius:3px; font-size:.72rem; font-weight:700; color:#fff; }
+  .ibge-badge.erro { background:#c0392b; }
+  .ibge-badge.aviso { background:#b8860b; }
+  .ibge-resumo { font-weight:700; margin:.6rem 0; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+
+<div class="validador-container">
+  <div class="ibge-arq-titulo">Arquivo TABINF07 — Divórcios Extrajudiciais</div>
+  <div class="ibge-arq-sub">Um registro por linha, 121 caracteres cada.</div>
+  <textarea id="ibge-07" class="validador-input" spellcheck="false" placeholder="Cole aqui o conteudo do TABINF07.TXT..."></textarea>
+  <div style="margin:.4rem 0;">
+    <label for="file07" class="val-btn val-btn-anexar">Anexar TABINF07.TXT</label>
+    <input type="file" id="file07" accept=".txt,text/plain" style="display:none;">
+  </div>
+
+  <div class="ibge-arq-titulo">Arquivo TABINF12 — Recibo / Resumo</div>
+  <div class="ibge-arq-sub">Um registro por linha, 26 caracteres cada.</div>
+  <textarea id="ibge-12" class="validador-input" spellcheck="false" placeholder="Cole aqui o conteudo do TABINF12.TXT..."></textarea>
+  <div style="margin:.4rem 0;">
+    <label for="file12" class="val-btn val-btn-anexar">Anexar TABINF12.TXT</label>
+    <input type="file" id="file12" accept=".txt,text/plain" style="display:none;">
+  </div>
+
+  <div class="validador-toolbar" style="margin-top:1rem;">
+    <button id="ibge-validar" class="val-btn val-btn-primary">✓ Validar</button>
+    <button id="ibge-exemplo" class="val-btn val-btn-gerar">Carregar exemplo válido</button>
+    <button id="ibge-limpar" class="val-btn">Limpar</button>
+  </div>
+  <div id="ibge-result" class="validador-resultado"></div>
+</div>
+
+<script>
+(function(){
+  window.SPEC = {"TABINF07": {"campos": [{"nome": "UF-PESQUISA", "inicio": 0, "tam": 2, "tipo": "alfa", "dominio": null, "desc": "UF da pesquisa (chave, fornecido pelo IBGE)"}, {"nome": "MUN-PESQUISA", "inicio": 2, "tam": 5, "tipo": "alfa", "dominio": null, "desc": "Município da pesquisa (chave)"}, {"nome": "DIST-PESQUISA", "inicio": 7, "tam": 2, "tipo": "alfa", "dominio": null, "desc": "Distrito da pesquisa (chave)"}, {"nome": "COD_CARTORIO", "inicio": 9, "tam": 2, "tipo": "alfa", "dominio": null, "desc": "Código do cartório (chave)"}, {"nome": "ANO-PESQUISA", "inicio": 11, "tam": 4, "tipo": "num", "dominio": null, "desc": "Ano da pesquisa"}, {"nome": "TRIM-PESQUISA", "inicio": 15, "tam": 1, "tipo": "num", "dominio": ["1", "2", "3", "4"], "desc": "Trimestre"}, {"nome": "NUM-LIVRO", "inicio": 16, "tam": 18, "tipo": "alfa", "dominio": null, "desc": "Número do livro"}, {"nome": "NUM-INICIAL-FOLHA", "inicio": 34, "tam": 4, "tipo": "num", "dominio": null, "desc": "Folha inicial"}, {"nome": "NUM-FINAL-FOLHA", "inicio": 38, "tam": 4, "tipo": "num", "dominio": null, "desc": "Folha final"}, {"nome": "COMPL-FOLHA", "inicio": 42, "tam": 1, "tipo": "num", "dominio": ["1", "2", "9"], "desc": "Complemento folha: 1=Frente 2=Verso 9=Sem"}, {"nome": "DATA-ABERT-ESCRIT", "inicio": 43, "tam": 8, "tipo": "data", "dominio": null, "desc": "Data abertura escritura (DDMMAAAA)"}, {"nome": "DATA-ATO-NOTARIAL", "inicio": 51, "tam": 8, "tipo": "data", "dominio": null, "desc": "Data ato notarial (DDMMAAAA)"}, {"nome": "DATA-CASAMENTO", "inicio": 59, "tam": 8, "tipo": "data", "dominio": null, "desc": "Data casamento (DDMMAAAA)"}, {"nome": "REGIME-BENS", "inicio": 67, "tam": 1, "tipo": "num", "dominio": ["1", "2", "3", "9"], "desc": "1=com.universal 2=com.parcial 3=separação 9=sem decl"}, {"nome": "NUM-FILHO-MAIOR", "inicio": 68, "tam": 2, "tipo": "num", "dominio": null, "desc": "Filhos maiores"}, {"nome": "NUM-FILHO-MENOR", "inicio": 70, "tam": 2, "tipo": "num", "dominio": null, "desc": "Filhos menores"}, {"nome": "COD_RESP_FILHO", "inicio": 72, "tam": 1, "tipo": "num", "dominio": ["1", "2", "3", "4", "9"], "desc": "1=cônj1 2=cônj2 3=ambos 4=outro 9=sem decl"}, {"nome": "COD-UF-RES-CONJ1", "inicio": 73, "tam": 2, "tipo": "uf", "dominio": null, "desc": "UF residência cônjuge 1"}, {"nome": "COD-MUN-RES-CONJ1", "inicio": 75, "tam": 5, "tipo": "mun", "dominio": null, "desc": "Município residência cônjuge 1"}, {"nome": "COD-PAIS-RES-CONJ1", "inicio": 80, "tam": 3, "tipo": "pais", "dominio": null, "desc": "País residência cônjuge 1"}, {"nome": "COD-UF-RES-CONJ2", "inicio": 83, "tam": 2, "tipo": "uf", "dominio": null, "desc": "UF residência cônjuge 2"}, {"nome": "COD-MUN-RES-CONJ2", "inicio": 85, "tam": 5, "tipo": "mun", "dominio": null, "desc": "Município residência cônjuge 2"}, {"nome": "COD-PAIS-RES-CONJ2", "inicio": 90, "tam": 3, "tipo": "pais", "dominio": null, "desc": "País residência cônjuge 2"}, {"nome": "COD-UF-NASC-CONJ1", "inicio": 93, "tam": 2, "tipo": "uf", "dominio": null, "desc": "UF nascimento cônjuge 1"}, {"nome": "COD-PAIS-NASC-CONJ1", "inicio": 95, "tam": 3, "tipo": "pais", "dominio": null, "desc": "País nascimento cônjuge 1"}, {"nome": "COD-UF-NASC-CONJ2", "inicio": 98, "tam": 2, "tipo": "uf", "dominio": null, "desc": "UF nascimento cônjuge 2"}, {"nome": "COD-PAIS-NASC-CONJ2", "inicio": 100, "tam": 3, "tipo": "pais", "dominio": null, "desc": "País nascimento cônjuge 2"}, {"nome": "DATA-NASC-CONJ1", "inicio": 103, "tam": 8, "tipo": "data", "dominio": null, "desc": "Data nascimento cônjuge 1 (DDMMAAAA)"}, {"nome": "DATA-NASC-CONJ2", "inicio": 111, "tam": 8, "tipo": "data", "dominio": null, "desc": "Data nascimento cônjuge 2 (DDMMAAAA)"}, {"nome": "SEXO-CONJ1", "inicio": 119, "tam": 1, "tipo": "num", "dominio": ["1", "2"], "desc": "1=masculino 2=feminino"}, {"nome": "SEXO-CONJ2", "inicio": 120, "tam": 1, "tipo": "num", "dominio": ["1", "2"], "desc": "1=masculino 2=feminino"}], "tamanho": 121}, "TABINF12": {"campos": [{"nome": "UF-PESQUISA", "inicio": 0, "tam": 2, "tipo": "alfa", "dominio": null, "desc": "UF da pesquisa (chave)"}, {"nome": "MUN-PESQUISA", "inicio": 2, "tam": 5, "tipo": "alfa", "dominio": null, "desc": "Município da pesquisa (chave)"}, {"nome": "DIST-PESQUISA", "inicio": 7, "tam": 2, "tipo": "alfa", "dominio": null, "desc": "Distrito da pesquisa (chave)"}, {"nome": "COD_CARTORIO", "inicio": 9, "tam": 2, "tipo": "alfa", "dominio": null, "desc": "Código do cartório (chave)"}, {"nome": "ANO-PESQUISA", "inicio": 11, "tam": 4, "tipo": "num", "dominio": null, "desc": "Ano da pesquisa"}, {"nome": "TRIM-PESQUISA", "inicio": 15, "tam": 1, "tipo": "num", "dominio": ["1", "2", "3", "4"], "desc": "Trimestre"}, {"nome": "TOTAL-DIV", "inicio": 16, "tam": 6, "tipo": "num", "dominio": null, "desc": "Total de divórcios (= total escrituras - repetidos)"}, {"nome": "TOTAL-REPETIDOS", "inicio": 22, "tam": 4, "tipo": "num", "dominio": null, "desc": "Total de registros com chave repetida"}], "tamanho": 26}};
+  window.PAISES_VALIDOS = ["004", "008", "012", "016", "020", "024", "028", "031", "032", "036", "040", "044", "048", "050", "051", "052", "056", "060", "064", "068", "070", "072", "076", "084", "090", "092", "096", "100", "104", "108", "112", "116", "120", "124", "132", "136", "140", "144", "148", "152", "156", "170", "174", "175", "178", "180", "184", "188", "191", "192", "196", "203", "204", "208", "212", "214", "218", "222", "226", "231", "232", "233", "234", "238", "242", "246", "248", "250", "254", "258", "262", "266", "268", "270", "275", "276", "288", "292", "296", "300", "304", "308", "312", "316", "320", "324", "328", "332", "336", "340", "344", "348", "352", "356", "360", "364", "368", "372", "376", "380", "384", "388", "392", "398", "400", "404", "408", "410", "414", "417", "418", "422", "426", "428", "430", "434", "438", "440", "442", "446", "450", "454", "458", "462", "466", "470", "474", "478", "480", "484", "492", "496", "498", "499", "500", "504", "508", "512", "516", "520", "524", "528", "531", "533", "534", "535", "540", "548", "554", "558", "562", "566", "570", "574", "578", "580", "583", "584", "585", "586", "591", "598", "600", "604", "608", "612", "616", "620", "624", "626", "630", "634", "638", "642", "643", "646", "652", "654", "659", "660", "662", "663", "666", "670", "674", "678", "680", "682", "686", "688", "690", "694", "702", "703", "704", "705", "706", "710", "716", "724", "728", "729", "732", "740", "744", "748", "752", "756", "760", "762", "764", "768", "772", "776", "780", "784", "788", "792", "795", "796", "798", "800", "804", "807", "818", "826", "830", "831", "832", "833", "834", "840", "850", "854", "858", "860", "862", "876", "882", "887", "894"];
+  // window.MUNICIPIOS_VALIDOS pode ser injetado futuramente (tabela DTB do IBGE) para validar existência de município
+
+  (function(global){
+// ===== Validador IBGE TABINF07 / TABINF12 (largura fixa) v2 =====
+// Calibrado com arquivo real do SIGNO.
+// SPEC, PAISES_VALIDOS e (opcional) MUNICIPIOS_VALIDOS injetados pelo build.
+// Saída no formato do relatório IBGE: {arquivo, etapa, linha, campo, mensagem, valor, sugestao}
+
+
+  const SPEC = global.SPEC;
+  const PAISES = global.PAISES_VALIDOS || [];
+  const MUNICIPIOS = global.MUNICIPIOS_VALIDOS || null; // Set/array de códigos 7-díg, ou null se não carregado
+  const UF_VALIDAS = ['11','12','13','14','15','16','17','21','22','23','24','25','26','27','28','29',
+                      '31','32','33','35','41','42','43','50','51','52','53'];
+
+  function ehData(s){
+    if(s === '99999999') return true;
+    if(!/^\d{8}$/.test(s)) return false;
+    const d=+s.slice(0,2), m=+s.slice(2,4), a=+s.slice(4,8);
+    if(m<1||m>12||d<1||d>31||a<1900||a>2100) return false;
+    const dt=new Date(a,m-1,d);
+    return dt.getDate()===d && dt.getMonth()===m-1;
+  }
+  function soDigitos(s){ return /^\d+$/.test(s); }
+  function err(arquivo, etapa, linha, campo, mensagem, valor, sugestao, nivel){
+    return {arquivo, etapa, linha, campo, mensagem, valor:valor||'', sugestao:sugestao||'', nivel:nivel||'erro'};
+  }
+
+  function municipioValido(cod7){
+    if(MUNICIPIOS){
+      if(Array.isArray(MUNICIPIOS)) return MUNICIPIOS.indexOf(cod7)!==-1;
+      return MUNICIPIOS.has(cod7);
+    }
+    return null; // tabela não carregada → não dá pra afirmar
+  }
+
+  function validarRegistro(linha, qualArq, nLinha, erros){
+    const spec = SPEC[qualArq];
+    const campos = spec.campos;
+
+    if(linha.length !== spec.tamanho){
+      erros.push(err(qualArq,'Tamanho do registro',nLinha,'(registro)',
+        'tamanho '+linha.length+' difere do exigido', linha.length+' bytes',
+        'o registro deve ter exatamente '+spec.tamanho+' caracteres'));
+    }
+
+    campos.forEach(c=>{
+      const raw = linha.substr(c.inicio, c.tam);
+      if(raw.length < c.tam){
+        erros.push(err(qualArq,'Estrutura/posição',nLinha,c.nome,
+          'campo truncado', raw, 'esperado '+c.tam+' caracteres nesta posição'));
+        return;
+      }
+      const val = raw;
+      if(c.tipo === 'alfa') return;
+      if(c.tipo === 'num'){
+        if(!soDigitos(val)){
+          erros.push(err(qualArq,'Tipo de dado',nLinha,c.nome,'deveria ser numérico (zeros à esquerda)',val,'preencher só com dígitos'));
+          return;
+        }
+        if(c.dominio){
+          const logico=String(parseInt(val,10));
+          if(!c.dominio.includes(logico) && !c.dominio.includes(val))
+            erros.push(err(qualArq,'Domínio',nLinha,c.nome,'valor fora do domínio',val,'valores aceitos: '+c.dominio.join(', ')));
+        }
+        return;
+      }
+      if(c.tipo === 'data'){
+        if(!ehData(val)) erros.push(err(qualArq,'Formato de data',nLinha,c.nome,'data inválida',val,'usar DDMMAAAA (ou 99999999 quando sem valor)'));
+        return;
+      }
+      if(c.tipo === 'uf'){
+        if(!soDigitos(val)){ erros.push(err(qualArq,'Tipo de dado',nLinha,c.nome,'UF deveria ser numérica',val,'')); return; }
+        if(!UF_VALIDAS.includes(val) && val!=='98' && val!=='59' && val!=='99')
+          erros.push(err(qualArq,'Domínio',nLinha,c.nome,'UF inexistente',val,'usar código IBGE da UF, ou 98/59/99'));
+        return;
+      }
+      if(c.tipo === 'mun'){
+        if(!soDigitos(val)){ erros.push(err(qualArq,'Tipo de dado',nLinha,c.nome,'município deveria ser numérico',val,'')); return; }
+        // validação de existência ocorre no nível do registro (precisa concatenar UF+MUN)
+        return;
+      }
+      if(c.tipo === 'pais'){
+        if(!soDigitos(val)){ erros.push(err(qualArq,'Tipo de dado',nLinha,c.nome,'país deveria ser numérico',val,'')); return; }
+        if(val === '076'){ erros.push(err(qualArq,'Domínio',nLinha,c.nome,'código 076 (Brasil ONU) é proibido',val,'usar 999 (ignorado) ou o país estrangeiro correto')); return; }
+        if(val !== '999' && PAISES.indexOf(val) === -1)
+          erros.push(err(qualArq,'Domínio',nLinha,c.nome,'código de país não consta na tabela ONU',val,'usar 999 para ignorado'));
+        return;
+      }
+    });
+
+    // regras de relacionamento UF/Município/País + existência de município (concatenando UF+MUN)
+    if(qualArq === 'TABINF07'){
+      const g = (nome)=>{ const c=campos.find(x=>x.nome===nome); return linha.substr(c.inicio,c.tam); };
+      [['COD-UF-RES-CONJ1','COD-MUN-RES-CONJ1','COD-PAIS-RES-CONJ1'],
+       ['COD-UF-RES-CONJ2','COD-MUN-RES-CONJ2','COD-PAIS-RES-CONJ2']].forEach(([ufN,munN,paisN])=>{
+        const uf=g(ufN), mun=g(munN), pais=g(paisN);
+        if(uf==='98'){
+          if(mun!=='99999') erros.push(err('TABINF07','Regra UF/Mun/País',nLinha,munN,'quando UF=98 (estrangeiro), município deve ser 99999',mun,'preencher 99999'));
+        } else if(uf==='59'||uf==='99'){
+          if(mun!=='99999') erros.push(err('TABINF07','Regra UF/Mun/País',nLinha,munN,'quando UF='+uf+', município deve ser 99999',mun,'preencher 99999'));
+          if(pais!=='999') erros.push(err('TABINF07','Regra UF/Mun/País',nLinha,paisN,'quando UF='+uf+', país deve ser 999',pais,'preencher 999'));
+        } else {
+          if(pais!=='999') erros.push(err('TABINF07','Regra UF/Mun/País',nLinha,paisN,'quando UF='+uf+', país deve ser 999',pais,'preencher 999'));
+          // município nacional: validar existência (UF+MUN = código 7 díg) se tabela carregada
+          if(mun!=='99999' && soDigitos(uf) && soDigitos(mun)){
+            const cod7=uf+mun, mv=municipioValido(cod7);
+            if(mv===false) erros.push(err('TABINF07','Domínio município',nLinha,munN,'código de município (UF+Mun = '+cod7+') não consta na tabela do IBGE',mun,'verificar na tabela IBGE'));
+          }
+        }
+      });
+      [['COD-UF-NASC-CONJ1','COD-PAIS-NASC-CONJ1'],
+       ['COD-UF-NASC-CONJ2','COD-PAIS-NASC-CONJ2']].forEach(([ufN,paisN])=>{
+        const uf=g(ufN), pais=g(paisN);
+        if(uf!=='98'){
+          if(pais!=='999') erros.push(err('TABINF07','Regra UF/Mun/País',nLinha,paisN,'quando UF='+uf+', país deve ser 999',pais,'preencher 999'));
+        }
+      });
+
+      // ---- Crítica IBGE: cônjuges de mesmo sexo (aviso) ----
+      const s1=g('SEXO-CONJ1'), s2=g('SEXO-CONJ2');
+      if(/^[12]$/.test(s1) && s1===s2)
+        erros.push(err('TABINF07','Mesmo sexo',nLinha,'SEXO-CONJ1/SEXO-CONJ2',
+          'cônjuges com o mesmo sexo ('+s1+')', s1+'/'+s2,
+          'o IBGE devolve estes casos para conferência','aviso'));
+
+      // ---- Crítica IBGE: registro "ignorado" (conteúdo essencial todo sem informação) (aviso) ----
+      const dcasa=g('DATA-CASAMENTO'), reg=g('REGIME-BENS'),
+            dn1=g('DATA-NASC-CONJ1'), dn2=g('DATA-NASC-CONJ2');
+      const semInfo = (v)=> /^9+$/.test(v);
+      if(semInfo(dcasa) && semInfo(reg) && semInfo(dn1) && semInfo(dn2) && semInfo(s1) && semInfo(s2))
+        erros.push(err('TABINF07','Registro ignorado',nLinha,'(conteúdo)',
+          'campos obrigatórios de conteúdo não preenchidos (data de casamento, regime, nascimentos e sexo todos sem informação)','',
+          'preencher os dados do divórcio; o IBGE conta como registro ignorado','aviso'));
+    }
+  }
+
+  function dividirLinhas(texto){
+    return texto.replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n');
+  }
+  // chave de cartório = 16 primeiros chars (UF+MUN+DIST+CART+ANO+TRIM)
+  function chaveCartorio(l){ return l.substr(0,16); }
+  // chave de registro repetido (07) = cartório + livro + folhaIni + folhaFin + complFolha
+  function chaveRepeticao07(l){
+    const c=SPEC.TABINF07.campos;
+    const g=(nome)=>{ const f=c.find(x=>x.nome===nome); return l.substr(f.inicio,f.tam); };
+    return [chaveCartorio(l), g('NUM-LIVRO'), g('NUM-INICIAL-FOLHA'), g('NUM-FINAL-FOLHA'), g('COMPL-FOLHA')].join('|');
+  }
+
+  function validarArquivo(texto, qualArq, erros){
+    const spec=SPEC[qualArq];
+    const linhas=dividirLinhas(texto);
+    const registros=[];
+    for(let i=0;i<linhas.length;i++){
+      const ln=linhas[i], num=i+1;
+      if(ln===''){
+        // linha vazia só é tolerada se for a última (arquivo terminando com \n)
+        if(i !== linhas.length-1)
+          erros.push(err(qualArq,'Estrutura',num,'(registro)','linha vazia no meio do arquivo','','remover linha em branco'));
+        continue;
+      }
+      registros.push({num,ln});
+    }
+    if(registros.length===0){
+      erros.push(err(qualArq,'Estrutura',0,'(arquivo)','nenhum registro encontrado','','verificar se o arquivo está vazio'));
+      return {registros};
+    }
+    const tams=new Set(registros.map(r=>r.ln.length));
+    if(tams.size>1)
+      erros.push(err(qualArq,'Tamanho do registro',0,'(arquivo)','registros com tamanhos diferentes',[...tams].join(', '),'todos devem ter '+spec.tamanho+' caracteres'));
+    registros.forEach(r=>validarRegistro(r.ln, qualArq, r.num, erros));
+    return {registros};
+  }
+
+  function validarIBGE(texto07, texto12){
+    const erros07=[], erros12=[], errosCross=[];
+    const r07=validarArquivo(texto07||'','TABINF07',erros07);
+    const r12=validarArquivo(texto12||'','TABINF12',erros12);
+
+    // ---- Conferência cruzada POR CARTÓRIO (chave = 16 primeiros chars) ----
+    if(r07.registros.length && r12.registros.length){
+      const c12=SPEC.TABINF12.campos;
+      const g12=(l,nome)=>{ const f=c12.find(x=>x.nome===nome); return l.substr(f.inicio,f.tam); };
+
+      const qtdePorCart={};
+      const repPorCart={};
+      const vistosRep={};        // chaveRepeticao -> [linhas]
+      r07.registros.forEach(r=>{
+        const kc=chaveCartorio(r.ln);
+        qtdePorCart[kc]=(qtdePorCart[kc]||0)+1;
+        const kr=chaveRepeticao07(r.ln);
+        (vistosRep[kr]=vistosRep[kr]||[]).push(r.num);
+      });
+      Object.keys(vistosRep).forEach(kr=>{
+        const linhasRep=vistosRep[kr];
+        if(linhasRep.length>1){
+          const kc=kr.split('|')[0];
+          repPorCart[kc]=(repPorCart[kc]||0)+(linhasRep.length-1);
+          // apontar no 07 como aviso, listando as linhas
+          errosCross.push(err('TABINF07','Registros repetidos',linhasRep[0],'(chave livro/folha)',
+            'registros com a mesma chave (cartório+livro+folha) nas linhas '+linhasRep.join(', '),
+            linhasRep.length+' ocorrências','verificar se há duplicação de lançamento','aviso'));
+        }
+      });
+
+      const recibosVistos={};
+      r12.registros.forEach(r=>{
+        const kc=chaveCartorio(r.ln);
+        recibosVistos[kc]=(recibosVistos[kc]||0)+1;
+        const td=g12(r.ln,'TOTAL-DIV'), tr=g12(r.ln,'TOTAL-REPETIDOS');
+        if(!/^\d+$/.test(td) || !/^\d+$/.test(tr)) return;
+        const declarado=parseInt(td,10)+parseInt(tr,10);
+        const real=qtdePorCart[kc]||0;
+        if(declarado !== real)
+          errosCross.push(err('Conferência cruzada','Comparação 07 x 12',r.num,'TOTAL-DIV/TOTAL-REPETIDOS',
+            'recibo do cartório '+kc+' declara '+declarado+' (TOTAL-DIV+TOTAL-REPETIDOS) mas o TABINF07 tem '+real+' registro(s)',
+            td+'+'+tr, 'ajustar o recibo ou os registros do cartório','erro'));
+        const repReal=repPorCart[kc]||0;
+        if(parseInt(tr,10) !== repReal)
+          errosCross.push(err('Conferência cruzada','Repetidos',r.num,'TOTAL-REPETIDOS',
+            'cartório '+kc+': recibo declara '+parseInt(tr,10)+' repetido(s), mas o TABINF07 tem '+repReal+' por chave',
+            tr, 'recontar registros de chave repetida','aviso'));
+      });
+      Object.keys(qtdePorCart).forEach(kc=>{
+        if(!recibosVistos[kc])
+          errosCross.push(err('Conferência cruzada','Recibo ausente',0,'(TABINF12)',
+            'cartório '+kc+' tem registros no TABINF07 mas não há recibo correspondente no TABINF12','','incluir recibo deste cartório','erro'));
+      });
+      Object.keys(recibosVistos).forEach(kc=>{
+        if(!qtdePorCart[kc])
+          errosCross.push(err('Conferência cruzada','Cartório sem registros',0,'(TABINF07)',
+            'recibo do cartório '+kc+' existe no TABINF12 mas não há registros no TABINF07','','verificar','erro'));
+      });
+    }
+
+    return {erros07, erros12, errosCross, qtd07:r07.registros.length, qtd12:r12.registros.length,
+            municipiosCarregados: MUNICIPIOS!==null};
+  }
+
+  global.IBGE = { validarIBGE, validarArquivo, ehData, chaveCartorio };
+
+  })(window);
+
+  let cm07=null, cm12=null;
+  function temaEscuro(){ return document.body.getAttribute('data-md-color-scheme')==='slate'; }
+  function mkEditor(id){
+    const ta=document.getElementById(id);
+    if(!ta || ta.dataset.cm==='1' || typeof CodeMirror==='undefined') return null;
+    ta.dataset.cm='1';
+    const cm=CodeMirror.fromTextArea(ta,{lineNumbers:true,lineWrapping:false,theme:temaEscuro()?'material-darker':'default',viewportMargin:Infinity});
+    cm.setSize('100%',null); return cm;
+  }
+  function getV(cm,id){ return cm?cm.getValue():(document.getElementById(id)||{}).value||''; }
+  function setV(cm,id,v){ if(cm) cm.setValue(v); else { const t=document.getElementById(id); if(t) t.value=v; } }
+
+  function exemplo(){
+    // 2 registros do mesmo cartório (São Paulo, código IBGE 3550308), recibo com total=2
+    const r1='3550308050120251M0001             001000119150320241503202401012010200009355030899935503089993599935999100519801206198212';
+    const r2='3550308050120251M0001             003000319150320241503202401012010200009355030899935503089993599935999150719851808198712';
+    const rec='35503080501202510000020000';
+    setV(cm07,'ibge-07', r1+'\n'+r2);
+    setV(cm12,'ibge-12', rec);
+    validar();
+  }
+
+  function tabela(titulo, itens){
+    if(!itens.length) return '';
+    let h='<div class="ibge-resumo">'+titulo+' ('+itens.length+')</div>';
+    h+='<table class="ibge-tab"><thead><tr><th>Nível</th><th>Etapa</th><th>Linha</th><th>Campo</th><th>Mensagem</th><th>Valor</th><th>Sugestão</th></tr></thead><tbody>';
+    itens.forEach(e=>{
+      const badge='<span class="ibge-badge '+e.nivel+'">'+(e.nivel==='erro'?'ERRO':'AVISO')+'</span>';
+      const linha=e.linha?e.linha:'—';
+      h+='<tr><td>'+badge+'</td><td>'+e.etapa+'</td><td>'+linha+'</td><td><code>'+e.campo+'</code></td><td>'+e.mensagem+'</td><td>'+(e.valor||'—')+'</td><td>'+(e.sugestao||'—')+'</td></tr>';
+    });
+    return h+'</tbody></table>';
+  }
+
+  function render(res){
+    const div=document.getElementById('ibge-result');
+    const todos=[...res.erros07,...res.erros12,...res.errosCross];
+    const erros=todos.filter(e=>e.nivel==='erro');
+    const avisos=todos.filter(e=>e.nivel==='aviso');
+    let html='';
+    if(erros.length===0){
+      html+='<div class="val-ok">✓ Sem erros! TABINF07 ('+res.qtd07+' registros) e TABINF12 ('+res.qtd12+' recibos) passaram na validação de layout, domínios, datas, regras de UF/Município/País e conferência cruzada por cartório.</div>';
+    }
+    html+=tabela('Erros (impedem o envio ao IBGE)', erros);
+    html+=tabela('Avisos (recomendado conferir)', avisos);
+    if(!res.municipiosCarregados && erros.length===0)
+      html+='<p style="font-size:.78rem;color:var(--c-cinza,#6A7781);">Observação: a tabela de municípios do IBGE não está carregada nesta versão, portanto a existência do código de município (UF+Município) não foi verificada — apenas o formato e as regras de relacionamento.</p>';
+    div.innerHTML=html; div.style.display='block';
+  }
+
+  function validar(){
+    const t07=getV(cm07,'ibge-07'), t12=getV(cm12,'ibge-12');
+    const div=document.getElementById('ibge-result');
+    if(!t07.trim() && !t12.trim()){ div.innerHTML='<div class="val-erro-titulo">Cole ou anexe os arquivos TABINF07 e TABINF12.</div>'; div.style.display='block'; return; }
+    let res; try{ res=window.IBGE.validarIBGE(t07,t12); }
+    catch(err){ div.innerHTML='<div class="val-erro-titulo">Erro ao validar: '+err.message+'</div>'; div.style.display='block'; return; }
+    render(res);
+  }
+
+  function anexar(inputId, getCm, taId){
+    const el=document.getElementById(inputId); if(!el) return;
+    el.addEventListener('change',function(ev){ const f=ev.target.files[0]; if(!f) return;
+      const rd=new FileReader(); rd.onload=function(e){ setV(getCm(),taId,e.target.result); }; rd.readAsText(f,'ISO-8859-1'); ev.target.value=''; });
+  }
+
+  function init(){
+    const btn=document.getElementById('ibge-validar');
+    if(!btn || btn.dataset.ready==='1') return;
+    btn.dataset.ready='1';
+    function tryE(n){ if(typeof CodeMirror!=='undefined'){ cm07=mkEditor('ibge-07'); cm12=mkEditor('ibge-12'); } else if(n>0) setTimeout(()=>tryE(n-1),300); }
+    tryE(12);
+    btn.addEventListener('click', validar);
+    document.getElementById('ibge-exemplo').addEventListener('click', exemplo);
+    document.getElementById('ibge-limpar').addEventListener('click',function(){ setV(cm07,'ibge-07',''); setV(cm12,'ibge-12',''); const d=document.getElementById('ibge-result'); d.style.display='none'; d.innerHTML=''; });
+    anexar('file07', ()=>cm07, 'ibge-07'); anexar('file12', ()=>cm12, 'ibge-12');
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+  const obs=new MutationObserver(()=>setTimeout(init,50));
+  const c=document.querySelector('.md-content'); if(c) obs.observe(c,{childList:true});
+})();
+</script>

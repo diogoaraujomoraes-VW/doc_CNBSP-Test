@@ -602,3 +602,278 @@ html,
     background-color: rgba(255, 183, 77, 0.15);
     color: #ffb74d;
 }
+
+/* ============================================================
+   GERADOR DE MODELO (painel de seleção)
+   ============================================================ */
+.gerador-modelo {
+    background-color: var(--bg-table-stripe, #f4faf9);
+    border: 1px solid var(--border-soft, #e0e0e0);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+}
+.gerador-titulo {
+    font-weight: 700;
+    color: var(--signo-primary);
+    margin-bottom: 12px;
+    font-size: 1.05em;
+}
+.gerador-grid {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 12px;
+}
+.gerador-campo {
+    display: flex !important;
+    flex-direction: column;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--text-main, #333);
+    gap: 4px;
+    margin: 0;
+}
+.gerador-campo select {
+    padding: 8px 10px;
+    border: 2px solid var(--border-soft, #e0e0e0) !important;
+    border-radius: 6px;
+    background-color: var(--feedback-bg, #fff);
+    color: var(--text-main, #333);
+    font-size: 1em;
+    min-width: 240px;
+    cursor: pointer;
+    appearance: auto;
+}
+.gerador-campo select:focus { outline: none; border-color: var(--signo-primary) !important; }
+.gerador-check {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--text-main, #333);
+    cursor: pointer;
+    margin: 0;
+}
+.gerador-check input {
+    width: 16px; height: 16px;
+    cursor: pointer;
+    accent-color: var(--signo-primary);
+    margin: 0;
+}
+/* Botão Gerar modelo — preenchido, igual ao Validar */
+.val-btn-gerar {
+    background-color: var(--signo-primary) !important;
+    color: #fff !important;
+    border: 2px solid var(--signo-primary) !important;
+    font-weight: 600;
+}
+.val-btn-gerar:hover { background-color: var(--signo-dark) !important; }
+
+/* ===== Grade estilo Excel — CEP Upload ===== */
+.grid-wrap { margin-top: 1rem; }
+.grid-info { font-size: .75rem; color: var(--md-default-fg-color--light); margin-bottom: .4rem; }
+.grid-scroll {
+  overflow: auto; max-height: 600px;
+  border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px;
+}
+.grid-tabela { border-collapse: separate; border-spacing: 0; font-size: .7rem; white-space: nowrap; }
+.grid-tabela th, .grid-tabela td {
+  border-right: 1px solid var(--md-default-fg-color--lightest);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding: 3px 5px; text-align: left; min-width: 70px; max-width: 180px;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.grid-tabela thead th { position: sticky; top: 0; background: #1B8A7E; color: #fff; z-index: 2; font-weight: 600; }
+.grid-tabela td[contenteditable] { cursor: text; }
+.grid-tabela td[contenteditable]:focus { outline: 2px solid #1B8A7E; outline-offset: -2px; background: rgba(27,138,126,.06); }
+.grid-num {
+  background: var(--md-default-fg-color--lightest); color: var(--md-default-fg-color--light);
+  text-align: center !important; min-width: 32px !important;
+  position: sticky; left: 0; z-index: 1; font-variant-numeric: tabular-nums;
+}
+.grid-tabela thead .grid-num { z-index: 3; background: #0D5A52; color: #fff; }
+.grid-lt-AC td { background: rgba(27,138,126,.10); }
+.grid-lt-PC td { background: rgba(27,138,126,.03); }
+.grid-lt-BC td { background: rgba(158,197,76,.10); }
+.grid-lt-AO td, .grid-lt-IP td, .grid-lt-CP td, .grid-lt-CA td, .grid-lt-PCA td { background: rgba(106,119,129,.07); }
+.grid-lt-AC td.grid-num, .grid-lt-PC td.grid-num, .grid-lt-BC td.grid-num,
+.grid-lt-AO td.grid-num, .grid-lt-IP td.grid-num, .grid-lt-CP td.grid-num, .grid-lt-CA td.grid-num, .grid-lt-PCA td.grid-num { background: var(--md-default-fg-color--lightest); }
+.val-btn-validar { background: #1B8A7E; color: #fff; border-color: #1B8A7E; }
+.val-btn-validar:hover { background: #0D5A52; }
+/* dark mode */
+[data-md-color-scheme="slate"] .grid-tabela thead th { background: #0D5A52; }
+[data-md-color-scheme="slate"] .grid-lt-AC td { background: rgba(27,138,126,.22); }
+[data-md-color-scheme="slate"] .grid-lt-PC td { background: rgba(27,138,126,.10); }
+[data-md-color-scheme="slate"] .grid-lt-BC td { background: rgba(158,197,76,.16); }
+
+
+/* ============================================================
+   VALIDADOR
+   ============================================================ */
+.validador-container { margin: 24px 0; }
+
+.validador-toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.val-btn {
+    background-color: var(--feedback-bg, #fff);
+    color: var(--signo-primary);
+    border: 2px solid var(--signo-primary);
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+.val-btn:hover { background-color: var(--signo-primary); color: #fff; }
+
+.val-btn-primary {
+    background-color: var(--signo-primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 10px 24px;
+}
+.val-btn-primary:hover { background-color: var(--signo-dark); }
+
+/* Botão Anexar — destacado, com leve preenchimento */
+label.val-btn-anexar {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--signo-light);
+    border: 2px solid var(--signo-primary);
+    color: var(--signo-primary);
+    font-weight: 600;
+    line-height: normal;
+}
+label.val-btn-anexar:hover {
+    background-color: var(--signo-primary);
+    color: #fff;
+}
+label.val-btn-anexar svg { stroke: currentColor; }
+
+/* Editor CodeMirror */
+.validador-input { display: none; } /* textarea original some quando o CM monta */
+.CodeMirror {
+    border: 2px solid var(--border-soft, #e0e0e0) !important;
+    border-radius: 8px !important;
+    font-size: 0.9em !important;
+    height: auto !important;
+    font-family: 'Courier New', monospace !important;
+}
+.CodeMirror-focused { border-color: var(--signo-primary) !important; }
+
+/* Caso o CodeMirror não carregue (offline), a textarea volta a aparecer */
+textarea.validador-input {
+    display: block;
+    width: 100%;
+    min-height: 260px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+    padding: 14px;
+    border: 2px solid var(--border-soft, #e0e0e0);
+    border-radius: 8px;
+    background-color: var(--bg-code, #f5f5f5);
+    color: var(--text-main, #333);
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.validador-arquivo {
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: var(--signo-primary);
+    font-style: italic;
+}
+
+.validador-resultado {
+    display: none;
+    margin-top: 16px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    background-color: var(--bg-table-stripe, #f4faf9);
+    border: 1px solid var(--border-soft, #e0e0e0);
+}
+
+.val-ok { color: #2e7d32; font-weight: 600; font-size: 1.05em; }
+[data-md-color-scheme="slate"] .val-ok { color: #81c784; }
+.val-erro-titulo { color: #c62828; font-weight: 700; margin-bottom: 8px; }
+[data-md-color-scheme="slate"] .val-erro-titulo { color: #ef9a9a; }
+.val-aviso-titulo { color: #e65100; font-weight: 700; margin: 14px 0 8px; }
+[data-md-color-scheme="slate"] .val-aviso-titulo { color: #ffb74d; }
+.val-lista { margin: 0; padding-left: 22px; }
+.val-lista li { margin: 6px 0; line-height: 1.5; }
+.val-lista code {
+    background-color: rgba(198, 40, 40, 0.10);
+    color: #c62828; padding: 1px 6px; border-radius: 3px; font-weight: 600;
+}
+[data-md-color-scheme="slate"] .val-lista code { background-color: rgba(239,154,154,0.15); color: #ef9a9a; }
+.val-lista-aviso code { background-color: rgba(230,81,0,0.10); color: #e65100; }
+[data-md-color-scheme="slate"] .val-lista-aviso code { background-color: rgba(255,183,77,0.15); color: #ffb74d; }
+
+/* ============================================================
+   GERADOR DE MODELO
+   ============================================================ */
+.gerador-modelo {
+    background-color: var(--bg-table-stripe, #f4faf9);
+    border: 1px solid var(--border-soft, #e0e0e0);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+}
+.gerador-titulo {
+    font-weight: 700;
+    color: var(--signo-primary);
+    margin-bottom: 12px;
+}
+.gerador-grid {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: end;
+    margin-bottom: 12px;
+}
+.gerador-campo {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--text-main, #333);
+    gap: 4px;
+}
+.gerador-campo select {
+    padding: 7px 10px;
+    border: 2px solid var(--border-soft, #e0e0e0);
+    border-radius: 6px;
+    background-color: var(--feedback-bg, #fff);
+    color: var(--text-main, #333);
+    font-size: 1em;
+    min-width: 240px;
+    cursor: pointer;
+}
+.gerador-campo select:focus { outline: none; border-color: var(--signo-primary); }
+.gerador-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--text-main, #333);
+    cursor: pointer;
+}
+.gerador-check input { width: 16px; height: 16px; cursor: pointer; accent-color: var(--signo-primary); }
+.val-btn-gerar {
+    background-color: var(--signo-primary);
+    color: #fff;
+    font-weight: 600;
+}
+.val-btn-gerar:hover { background-color: var(--signo-dark); }
+
