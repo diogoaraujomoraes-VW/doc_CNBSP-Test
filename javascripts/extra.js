@@ -174,3 +174,98 @@ function observarConteudo() {
     contentObserverCriado = true;
 }
 observarConteudo();
+// ============================================================
+// 4. PARALLAX GEOMÉTRICO DE FUNDO (cíclico — cobre páginas longas)
+// Cria formas atrás do conteúdo e as move em velocidades diferentes pelo scroll.
+// O deslocamento é cíclico (módulo da altura da faixa), então sempre há formas
+// visíveis por mais que a página seja longa.
+// ============================================================
+(function () {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+
+    // tipo, largura, altura, top%, left%, opacidade, velocidade, rotação
+    var SHAPES = [
+        ['circle', 220, 220, 12, 8,  0.55, 0.15, 0],
+        ['disc',   340, 340, 40, 70, 0.70, 0.30, 0],
+        ['tri',    160, 160, 75, 15, 0.55, 0.22, 0],
+        ['circle', 120, 120, 65, 50, 0.50, 0.40, 0],
+        ['disc',   200, 200, 20, 82, 0.60, 0.12, 0],
+        ['line',   300, 2,   55, 5,  0.65, 0.50, 0],
+        ['tri',    100, 100, 8,  45, 0.45, 0.35, 180],
+        ['circle', 90,  90,  88, 78, 0.55, 0.28, 0],
+        ['line',   240, 2,   33, 60, 0.55, 0.20, 0]
+    ];
+
+    var shapeEls = [];
+    var cycle = 1; // altura do ciclo (recalculada no resize)
+
+    function criarParallax() {
+        if (document.querySelector('.signo-parallax')) {
+            shapeEls = [].slice.call(document.querySelectorAll('.signo-parallax .shape'));
+            return;
+        }
+        var layer = document.createElement('div');
+        layer.className = 'signo-parallax';
+        layer.setAttribute('aria-hidden', 'true');
+        shapeEls = [];
+        for (var i = 0; i < SHAPES.length; i++) {
+            var s = SHAPES[i];
+            var el = document.createElement('div');
+            el.className = 'shape ' + s[0];
+            el.style.width = s[1] + 'px';
+            el.style.height = s[2] + 'px';
+            el.style.top = s[3] + '%';
+            el.style.left = s[4] + '%';
+            el.style.setProperty('--o', s[5]);
+            el.dataset.speed = s[6];
+            el.dataset.rot = s[7];
+            layer.appendChild(el);
+            shapeEls.push(el);
+        }
+        document.body.insertBefore(layer, document.body.firstChild);
+    }
+
+    function recalcCiclo() {
+        // ciclo = altura visível + folga, para a forma sumir e reentrar suave
+        cycle = (window.innerHeight || 800) + 400;
+    }
+
+    var ticking = false;
+    function aplicar() {
+        var y = window.scrollY || window.pageYOffset || 0;
+        for (var i = 0; i < shapeEls.length; i++) {
+            var el = shapeEls[i];
+            var sp = parseFloat(el.dataset.speed);
+            var rot = parseFloat(el.dataset.rot);
+            // deslocamento cíclico: mantém a forma sempre dentro de uma faixa,
+            // reentrando pelo lado oposto (efeito de repetição infinita)
+            var raw = y * sp;
+            var mod = ((raw % cycle) + cycle) % cycle;   // 0..cycle
+            var shift = mod - 200;                        // -200..cycle-200
+            var t = 'translate3d(0,' + shift + 'px,0)';
+            if (rot) t += ' rotate(' + rot + 'deg)';
+            el.style.transform = t;
+        }
+        ticking = false;
+    }
+    function onScroll() {
+        if (!ticking) { window.requestAnimationFrame(aplicar); ticking = true; }
+    }
+
+    function iniciar() {
+        if (!document.body) { setTimeout(iniciar, 100); return; }
+        criarParallax();
+        recalcCiclo();
+        aplicar();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', function () { recalcCiclo(); aplicar(); });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', iniciar);
+    } else {
+        iniciar();
+    }
+})();

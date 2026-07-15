@@ -5,6 +5,7 @@
 [data-md-color-scheme="default"] {
     --signo-primary: #1B8A7E;
     --signo-secondary: #2DA89A;
+    --shape-rgb: 27, 138, 126;
 	--header-bg: var(--signo-primary);
     --signo-dark: #0D5A52;
     --signo-light: #E8F4F2;
@@ -14,7 +15,7 @@
 	--footer-meta-bg: var(--signo-dark);
 
     /* Tokens contextuais (usados nas regras abaixo) */
-    --bg-main: linear-gradient(180deg, #ffffff 0%, #f0f8f6 100%);
+    --bg-main: #ffffff;
     --bg-sidebar: #ffffff;
     --bg-code: #f5f5f5;
     --bg-table-stripe: var(--signo-light);
@@ -28,6 +29,7 @@
     --feedback-bg: #ffffff;
     --scrollbar-track: #f1f1f1;
     --scrollbar-thumb: gray;
+    --wave-opacity: 0.09;
 }
 
 /* ============================================================
@@ -35,6 +37,7 @@
    ============================================================ */
 [data-md-color-scheme="slate"] {
     --signo-primary: #4FC3B4;       /* clareado pra contraste no escuro */
+    --shape-rgb: 79, 195, 180;
     --signo-secondary: #6FD4C5;
 	--header-bg: #0D5A52;
     --signo-dark: #2DA89A;
@@ -44,7 +47,7 @@
 	--footer-bg: #0D5A52;
 	--footer-meta-bg: #073d37;
 
-    --bg-main: linear-gradient(180deg, #1a1a1a 0%, #0f1f1d 100%);
+    --bg-main: #1a1a1a;
     --bg-sidebar: #1c1c1c;
     --bg-code: #2a2a2a;
     --bg-table-stripe: #243030;
@@ -58,6 +61,7 @@
     --feedback-bg: #1c1c1c;
     --scrollbar-track: #2a2a2a;
     --scrollbar-thumb: #555555;
+    --wave-opacity: 0.12;
 }
 
 /* ============================================================
@@ -66,7 +70,94 @@
 .md-header {
 	background-color: var(--header-bg);
     border-bottom: none;
+    /* sem position aqui: mantém o position:sticky nativo do Material.
+       O ::before das ondas se ancora no header sticky normalmente. */
 }
+
+.md-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: var(--wave-opacity, 0.09);
+    background-repeat: repeat-x;
+    background-position: 0 bottom, 0 bottom, 0 bottom, 0 bottom;
+    background-size: 1200px 100%, 1400px 100%, 1600px 100%, 1000px 100%;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='72' viewBox='0 0 1200 72' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,44 C150,28 300,56 460,46 C640,35 820,60 1000,48 C1120,40 1180,50 1200,46 L1200,72 L0,72 Z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='72' viewBox='0 0 1400 72' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,52 C210,40 400,62 610,54 C820,46 1050,66 1260,56 C1330,52 1370,56 1400,54 L1400,72 L0,72 Z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='72' viewBox='0 0 1600 72' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,58 C210,50 480,66 750,60 C1010,54 1280,70 1540,62 C1570,61 1590,62 1600,61 L1600,72 L0,72 Z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='72' viewBox='0 0 1000 72' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,64 C180,58 350,70 530,65 C720,60 860,71 1000,66 L1000,72 L0,72 Z'/%3E%3C/svg%3E");
+    animation: signo-waves 10s linear infinite;
+}
+
+@keyframes signo-waves {
+    from { background-position: 0 bottom, 0 bottom, 0 bottom, 0 bottom; }
+    to   { background-position: -1200px bottom, 1400px bottom, -1600px bottom, 1000px bottom; }
+}
+
+/* Ondas no rodapé — aplicadas na faixa META (a barra verde inferior visível,
+   que contém "Made with Material for MkDocs"). Crista voltada para cima. */
+.md-footer-meta {
+    position: relative;
+    -webkit-clip-path: inset(0);
+    clip-path: inset(0);
+}
+
+.md-footer-meta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: var(--wave-opacity, 0.09);
+    background-repeat: repeat-x;
+    background-position: 0 top, 0 top, 0 top, 0 top;
+    background-size: 1200px 100%, 1400px 100%, 1600px 100%, 1000px 100%;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='72' viewBox='0 0 1200 72' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,28 C150,44 300,16 460,26 C640,37 820,12 1000,24 C1120,32 1180,22 1200,26 L1200,0 L0,0 Z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='72' viewBox='0 0 1400 72' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,20 C210,32 400,10 610,18 C820,26 1050,6 1260,16 C1330,20 1370,16 1400,18 L1400,0 L0,0 Z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='72' viewBox='0 0 1600 72' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,14 C210,22 480,6 750,12 C1010,18 1280,2 1540,10 C1570,11 1590,10 1600,11 L1600,0 L0,0 Z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='72' viewBox='0 0 1000 72' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,8 C180,14 350,2 530,7 C720,12 860,1 1000,6 L1000,0 L0,0 Z'/%3E%3C/svg%3E");
+    animation: signo-waves-footer 10s linear infinite;
+}
+
+@keyframes signo-waves-footer {
+    from { background-position: 0 top, 0 top, 0 top, 0 top; }
+    to   { background-position: -1200px top, 1400px top, -1600px top, 1000px top; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .md-header::before,
+    .md-footer-meta::before { animation: none; }
+}
+
+/* Conteúdo acima das ondas */
+.md-header__inner,
+.md-header-nav,
+.md-header__topic,
+.md-header__title,
+.md-search { position: relative; z-index: 1; }
+
+/* O título de página que o Material revela ao rolar (.md-header__title) deve
+   ficar centralizado verticalmente na faixa do header, alinhado com o logo —
+   sem "cair" torto para baixo. */
+.md-header__title {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.md-header__title .md-header__ellipsis,
+.md-header__title .md-ellipsis {
+    line-height: 1.2;
+}
+
+.md-footer-meta__inner { position: relative; z-index: 1; }
+
+/* Sidebars: posicionamento natural do Material (sem forçar top). */
+.md-sidebar { transition: top .25s ease; }
 
 .md-header__button.md-logo img {
     height: 50px;
@@ -76,9 +167,14 @@
 /* ============================================================
    SIDEBAR (menu lateral)
    ============================================================ */
+/* Fundo transparente: como o fundo da página é uma cor sólida uniforme, o menu
+   herda esse mesmo fundo e não há diferença de tom entre o menu e o resto — nem
+   no claro, nem no escuro. */
 .md-sidebar,
-.md-sidebar--secondary {
-    background-color: var(--bg-sidebar) !important;
+.md-sidebar--secondary,
+.md-sidebar__scrollwrap,
+.md-sidebar__inner {
+    background-color: transparent !important;
 }
 
 .md-nav__link {
@@ -106,7 +202,7 @@
 
 /* Títulos das seções do menu lateral (CEP, CESDI, RCTO) */
 .md-nav__item--section > .md-nav__link {
-    color: var(--text-main) !important;
+    color: var(--signo-primary) !important;
     font-weight: 700 !important;
     font-size: 0.95em;
 }
@@ -120,6 +216,18 @@
 .md-nav__title {
     color: var(--signo-primary);
     font-weight: 600;
+}
+
+/* O cabeçalho dos menus (esquerdo "Documentação SIGNO" e direito "Índice")
+   O título dos menus precisa de fundo opaco para segurar os itens ao rolar a
+   lista, mas usando a MESMA cor sólida do fundo da página (--bg-main), assim
+   ele casa perfeitamente com tudo — sem virar um retângulo destoante, no claro
+   ou no escuro. */
+.md-nav--primary > .md-nav__title,
+.md-nav--secondary > .md-nav__title,
+.md-sidebar .md-nav__title[for] {
+    background-color: var(--bg-main) !important;
+    box-shadow: none !important;
 }
 
 /* Sumário direito: H3 em negrito, H4 normal */
@@ -317,11 +425,64 @@
    ============================================================ */
 body {
     color: var(--text-main);
+    background: var(--bg-main);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .md-main {
-    background: var(--bg-main);
+    background: transparent;
+}
+
+/* ============================================================
+   PARALLAX GEOMÉTRICO DE FUNDO
+   Formas (círculos, discos, triângulos, linhas) em tons da paleta, atrás de
+   todo o conteúdo, movidas em velocidades diferentes pelo scroll (extra.js).
+   Discreto: opacidades baixas e cores suaves. Respeita reduzir-movimento.
+   ============================================================ */
+.signo-parallax {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.signo-parallax .shape {
+    position: absolute;
+    opacity: var(--o, 0.5);
+    will-change: transform;
+}
+.signo-parallax .circle {
+    border-radius: 50%;
+    border: 1.5px solid rgba(var(--shape-rgb), 0.12);
+}
+.signo-parallax .disc {
+    border-radius: 50%;
+    background: rgba(var(--shape-rgb), 0.035);
+}
+.signo-parallax .tri {
+    background: rgba(var(--shape-rgb), 0.04);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.signo-parallax .line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(var(--shape-rgb), 0.14), transparent);
+}
+
+/* Conteúdo e menus acima das formas. NÃO forçamos position no header: ele
+   precisa manter o position:sticky nativo do Material (senão trava no meio da
+   tela ao rolar devagar). O z-index sozinho já o mantém sobre o parallax. */
+.md-container {
+    position: relative;
+    z-index: 1;
+}
+.md-header,
+.md-footer {
+    z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .signo-parallax { display: none; }
 }
 
 .md-typeset {
@@ -338,7 +499,6 @@ body {
 
 .md-footer-meta {
     background-color: var(--footer-meta-bg) !important;
-	filter: brightness(0.85);
 }
 
 .md-footer-meta a {
@@ -766,7 +926,7 @@ label.val-btn-anexar svg { stroke: currentColor; }
     border: 2px solid var(--border-soft, #e0e0e0) !important;
     border-radius: 8px !important;
     font-size: 0.9em !important;
-    height: auto !important;
+    height: 320px !important;
     font-family: 'Courier New', monospace !important;
 }
 .CodeMirror-focused { border-color: var(--signo-primary) !important; }

@@ -1,0 +1,1513 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Parâmetros para envio de atos por cartórios no sistema SIGNO">
+      
+      
+      
+      
+        <link rel="prev" href="../validar_rcto_api/">
+      
+      
+        <link rel="next" href="../dominios/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>RCTO - Upload - Documentação SIGNO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#validador-rcto-upload" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Documentação SIGNO" class="md-header__button md-logo" aria-label="Documentação SIGNO" data-md-component="logo">
+      
+  <img src="../assets/cnb-sp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação SIGNO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RCTO - Upload
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentação SIGNO" class="md-nav__button md-logo" aria-label="Documentação SIGNO" data-md-component="logo">
+      
+  <img src="../assets/cnb-sp.png" alt="logo">
+
+    </a>
+    Documentação SIGNO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CEP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CEP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cep_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cep_upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validadores
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Validadores
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validar_cep_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CEP - API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validar_cep_upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CEP - Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CESDI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CESDI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cesdi_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cesdi_upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validadores
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Validadores
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validar_cesdi_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CESDI - API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validar_cesdi_upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CESDI - Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCTO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RCTO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rcto_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rcto_upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validadores
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Validadores
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validar_rcto_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCTO - API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCTO - Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dominios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domínios Compartilhados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="validador-rcto-upload">Validador — RCTO Upload<a class="headerlink" href="#validador-rcto-upload" title="Permanent link">&para;</a></h1>
+<p>Verifique se o arquivo de <strong>Upload</strong> (planilha) do RCTO está de acordo com o manual. A validação roda <strong>localmente no seu navegador</strong> — nada é enviado a nenhum servidor.</p>
+<p>O arquivo de Upload do RCTO é <strong>plano</strong>: cada linha do CSV representa <strong>um ato completo</strong> (testamento), com as informações do ato, do testador e, quando houver, da revogação — todas na mesma linha. São 35 colunas em ordem fixa.</p>
+<p><strong>Como usar:</strong></p>
+<ol>
+<li>Gere um modelo no painel abaixo <strong>ou</strong> anexe seu arquivo (.csv UTF-8 ou .xlsx)</li>
+<li>Edite as células diretamente na tabela se precisar</li>
+<li>Clique em <strong>Validar</strong> para conferir e em <strong>Baixar CSV</strong> para exportar</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Formato do arquivo</p>
+<p>O SIGNO espera o arquivo no formato <strong>CSV, UTF-8, separado por ponto-e-vírgula (<code>;</code>)</strong> — é nesse formato que o botão "Baixar CSV" exporta. O upload de <code>.xlsx</code> é aceito aqui apenas como conveniência (a página converte para CSV durante a leitura).</p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<div class="validador-container">
+  <div class="gerador-modelo">
+    <div class="gerador-titulo">Gerar modelo de exemplo (Excel)</div>
+    <div class="gerador-grid">
+      <label class="gerador-campo">Tipo de testamento
+        <select id="selTipoTest">
+          <option value="1">Testamento público - 1</option>
+          <option value="2">Aditamento - 2</option>
+          <option value="3">Revogação - 3</option>
+          <option value="4">Testamento cerrado - 4</option>
+          <option value="5">Testamento sem conteúdo patrimonial - 5</option>
+          <option value="13">Testamento com revogação - 13</option>
+        </select>
+      </label>
+    </div>
+    <div class="gerador-grid">
+      <label class="gerador-check"><input type="checkbox" id="chkLegado"> Possui legado solidário (doação a entidade)</label>
+    </div>
+    <button id="btnGerar" class="val-btn val-btn-gerar">Gerar modelo</button>
+  </div>
+
+  <div class="validador-toolbar">
+    <label for="fileInput" class="val-btn val-btn-anexar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px;"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>Anexar planilha (.xlsx ou .csv)</label>
+    <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" style="display:none;">
+    <button id="btnValidar" class="val-btn val-btn-validar">Validar</button>
+    <button id="btnBaixar" class="val-btn">Baixar CSV</button>
+    <button id="btnLimpar" class="val-btn">Limpar</button>
+  </div>
+  <div id="nomeArquivo" class="validador-arquivo"></div>
+  <div id="gridWrap" class="grid-wrap" style="display:none;">
+    <div id="gridInfo" class="grid-info"></div>
+    <div class="grid-scroll"><table id="gridTabela" class="grid-tabela"></table></div>
+  </div>
+  <div id="resultado" class="validador-resultado"></div>
+</div>
+
+<script>
+(function(){
+  window.SCHEMA_RCTO_UP = {"header": ["STATUS", "DATAATO", "LIVROINICIAL", "COMPLEMENTOLIVROINICIAL", "LIVROFINAL", "COMPLEMENTOLIVROFINAL", "FOLHAINICIAL", "COMPLEMENTOFOLHAINICIAL", "FOLHAFINAL", "COMPLEMENTOFOLHAFINAL", "LEGADOSOLIDARIO", "DESCRICAOLEGADOSOLIDARIO", "CPF", "TIPODOCUMENTO", "DESCRICAODOCUMENTO", "NOME", "NOMESOCIAL", "QUALIFICACAO", "FILIACAO", "NACIONALIDADE", "TIPOTESTAMENTO", "PAISORIGEM", "DATANASCIMENTO", "ESTADOCIVIL", "AREADEATUACAO", "PROFISSAO", "REVOGACAOCARTORIO", "REVOGACAOLIVROINICIAL", "REVOGACAOCOMPLEMENTOLIVROINICIAL", "REVOGACAOLIVROFINAL", "REVOGACAOCOMPLEMENTOLIVROFINAL", "REVOGACAOFOLHAINICIAL", "REVOGACAOFOLHAFINAL", "REVOGACAOOBSERVACAO", "OBSERVACAOATO"], "columns": [{"idx": 0, "name": "STATUS", "obrigatorio": false, "tipo": "integer", "tamanho": 2, "dominio": ["10"], "skip": true}, {"idx": 1, "name": "DATAATO", "obrigatorio": true, "tipo": "string", "tamanho": null, "dominio": null, "skip": false, "formato": "dd/mm/aaaa"}, {"idx": 2, "name": "LIVROINICIAL", "obrigatorio": true, "tipo": "integer", "tamanho": 4, "dominio": null, "skip": false, "formato": "0000"}, {"idx": 3, "name": "COMPLEMENTOLIVROINICIAL", "obrigatorio": false, "tipo": "string", "tamanho": 1, "dominio": null, "skip": false, "formato": "X (letra)"}, {"idx": 4, "name": "LIVROFINAL", "obrigatorio": false, "tipo": "string", "tamanho": null, "dominio": null, "skip": true}, {"idx": 5, "name": "COMPLEMENTOLIVROFINAL", "obrigatorio": false, "tipo": "string", "tamanho": null, "dominio": null, "skip": true}, {"idx": 6, "name": "FOLHAINICIAL", "obrigatorio": true, "tipo": "integer", "tamanho": 3, "dominio": null, "skip": false, "formato": "000"}, {"idx": 7, "name": "COMPLEMENTOFOLHAINICIAL", "obrigatorio": false, "tipo": "string", "tamanho": 1, "dominio": null, "skip": false, "formato": "X (letra)"}, {"idx": 8, "name": "FOLHAFINAL", "obrigatorio": true, "tipo": "integer", "tamanho": 3, "dominio": null, "skip": false, "formato": "000"}, {"idx": 9, "name": "COMPLEMENTOFOLHAFINAL", "obrigatorio": false, "tipo": "string", "tamanho": 1, "dominio": null, "skip": false, "formato": "X (letra)"}, {"idx": 10, "name": "LEGADOSOLIDARIO", "obrigatorio": true, "tipo": "integer", "tamanho": 1, "dominio": ["0", "1"], "skip": false, "formato": "0"}, {"idx": 11, "name": "DESCRICAOLEGADOSOLIDARIO", "obrigatorio": false, "tipo": "string", "tamanho": 100, "dominio": null, "skip": false, "cond": {"tipo": "obrigatorioQuando", "campo": "LEGADOSOLIDARIO", "valores": [1], "rotulo": "LEGADOSOLIDARIO = Possui (1)"}, "formato": "texto livre"}, {"idx": 12, "name": "CPF", "obrigatorio": false, "tipo": "integer", "tamanho": 11, "dominio": null, "skip": false, "formato": "00000000000"}, {"idx": 13, "name": "TIPODOCUMENTO", "obrigatorio": false, "tipo": "integer", "tamanho": 2, "dominio": ["14", "15", "16", "17"], "skip": false, "cond": {"tipo": "obrigatorioSeAusente", "campo": "CPF", "rotulo": "CPF não preenchido"}}, {"idx": 14, "name": "DESCRICAODOCUMENTO", "obrigatorio": false, "tipo": "string", "tamanho": null, "dominio": null, "skip": false, "cond": {"tipo": "obrigatorioSeInformado", "campo": "TIPODOCUMENTO", "rotulo": "TIPODOCUMENTO informado"}}, {"idx": 15, "name": "NOME", "obrigatorio": true, "tipo": "string", "tamanho": 100, "dominio": null, "skip": false}, {"idx": 16, "name": "NOMESOCIAL", "obrigatorio": false, "tipo": "string", "tamanho": null, "dominio": null, "skip": false}, {"idx": 17, "name": "QUALIFICACAO", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "dominio": ["1"], "skip": true}, {"idx": 18, "name": "FILIACAO", "obrigatorio": true, "tipo": "string", "tamanho": 200, "dominio": null, "skip": false, "formato": "sep / ou |, N/A se não houver"}, {"idx": 19, "name": "NACIONALIDADE", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "dominio": ["1", "2", "3"], "skip": false, "formato": "1=Bras 2=Estr 3=Natur"}, {"idx": 20, "name": "TIPOTESTAMENTO", "obrigatorio": true, "tipo": "integer", "tamanho": 2, "dominio": ["1", "2", "3", "4", "5", "13"], "skip": false}, {"idx": 21, "name": "PAISORIGEM", "obrigatorio": false, "tipo": "string", "tamanho": 3, "dominio": ["ABW", "AFG", "AGO", "AIA", "ALA", "ALB", "AND", "ARE", "ARG", "ARM", "ASM", "ATG", "AUS", "AUT", "AZE", "BDI", "BEL", "BEN", "BES", "BFA", "BGD", "BGR", "BHR", "BHS", "BIH", "BLM", "BLR", "BLZ", "BMU", "BOL", "BRA", "BRB", "BRN", "BTN", "BWA", "CAF", "CAN", "CCK", "CHE", "CHL", "CHN", "CIV", "CMR", "COD", "COG", "COK", "COL", "COM", "CPV", "CRI", "CUB", "CUW", "CYM", "CYP", "CZE", "DEU", "DJI", "DMA", "DNK", "DOM", "DZA", "ECU", "EGY", "ERI", "ESH", "ESP", "EST", "ETH", "FIN", "FJI", "FLK", "FRA", "FRO", "FSM", "GAB", "GBR", "GEO", "GGY", "GHA", "GIB", "GIN", "GLP", "GMB", "GNB", "GNQ", "GRC", "GRD", "GRL", "GTM", "GUF", "GUM", "GUY", "HKG", "HND", "HRV", "HTI", "HUN", "IDN", "IMN", "IND", "IRL", "IRN", "IRQ", "ISL", "ISR", "ITA", "JAM", "JEY", "JOR", "JPN", "KAZ", "KEN", "KGZ", "KHM", "KIR", "KNA", "KOR", "KWT", "LAO", "LBN", "LBR", "LBY", "LCA", "LIE", "LKA", "LSO", "LTU", "LUX", "LVA", "MAC", "MAF", "MAR", "MCO", "MDA", "MDG", "MDV", "MEX", "MHL", "MKD", "MLI", "MLT", "MMR", "MNE", "MNG", "MNP", "MOZ", "MRT", "MSR", "MTQ", "MUS", "MWI", "MYS", "MYT", "NAM", "NCL", "NER", "NFK", "NGA", "NIC", "NIU", "NLD", "NOR", "NPL", "NRU", "NZL", "OMN", "PAK", "PAN", "PCN", "PER", "PHL", "PLW", "PNG", "POL", "PRI", "PRK", "PRT", "PRY", "PSE", "PYF", "QAT", "REU", "ROU", "RUS", "RWA", "SAU", "SDN", "SEN", "SGP", "SHN", "SJM", "SLB", "SLE", "SLV", "SMR", "SOM", "SPM", "SRB", "SRK", "SSD", "STP", "SUR", "SVK", "SVN", "SWE", "SWZ", "SXM", "SYC", "SYR", "TCA", "TCD", "TGO", "THA", "TJK", "TKL", "TKM", "TLS", "TON", "TTO", "TUN", "TUR", "TUV", "TZA", "UGA", "UKR", "URY", "USA", "UZB", "VAT", "VCT", "VEN", "VGB", "VIR", "VNM", "VUT", "WLF", "WSM", "YEM", "ZAF", "ZMB", "ZWE"], "skip": false, "formato": "sigla 3 letras (aba País)"}, {"idx": 22, "name": "DATANASCIMENTO", "obrigatorio": true, "tipo": "string", "tamanho": null, "dominio": null, "skip": false, "formato": "dd/mm/aaaa"}, {"idx": 23, "name": "ESTADOCIVIL", "obrigatorio": false, "tipo": "integer", "tamanho": 1, "dominio": ["1", "2", "3", "4", "5", "6", "7"], "skip": false}, {"idx": 24, "name": "AREADEATUACAO", "obrigatorio": false, "tipo": "integer", "tamanho": 2, "dominio": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"], "skip": false, "formato": "cód área (aba Profissão)"}, {"idx": 25, "name": "PROFISSAO", "obrigatorio": false, "tipo": "integer", "tamanho": 3, "dominio": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134"], "skip": false, "formato": "cód profissão (aba Profissão)"}, {"idx": 26, "name": "REVOGACAOCARTORIO", "obrigatorio": false, "tipo": "integer", "tamanho": 6, "dominio": null, "skip": false, "cond": {"tipo": "obrigatorioQuando", "campo": "TIPOTESTAMENTO", "valores": [3, 13], "rotulo": "TIPOTESTAMENTO = Revogação (3) ou Test. com revogação (13)"}, "formato": "000000 (CNS)"}, {"idx": 27, "name": "REVOGACAOLIVROINICIAL", "obrigatorio": false, "tipo": "integer", "tamanho": 4, "dominio": null, "skip": false, "cond": {"tipo": "obrigatorioQuando", "campo": "TIPOTESTAMENTO", "valores": [3, 13], "rotulo": "TIPOTESTAMENTO = 3 ou 13"}, "formato": "0000"}, {"idx": 28, "name": "REVOGACAOCOMPLEMENTOLIVROINICIAL", "obrigatorio": false, "tipo": "string", "tamanho": 1, "dominio": null, "skip": false, "formato": "X (letra)"}, {"idx": 29, "name": "REVOGACAOLIVROFINAL", "obrigatorio": false, "tipo": "string", "tamanho": null, "dominio": null, "skip": true}, {"idx": 30, "name": "REVOGACAOCOMPLEMENTOLIVROFINAL", "obrigatorio": false, "tipo": "string", "tamanho": null, "dominio": null, "skip": true}, {"idx": 31, "name": "REVOGACAOFOLHAINICIAL", "obrigatorio": false, "tipo": "integer", "tamanho": 3, "dominio": null, "skip": false, "cond": {"tipo": "obrigatorioQuando", "campo": "TIPOTESTAMENTO", "valores": [3, 13], "rotulo": "TIPOTESTAMENTO = 3 ou 13"}, "formato": "000"}, {"idx": 32, "name": "REVOGACAOFOLHAFINAL", "obrigatorio": false, "tipo": "integer", "tamanho": 3, "dominio": null, "skip": false, "cond": {"tipo": "obrigatorioQuando", "campo": "TIPOTESTAMENTO", "valores": [3, 13], "rotulo": "TIPOTESTAMENTO = 3 ou 13"}, "formato": "000"}, {"idx": 33, "name": "REVOGACAOOBSERVACAO", "obrigatorio": false, "tipo": "string", "tamanho": 200, "dominio": null, "skip": false, "cond": {"tipo": "obrigatorioSeAusente", "campo": "REVOGACAOCARTORIO", "rotulo": "demais campos de revogação não preenchidos"}}, {"idx": 34, "name": "OBSERVACAOATO", "obrigatorio": false, "tipo": "string", "tamanho": null, "dominio": null, "skip": true}]};
+
+  // ---------- MOTOR ----------
+  (function(global){
+// Motor RCTO Upload - flat single-line (cada linha CSV = 1 ato completo)
+
+  const SCHEMA = global.SCHEMA_RCTO_UP;
+  const COLS = SCHEMA.columns;
+  const HEADER = SCHEMA.header;
+
+  function ausente(v){ return v===undefined||v===null||String(v).trim()===''; }
+  function soDigitos(s){ return /^\d+$/.test(s); }
+  function limpaDoc(s){ return String(s).replace(/[.\-\/\s]/g,''); }
+
+  function validaCPF(cpf){
+    cpf=limpaDoc(cpf);
+    if(!/^\d{11}$/.test(cpf)) return false;
+    if(/^(\d)\1{10}$/.test(cpf)) return false;
+    let s=0; for(let i=0;i<9;i++) s+=parseInt(cpf[i])*(10-i);
+    let d=11-(s%11); if(d>=10)d=0; if(d!==parseInt(cpf[9])) return false;
+    s=0; for(let i=0;i<10;i++) s+=parseInt(cpf[i])*(11-i);
+    d=11-(s%11); if(d>=10)d=0; return d===parseInt(cpf[10]);
+  }
+  function validaCNPJ(cnpj){
+    cnpj=limpaDoc(cnpj);
+    if(!/^\d{14}$/.test(cnpj)) return false;
+    if(/^(\d)\1{13}$/.test(cnpj)) return false;
+    const calc=(base,pesos)=>{ let s=0; for(let i=0;i<pesos.length;i++) s+=parseInt(base[i])*pesos[i]; let r=s%11; return r<2?0:11-r; };
+    const d1=calc(cnpj,[5,4,3,2,9,8,7,6,5,4,3,2]);
+    const d2=calc(cnpj,[6,5,4,3,2,9,8,7,6,5,4,3,2]);
+    return d1===parseInt(cnpj[12]) && d2===parseInt(cnpj[13]);
+  }
+  function ehDataValida(s){
+    if(!/^\d{2}\/\d{2}\/\d{4}$/.test(s)) return false;
+    const [d,m,a]=s.split('/').map(Number);
+    if(m<1||m>12||d<1||d>31||a<1900||a>2100) return false;
+    const dt=new Date(a,m-1,d);
+    return dt.getDate()===d && dt.getMonth()===m-1;
+  }
+
+  // índice por nome
+  const IDX={}; HEADER.forEach((h,i)=>{ IDX[h.toUpperCase()]=i; });
+
+  function val(row,nome){ const i=IDX[nome.toUpperCase()]; return i===undefined?'':row[i]; }
+
+  // condicional satisfeita?
+  function condAtiva(cond,row){
+    const v=val(row,cond.campo);
+    if(cond.tipo==='obrigatorioQuando') return cond.valores.map(String).includes(String(v).trim());
+    if(cond.tipo==='obrigatorioSeInformado') return !ausente(v);
+    if(cond.tipo==='obrigatorioSeAusente') return ausente(v);
+    if(cond.tipo==='somenteQuando') return cond.valores.map(String).includes(String(v).trim());
+    return false;
+  }
+
+  function validarCampo(col, valor, nLinha, erros){
+    const tag=col.name;
+    const vazio=ausente(valor);
+
+    if(vazio){
+      // obrigatoriedade fixa (condicional é tratada em validarLinha)
+      if(col.obrigatorio && !col.skip)
+        erros.push({linha:nLinha,campo:tag,tipo:'erro',msg:'campo obrigatório não preenchido'});
+      return; // vazio + não obrigatório → ok, não valida tipo
+    }
+    if(col.skip) return; // campo inutilizado preenchido → ignora (não valida)
+
+    const s=String(valor).trim();
+
+    // CPF/CNPJ
+    if(tag==='CPF'){
+      const doc=limpaDoc(s);
+      if(doc.length<=11){ if(!validaCPF(doc)) erros.push({linha:nLinha,campo:tag,tipo:'erro',msg:'CPF inválido (dígito verificador)'}); }
+      else { if(!validaCNPJ(doc)) erros.push({linha:nLinha,campo:tag,tipo:'erro',msg:'CNPJ inválido (dígito verificador)'}); }
+      return;
+    }
+    // datas
+    if(col.formato && /dd\/mm\/aaaa/i.test(col.formato)){
+      if(!ehDataValida(s)) erros.push({linha:nLinha,campo:tag,tipo:'erro',msg:'data inválida (use dd/mm/aaaa): "'+s+'"'});
+      return;
+    }
+    // tipo integer
+    if(col.tipo==='integer'){
+      if(!soDigitos(s)){ erros.push({linha:nLinha,campo:tag,tipo:'erro',msg:'deve ser numérico: "'+s+'"'}); return; }
+      if(col.tamanho && s.length>col.tamanho) erros.push({linha:nLinha,campo:tag,tipo:'erro',msg:'excede '+col.tamanho+' dígitos'});
+    } else { // string
+      if(col.tamanho && s.length>col.tamanho) erros.push({linha:nLinha,campo:tag,tipo:'erro',msg:'excede '+col.tamanho+' caracteres'});
+      if(col.formato && /^X \(letra\)$/i.test(col.formato.trim()) && !/^[A-Za-z]$/.test(s))
+        erros.push({linha:nLinha,campo:tag,tipo:'erro',msg:'deve ser uma única letra'});
+    }
+    // domínio
+    if(col.dominio && col.dominio.length){
+      if(!col.dominio.map(String).includes(s)){
+        const d = col.dominio.length>15 ? '(consulte a tabela do manual)' : '('+col.dominio.join(', ')+')';
+        erros.push({linha:nLinha,campo:tag,tipo:'erro',msg:'valor "'+s+'" fora do domínio '+d});
+      }
+    }
+  }
+
+  function validarLinha(row, nLinha, erros){
+    // largura
+    if(row.length !== HEADER.length){
+      erros.push({linha:nLinha,campo:'(linha)',tipo:'erro',msg:'esperado '+HEADER.length+' colunas, encontrado '+row.length});
+    }
+    COLS.forEach(col=>{
+      const valor = col.idx < row.length ? row[col.idx] : '';
+      validarCampo(col, valor, nLinha, erros);
+    });
+    // condicionais de obrigatoriedade
+    const tipoTest = String(val(row,'TIPOTESTAMENTO')).trim();
+    const ehRevogacao = (tipoTest==='3' || tipoTest==='13');
+    const camposRevogacao = ['REVOGACAOCARTORIO','REVOGACAOLIVROINICIAL','REVOGACAOCOMPLEMENTOLIVROINICIAL',
+                             'REVOGACAOFOLHAINICIAL','REVOGACAOFOLHAFINAL','REVOGACAOOBSERVACAO'];
+    COLS.forEach(col=>{
+      if(!col.cond) return;
+      const c=col.cond;
+      // o bloco de revogação tem regra própria (abaixo); não aplica a cond genérica
+      if(camposRevogacao.includes(col.name)) return;
+      if(['obrigatorioQuando','obrigatorioSeInformado','obrigatorioSeAusente'].includes(c.tipo)){
+        if(condAtiva(c,row) && ausente(col.idx<row.length?row[col.idx]:'') && !col.skip){
+          erros.push({linha:nLinha,campo:col.name,tipo:'erro',msg:'campo obrigatório quando '+c.rotulo});
+        }
+      }
+    });
+    // Regra de revogação (tipo 3/13): exige OU os campos estruturados (cartório+livro+folhaIni+folhaFin)
+    // OU a REVOGACAOOBSERVACAO preenchida. Fora dos tipos 3/13, esses campos não devem ser enviados
+    // (manual: "PREENCHIDOS SOMENTE PARA ATOS DE REVOGAÇÃO").
+    {
+      const cart=val(row,'REVOGACAOCARTORIO'), livIni=val(row,'REVOGACAOLIVROINICIAL'),
+            complLivIni=val(row,'REVOGACAOCOMPLEMENTOLIVROINICIAL'),
+            folIni=val(row,'REVOGACAOFOLHAINICIAL'), folFim=val(row,'REVOGACAOFOLHAFINAL'),
+            obs=val(row,'REVOGACAOOBSERVACAO');
+      if(ehRevogacao){
+        const estruturadosCompletos = !ausente(cart) && !ausente(livIni) && !ausente(folIni) && !ausente(folFim);
+        const temObs = !ausente(obs);
+        if(!estruturadosCompletos && !temObs){
+          erros.push({linha:nLinha,campo:'REVOGACAO',tipo:'erro',
+            msg:'ato de revogação exige os campos de cartório/livro/folha OU o campo REVOGACAOOBSERVACAO preenchido'});
+        }
+      } else {
+        [['REVOGACAOCARTORIO',cart],['REVOGACAOLIVROINICIAL',livIni],['REVOGACAOCOMPLEMENTOLIVROINICIAL',complLivIni],
+         ['REVOGACAOFOLHAINICIAL',folIni],['REVOGACAOFOLHAFINAL',folFim]].forEach(([nome,v])=>{
+          if(!ausente(v)) erros.push({linha:nLinha,campo:nome,tipo:'erro',
+            msg:'só deve ser preenchido em atos de revogação (TIPOTESTAMENTO 3 ou 13)'});
+        });
+        if(!ausente(obs)) erros.push({linha:nLinha,campo:'REVOGACAOOBSERVACAO',tipo:'aviso',
+          msg:'preenchido em ato que não é de revogação'});
+      }
+    }
+    // coerência: folha/livro final >= inicial; nascimento <= ato; datas não futuras
+    function pInt(n){ const v=val(row,n); return soDigitos(String(v).trim())?parseInt(v,10):null; }
+    const fi=pInt('FOLHAINICIAL'), ff=pInt('FOLHAFINAL');
+    if(fi!==null && ff!==null && ff<fi) erros.push({linha:nLinha,campo:'FOLHAFINAL',tipo:'erro',msg:'folha final ('+ff+') menor que inicial ('+fi+')'});
+    const li=pInt('LIVROINICIAL');
+    function pData(n){ const v=String(val(row,n)).trim(); return ehDataValida(v)? v.split('/').map(Number):null; }
+    const dAto=pData('DATAATO'), dNasc=pData('DATANASCIMENTO');
+    function toDate(a){ return a?new Date(a[2],a[1]-1,a[0]):null; }
+    const hoje=new Date(); hoje.setHours(23,59,59,999);
+    const dAtoD=toDate(dAto), dNascD=toDate(dNasc);
+    if(dAtoD && dAtoD>hoje) erros.push({linha:nLinha,campo:'DATAATO',tipo:'erro',msg:'data do ato no futuro'});
+    if(dNascD && dNascD>hoje) erros.push({linha:nLinha,campo:'DATANASCIMENTO',tipo:'erro',msg:'data de nascimento no futuro'});
+    if(dAtoD && dNascD && dNascD>dAtoD) erros.push({linha:nLinha,campo:'DATANASCIMENTO',tipo:'erro',msg:'nascimento posterior à data do ato'});
+  }
+
+  // parse CSV (separador ;), respeitando aspas
+  function parseCSV(texto){
+    const linhas = texto.replace(/^\uFEFF/,'').replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n');
+    return linhas.map(l=>{
+      const out=[]; let cur=''; let q=false;
+      for(let i=0;i<l.length;i++){ const ch=l[i];
+        if(q){ if(ch==='"'){ if(l[i+1]==='"'){cur+='"';i++;} else q=false; } else cur+=ch; }
+        else { if(ch==='"') q=true; else if(ch===';'){ out.push(cur); cur=''; } else cur+=ch; }
+      }
+      out.push(cur); return out;
+    });
+  }
+
+  function validar(texto){
+    const erros=[];
+    const linhas=parseCSV(texto).filter((r,i)=> !(r.length===1 && r[0].trim()==='') );
+    if(linhas.length===0){ return {erros:[{linha:0,campo:'(arquivo)',tipo:'erro',msg:'arquivo vazio'}], registros:0}; }
+    // 1ª linha é cabeçalho? detecta se contém STATUS/DATAATO
+    let inicio=0;
+    const prim=linhas[0].map(x=>String(x).trim().toUpperCase());
+    if(prim.includes('DATAATO')||prim.includes('STATUS')||prim.includes('TIPOTESTAMENTO')){
+      // valida header
+      inicio=1;
+      const faltam=HEADER.filter(h=>!prim.includes(h.toUpperCase()));
+      if(faltam.length) erros.push({linha:1,campo:'(cabeçalho)',tipo:'aviso',msg:'colunas ausentes no cabeçalho: '+faltam.join(', ')});
+    }
+    let n=0;
+    for(let i=inicio;i<linhas.length;i++){ n++; validarLinha(linhas[i], i+1, erros); }
+    return {erros, registros:n};
+  }
+
+  global.RCTO_UP = { validar, parseCSV, validaCPF, validaCNPJ, ehDataValida };
+
+  })(window);
+
+  const SCHEMA = window.SCHEMA_RCTO_UP;
+  const HEADER = SCHEMA.header;
+
+  function ausente(v){ return v===undefined||v===null||String(v).trim()===''; }
+
+  // ---------- GERAR MODELO ----------
+  function valorExemplo(col){
+    const nm=col.name;
+    const M={
+      DATAATO:'02/02/2025', LIVROINICIAL:'30', FOLHAINICIAL:'222', FOLHAFINAL:'222',
+      LEGADOSOLIDARIO:'0', CPF:'66221977096', NOME:'FULANO DE TAL', FILIACAO:'MARIA DE TAL / JOAO DE TAL',
+      TIPOTESTAMENTO:'1', DATANASCIMENTO:'10/05/1960', NACIONALIDADE:'1', PAISORIGEM:'BRA',
+      ESTADOCIVIL:'5', AREADEATUACAO:'1', PROFISSAO:'1', STATUS:'10', QUALIFICACAO:'1'
+    };
+    if (M[nm]!==undefined) return M[nm];
+    if (col.dominio && col.dominio.length) return col.dominio[0];
+    if (col.formato && /dd\/mm\/aaaa/i.test(col.formato)) return '10/05/1960';
+    if (col.tipo==='integer') return '1';
+    return '';
+  }
+
+  function gerarLinha(opts){
+    const row = new Array(HEADER.length).fill('');
+    function set(nome,v){ const i=HEADER.indexOf(nome); if(i>=0) row[i]=v; }
+    // obrigatórios sempre
+    SCHEMA.columns.forEach(col=>{ if(col.obrigatorio && !col.skip) set(col.name, valorExemplo(col)); });
+    set('STATUS','10');
+    set('TIPOTESTAMENTO', String(opts.tipoTest));
+    // documento: sempre CPF no modelo de exemplo
+    set('CPF','66221977096');
+    // legado
+    if (opts.legado){ set('LEGADOSOLIDARIO','1'); set('DESCRICAOLEGADOSOLIDARIO','Instituicao Beneficente XYZ'); }
+    else set('LEGADOSOLIDARIO','0');
+    // revogação (tipo 3 ou 13)
+    if (opts.tipoTest===3 || opts.tipoTest===13){
+      set('REVOGACAOCARTORIO','123456'); set('REVOGACAOLIVROINICIAL','10');
+      set('REVOGACAOFOLHAINICIAL','5'); set('REVOGACAOFOLHAFINAL','6');
+    }
+    return [HEADER.slice(), row];
+  }
+
+  // ---------- RENDER ----------
+  function render(res){
+    const div=document.getElementById('resultado');
+    const er=res.erros.filter(e=>e.tipo==='erro');
+    const av=res.erros.filter(e=>e.tipo==='aviso');
+    let html='';
+    if (er.length===0){
+      html='<div class="val-ok">✓ Arquivo válido! '+res.registros+' ato(s) conferido(s) — todas as linhas seguem as regras do manual.</div>';
+    } else {
+      html='<div class="val-erro-titulo">✗ '+er.length+' erro(s) encontrado(s):</div><ul class="val-lista">';
+      er.slice(0,300).forEach(e=>{ const loc=e.linha?('Linha '+e.linha+' · '):''; html+='<li>'+loc+'<code>'+e.campo+'</code> — '+e.msg+'</li>'; });
+      html+='</ul>';
+      if (er.length>300) html+='<p>... e mais '+(er.length-300)+' erro(s).</p>';
+    }
+    if (av.length){
+      html+='<div class="val-erro-titulo" style="color:#b8860b;">⚠ '+av.length+' aviso(s):</div><ul class="val-lista">';
+      av.slice(0,100).forEach(e=>{ const loc=e.linha?('Linha '+e.linha+' · '):''; html+='<li>'+loc+'<code>'+e.campo+'</code> — '+e.msg+'</li>'; });
+      html+='</ul>';
+    }
+    div.innerHTML=html; div.style.display='block';
+  }
+
+  // ---------- LEITURA DE ARQUIVO ----------
+  function lerArquivo(file, cb){
+    const nome=file.name.toLowerCase(); const reader=new FileReader();
+    if (nome.endsWith('.csv')){
+      reader.onload=e=>{
+        const txt=e.target.result.replace(/^\uFEFF/,'');
+        const linhas=txt.split(/\r?\n/).filter(l=>l.length);
+        const sep=(linhas[0].split(';').length>=linhas[0].split(',').length)?';':',';
+        const rows=linhas.map(l=>{
+          const out=[];let cur='';let q=false;
+          for(let i=0;i<l.length;i++){const ch=l[i];
+            if(q){if(ch==='"'){if(l[i+1]==='"'){cur+='"';i++;}else q=false;}else cur+=ch;}
+            else{if(ch==='"')q=true;else if(ch===sep){out.push(cur);cur='';}else cur+=ch;}}
+          out.push(cur);return out.map(c=>c.trim());
+        });
+        cb(rows);
+      };
+      reader.readAsText(file,'UTF-8');
+    } else {
+      reader.onload=e=>{
+        const wb=XLSX.read(new Uint8Array(e.target.result),{type:'array'});
+        const ws=wb.Sheets[wb.SheetNames[0]];
+        cb(XLSX.utils.sheet_to_json(ws,{header:1,defval:'',raw:false}));
+      };
+      reader.readAsArrayBuffer(file);
+    }
+  }
+
+  // ---------- GRADE ESTILO EXCEL ----------
+  let dados=[];
+  const GRID_CAP=200;
+  function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function renderGrid(){
+    const wrap=document.getElementById('gridWrap'), tabela=document.getElementById('gridTabela'), info=document.getElementById('gridInfo');
+    if(!dados||dados.length<1){ wrap.style.display='none'; return; }
+    const header=dados[0], total=dados.length-1, mostradas=Math.min(total,GRID_CAP);
+    let h='<thead><tr><th class="grid-num">#</th>';
+    header.forEach(c=>h+='<th>'+escapeHtml(c)+'</th>'); h+='</tr></thead><tbody>';
+    for(let r=1;r<=mostradas;r++){
+      const row=dados[r]||[];
+      h+='<tr data-row="'+r+'"><td class="grid-num">'+r+'</td>';
+      for(let c=0;c<header.length;c++){ h+='<td contenteditable="true" data-col="'+c+'">'+escapeHtml(row[c]==null?'':row[c])+'</td>'; }
+      h+='</tr>';
+    }
+    h+='</tbody>'; tabela.innerHTML=h;
+    info.textContent = total>GRID_CAP ? ('Mostrando as primeiras '+GRID_CAP+' de '+total+' linhas — edite e clique em Validar (todas são validadas).') : (total+' ato(s) — edite as células e clique em Validar.');
+    wrap.style.display='block';
+  }
+  function lerGrid(){
+    const tabela=document.getElementById('gridTabela'); if(!tabela) return;
+    tabela.querySelectorAll('tbody tr').forEach(tr=>{
+      const r=parseInt(tr.getAttribute('data-row'),10);
+      tr.querySelectorAll('td[contenteditable]').forEach(td=>{ const c=parseInt(td.getAttribute('data-col'),10); if(dados[r]) dados[r][c]=td.textContent.trim(); });
+    });
+  }
+  function dadosParaTexto(){
+    return dados.map(row=>row.map(c=>{ const v=c==null?'':String(c); return /[;"\r\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; }).join(';')).join('\r\n');
+  }
+  function validarDados(){
+    if(dados.length<1) return {erros:[{linha:0,campo:'(arquivo)',tipo:'erro',msg:'nada para validar'}],registros:0};
+    return window.RCTO_UP.validar('\ufeff'+dadosParaTexto());
+  }
+  function exportarCSV(){
+    if(!dados.length){ alert('Nada para exportar — gere um modelo ou anexe um arquivo primeiro.'); return; }
+    lerGrid();
+    const csv='\ufeff'+dadosParaTexto();
+    const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a'); a.href=url; a.download='rcto_upload.csv';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+
+  function init(){
+    const btnGerar=document.getElementById('btnGerar');
+    if(!btnGerar || btnGerar.dataset.ready==='1') return;
+    btnGerar.dataset.ready='1';
+    btnGerar.addEventListener('click', function(){
+      const opts={ tipoTest:parseInt(document.getElementById('selTipoTest').value,10),
+                   legado:document.getElementById('chkLegado').checked };
+      dados=gerarLinha(opts);
+      document.getElementById('nomeArquivo').textContent='Modelo gerado — edite na tabela abaixo se quiser.';
+      renderGrid(); render(validarDados());
+    });
+    document.getElementById('fileInput').addEventListener('change', function(ev){
+      const file=ev.target.files[0]; if(!file) return;
+      document.getElementById('nomeArquivo').textContent='Arquivo: '+file.name;
+      lerArquivo(file, function(rows){ dados=rows; renderGrid(); render(validarDados()); });
+      ev.target.value='';
+    });
+    document.getElementById('btnValidar').addEventListener('click', function(){
+      if(!dados.length){ alert('Gere um modelo ou anexe um arquivo primeiro.'); return; }
+      lerGrid(); render(validarDados());
+    });
+    document.getElementById('btnBaixar').addEventListener('click', exportarCSV);
+    document.getElementById('btnLimpar').addEventListener('click', function(){
+      dados=[]; document.getElementById('nomeArquivo').textContent='';
+      document.getElementById('gridWrap').style.display='none';
+      document.getElementById('gridTabela').innerHTML='';
+      const div=document.getElementById('resultado'); div.style.display='none'; div.innerHTML='';
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+  const obs=new MutationObserver(()=>setTimeout(init,50));
+  const c=document.querySelector('.md-content'); if(c) obs.observe(c,{childList:true});
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.highlight", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
