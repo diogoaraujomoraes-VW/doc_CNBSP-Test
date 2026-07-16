@@ -1147,7 +1147,7 @@
     const tipo = String(opts.tipoAto||"1");
     const legado = !!opts.legado;
     const m = {
-      filiacoes:["João da Silva", "Maria da Silva"],
+      filiacoes:["Roberto Carlos Nascimento", "Isabel Cristina Nascimento"],
       codigoPaisParte:"BRA",
       complementoLivroFinal:null,
       complementoLivroInicial:null,
@@ -1161,7 +1161,7 @@
       legadoSolidario:legado,
       livroFinal:12,
       livroInicial:12,
-      nomeParte:"Marcos da Silva",
+      nomeParte:"Fernando Nascimento Oliveira",
       qualificacaoParte:"1",
       tipoAto:tipo,
       tipoInvalidacaoAto:"10"
@@ -1197,7 +1197,7 @@
     if (!ta || ta.dataset.cm === '1' || typeof CodeMirror === 'undefined') return;
     ta.dataset.cm = '1';
     cm = CodeMirror.fromTextArea(ta, { mode:{name:'javascript',json:true}, lineNumbers:true,
-      theme: temaEscuro() ? 'material-darker' : 'default', tabSize:2, lineWrapping:true, viewportMargin:Infinity });
+      theme: temaEscuro() ? 'material-darker' : 'default', tabSize:2, lineWrapping:true, viewportMargin:Infinity});
     cm.setSize('100%', null);
     const obsTema = new MutationObserver(function(){ cm.setOption('theme', temaEscuro() ? 'material-darker' : 'default'); });
     obsTema.observe(document.body, {attributes:true, attributeFilter:['data-md-color-scheme']});

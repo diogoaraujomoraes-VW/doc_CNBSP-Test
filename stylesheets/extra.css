@@ -926,8 +926,12 @@ label.val-btn-anexar svg { stroke: currentColor; }
     border: 2px solid var(--border-soft, #e0e0e0) !important;
     border-radius: 8px !important;
     font-size: 0.9em !important;
-    height: 320px !important;
+    height: auto !important;
+    min-height: 120px !important;
     font-family: 'Courier New', monospace !important;
+}
+.CodeMirror-scroll {
+    overflow: visible !important;
 }
 .CodeMirror-focused { border-color: var(--signo-primary) !important; }
 
